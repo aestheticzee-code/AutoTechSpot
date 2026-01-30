@@ -88,16 +88,26 @@ const ArticlePage = () => {
       });
   };
 
-  // Schema.org Article markup
+  // Schema.org Article markup for rich snippets
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Article",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
     headline: article.title,
     description: article.excerpt,
-    image: article.featuredImage,
+    image: {
+      "@type": "ImageObject",
+      url: article.featuredImage,
+      width: 1200,
+      height: 630,
+    },
     author: {
       "@type": "Person",
       name: article.author.name,
+      image: article.author.avatar,
     },
     publisher: {
       "@type": "Organization",
@@ -105,10 +115,15 @@ const ArticlePage = () => {
       logo: {
         "@type": "ImageObject",
         url: "https://autotechspot.com/logo.png",
+        width: 200,
+        height: 60,
       },
     },
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.publishedAt,
+    articleSection: category?.name,
+    keywords: article.tags.join(", "),
+    wordCount: article.content.trim().split(/\s+/).length,
   };
 
   return (
