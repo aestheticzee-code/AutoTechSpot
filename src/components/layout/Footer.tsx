@@ -75,12 +75,6 @@ const Footer = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             <Link
-              to="/about"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              About Us
-            </Link>
-            <Link
               to="/contact"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
