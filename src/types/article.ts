@@ -1,5 +1,10 @@
 export type ArticleCategory = "car-reviews" | "news";
 
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 export interface Article {
   slug: string;
   title: string;
@@ -17,6 +22,7 @@ export interface Article {
   updatedAt?: string;
   readingTime: number;
   featured?: boolean;
+  faqs?: FAQ[];
 }
 
 export interface CategoryInfo {
