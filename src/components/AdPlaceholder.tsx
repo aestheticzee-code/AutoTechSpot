@@ -1,5 +1,8 @@
 import { cn } from "@/lib/utils";
 
+// Toggle this to true when your Google AdSense is approved
+const SHOW_ADS = false;
+
 type AdSize = "banner" | "sidebar" | "in-article" | "leaderboard";
 
 interface AdPlaceholderProps {
@@ -15,6 +18,11 @@ const sizeStyles: Record<AdSize, string> = {
 };
 
 const AdPlaceholder = ({ size, className }: AdPlaceholderProps) => {
+  // Return null when ads are disabled
+  if (!SHOW_ADS) {
+    return null;
+  }
+
   return (
     <div
       className={cn(
