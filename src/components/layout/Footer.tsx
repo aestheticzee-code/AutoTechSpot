@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { categories } from "@/types/article";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,10 +13,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="font-display text-lg font-bold text-primary-foreground">AT</span>
-              </div>
-              <span className="font-display text-xl font-bold">AutoTechSpot</span>
+              <img src={logo} alt="AutoTechSpot" className="h-12 w-auto" />
             </Link>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
               Your trusted source for in-depth car reviews, automotive news, and expert insights. 
