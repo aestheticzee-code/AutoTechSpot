@@ -59,7 +59,25 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {currentYear} AutoTechSpot. All rights reserved.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
+            <Link
+              to="/about"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              About Us
+            </Link>
+            <Link
+              to="/contact"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Contact Us
+            </Link>
+            <Link
+              to="/disclaimer"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Disclaimer
+            </Link>
             <Link
               to="/privacy"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
