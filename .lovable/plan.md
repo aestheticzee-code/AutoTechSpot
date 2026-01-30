@@ -1,86 +1,202 @@
 
 
-# AutoTechSpot Website Enhancement Plan
+# Guide: Managing Articles on AutoTechSpot
 
 ## Overview
 
-This streamlined plan focuses on critical SEO improvements and user experience enhancements for your website.
+Your articles are stored in a single file: `src/data/articles.ts`. This is a TypeScript file containing an array of article objects. To add, edit, or remove articles, you'll modify this file directly.
 
 ---
 
-## 1. Add Sitemap.xml (SEO Critical)
+## Part 1: How to Remove Sample Articles
 
-Create a sitemap for better Google indexing and discoverability.
+### Step 1: Open the Articles File
+Navigate to `src/data/articles.ts` in the code editor (click "Code" in the top-left of Lovable).
 
-### Changes
+### Step 2: Delete Article Objects
+The file contains an `articles` array with 5 sample articles. Each article is an object inside curly braces `{ ... }`. To remove an article, delete the entire object from the opening `{` to the closing `}` including the comma.
 
-**New file: `public/sitemap.xml`**
-- Static sitemap with all current routes
-- Includes homepage, category pages, article pages, and legal pages
-- Proper priority and changefreq values for each page type
+**Current sample articles to remove:**
+- `2024-porsche-911-carrera-review`
+- `tesla-model-3-highland-2024`
+- `bmw-announces-neue-klasse-platform`
+- `2024-honda-civic-type-r-review`
+- `ev-sales-record-2024`
 
-**Edit file: `public/robots.txt`**
-- Add sitemap location reference
-
-### Sitemap Structure
-```text
-sitemap.xml
-├── / (homepage) - priority: 1.0
-├── /category/car-reviews - priority: 0.8
-├── /category/news - priority: 0.8
-├── /category/electric-vehicles - priority: 0.8
-├── /category/buying-guides - priority: 0.8
-├── /article/[slug] (all articles) - priority: 0.7
-├── /about - priority: 0.5
-├── /contact - priority: 0.5
-└── /privacy, /terms, /disclaimer - priority: 0.3
+### Step 3: Keep the Array Structure
+After removing, ensure the file still has valid structure:
+```typescript
+export const articles: Article[] = [
+  // Your new articles will go here
+];
 ```
 
 ---
 
-## 2. Add OG Image for Social Sharing
+## Part 2: How to Write Your Own Articles
 
-Fix the missing Open Graph image that displays when your site is shared on social media.
+### Article Structure Template
 
-### Changes
+Copy this template for each new article:
 
-**Edit file: `index.html`**
-- Update og:image meta tag to reference a reliable image URL
-- Use an existing high-quality automotive image from the site
+```typescript
+{
+  slug: "your-article-url-slug",           // URL-friendly (lowercase, hyphens)
+  title: "Your Article Title Here",
+  excerpt: "A brief 1-2 sentence summary that appears on article cards.",
+  content: `
+## Main Heading
+
+Your article content goes here using Markdown format.
+
+### Subheading
+
+Write your paragraphs here. You can use:
+- Bullet points
+- **Bold text**
+- *Italic text*
+
+### Another Section
+
+More content...
+  `,
+  featuredImage: "https://example.com/your-image.jpg",  // 1200x630px recommended
+  featuredImageAlt: "Descriptive alt text for SEO",
+  category: "car-reviews",                  // or "news"
+  tags: ["Tag1", "Tag2", "Tag3"],
+  author: {
+    name: "Alexander Sterling",
+    avatar: "/images/alexander-sterling.png",
+  },
+  publishedAt: "2026-01-30",               // YYYY-MM-DD format
+  readingTime: 5,                          // Estimated minutes
+  featured: false,                         // Set ONE article to true
+  faqs: [                                  // Optional - helps SEO
+    {
+      question: "Common question about this topic?",
+      answer: "Your detailed answer here.",
+    },
+  ],
+},
+```
+
+### Field Explanations
+
+| Field | Description | Example |
+|-------|-------------|---------|
+| `slug` | URL path (no spaces, lowercase) | `"2026-tesla-model-y-review"` |
+| `title` | Article headline | `"2026 Tesla Model Y Review"` |
+| `excerpt` | Short preview (50-100 words) | Brief teaser text |
+| `content` | Full article in Markdown | Use headings, lists, bold |
+| `featuredImage` | Main image URL | Unsplash or uploaded image |
+| `category` | Must be `"car-reviews"` or `"news"` | `"car-reviews"` |
+| `tags` | Keywords for search/SEO | `["Tesla", "EV", "SUV"]` |
+| `publishedAt` | Publication date | `"2026-01-30"` |
+| `featured` | Show in hero section | `true` or `false` |
+| `faqs` | Optional Q&A for SEO | Array of question/answer pairs |
 
 ---
 
-## 3. Enhanced 404 Page
+## Part 3: What to Update When Publishing
 
-Transform the basic 404 page into a helpful, branded experience that keeps visitors engaged.
+### Checklist for Each New Article
 
-### Changes
+```text
+✅ 1. Add article to src/data/articles.ts
+✅ 2. Update public/sitemap.xml (add new URL)
+✅ 3. Upload images to public/images/ (if using local images)
+✅ 4. Click "Publish" to deploy changes
+```
 
-**Edit file: `src/pages/NotFound.tsx`**
-- Add Layout wrapper for consistent header/footer
-- Include search functionality
-- Show popular articles suggestions
-- Add category quick links
-- Improve visual design with automotive-themed messaging
+### Sitemap Update
+
+Add a new entry to `public/sitemap.xml` for each article:
+
+```xml
+<url>
+  <loc>https://autotechspot.com/article/your-article-slug</loc>
+  <lastmod>2026-01-30</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+```
 
 ---
 
-## Implementation Summary
+## Part 4: Adding Images
 
-| Priority | Enhancement | Impact |
-|----------|-------------|--------|
-| 1 | Sitemap.xml | SEO - Critical for Google indexing |
-| 2 | OG Image | Social sharing appearance |
-| 3 | Enhanced 404 | User experience + retention |
+### Option 1: Use External Images (Easier)
+Use free stock photos from Unsplash. Example URL format:
+```
+https://images.unsplash.com/photo-XXXXXXXXX?w=1200&h=630&fit=crop
+```
+
+### Option 2: Upload Your Own Images
+1. Upload images to Lovable (drag & drop in chat)
+2. Images go to `public/images/`
+3. Reference as `/images/your-image-name.jpg`
 
 ---
 
-## Files Summary
+## Example: Complete New Article
 
-| File | Action |
-|------|--------|
-| `public/sitemap.xml` | Create |
-| `public/robots.txt` | Edit |
-| `index.html` | Edit |
-| `src/pages/NotFound.tsx` | Edit |
+```typescript
+{
+  slug: "2026-ford-mustang-dark-horse-review",
+  title: "2026 Ford Mustang Dark Horse Review: American Muscle Evolved",
+  excerpt: "Ford's most powerful naturally-aspirated Mustang ever delivers 500 horsepower of pure driving excitement. We test the Dark Horse on track and street.",
+  content: `
+## Introduction
+
+The 2026 Ford Mustang Dark Horse represents the pinnacle of American muscle car engineering...
+
+### Performance
+
+- **Horsepower:** 500 HP
+- **0-60 mph:** 4.1 seconds
+- **Top Speed:** 165 mph
+
+### Verdict
+
+This is the Mustang for true enthusiasts...
+
+**Rating: 9.2/10**
+  `,
+  featuredImage: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=1200&h=630&fit=crop",
+  featuredImageAlt: "2026 Ford Mustang Dark Horse in Shadow Black on a mountain road",
+  category: "car-reviews",
+  tags: ["Ford", "Mustang", "Muscle Car", "American Cars"],
+  author: {
+    name: "Alexander Sterling",
+    avatar: "/images/alexander-sterling.png",
+  },
+  publishedAt: "2026-01-30",
+  readingTime: 6,
+  featured: true,
+  faqs: [
+    {
+      question: "How much horsepower does the Mustang Dark Horse have?",
+      answer: "The 2026 Mustang Dark Horse produces 500 horsepower from its 5.0-liter V8 engine.",
+    },
+  ],
+},
+```
+
+---
+
+## Quick Reference: Categories
+
+| Category Slug | Display Name | Use For |
+|--------------|--------------|---------|
+| `car-reviews` | Car Reviews | Vehicle reviews and comparisons |
+| `news` | Car Updates | Industry news and announcements |
+
+---
+
+## Need Help?
+
+Just ask me to:
+- **"Add a new article about [topic]"** - I'll create the full article entry
+- **"Remove all sample articles"** - I'll clear the dummy content
+- **"Update the sitemap"** - I'll add new article URLs
 
