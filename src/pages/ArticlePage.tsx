@@ -126,6 +126,32 @@ const ArticlePage = () => {
     wordCount: article.content.trim().split(/\s+/).length,
   };
 
+  // BreadcrumbList schema for navigation in search results
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://autotechspot.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: category?.name,
+        item: `https://autotechspot.com/category/${article.category}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: articleUrl,
+      },
+    ],
+  };
+
   return (
     <Layout>
       <Helmet>
@@ -149,6 +175,7 @@ const ArticlePage = () => {
 
         {/* Schema.org */}
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <article>
