@@ -79,11 +79,11 @@ const HeroSection = () => {
             <div className="absolute -bottom-4 -left-4 rounded-xl border bg-card p-4 shadow-lg md:-bottom-6 md:-left-6 md:p-5">
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                  <span className="font-display text-lg font-bold text-primary">⭐</span>
+                  <span className="font-display text-lg font-bold text-primary">📰</span>
                 </div>
                 <div>
-                  <p className="font-display text-lg font-bold">Trusted Reviews</p>
-                  <p className="text-sm text-muted-foreground">By car enthusiasts</p>
+                  <p className="font-display text-lg font-bold">New Articles Weekly</p>
+                  <p className="text-sm text-muted-foreground">Fresh content every week</p>
                 </div>
               </div>
             </div>
