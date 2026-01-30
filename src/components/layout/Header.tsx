@@ -4,7 +4,6 @@ import { Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/types/article";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo.png";
 
 interface HeaderProps {
   onSearchClick: () => void;
@@ -18,7 +17,10 @@ const Header = ({ onSearchClick }: HeaderProps) => {
       <nav className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="AutoTechSpot" className="h-10 w-auto" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
+            <span className="font-display text-lg font-bold text-primary-foreground">AT</span>
+          </div>
+          <span className="font-display text-xl font-bold">AutoTechSpot</span>
         </Link>
 
         {/* Desktop Navigation */}
