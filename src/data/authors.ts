@@ -2,8 +2,8 @@ import { Author } from "@/types/author";
 
 export const authors: Author[] = [
   {
-    slug: "michael-torres",
-    name: "Michael Torres",
+    slug: "brandon-chase",
+    name: "Brandon Chase",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
     role: "Senior Automotive Editor",
     bio: "Michael Torres has been writing about cars for over 15 years. A former racing driver and certified automotive technician, he brings hands-on expertise to every review. His passion for performance vehicles started in his father's garage, where he learned to appreciate the engineering excellence that goes into every sports car. Michael has driven over 500 vehicles for professional reviews and has been featured in major automotive publications worldwide.",

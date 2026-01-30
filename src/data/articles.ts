@@ -37,7 +37,7 @@ The 2024 Porsche 911 Carrera isn't just living off its legacy – it's actively 
     category: "car-reviews",
     tags: ["Porsche", "Sports Car", "911", "German Cars"],
     author: {
-      name: "Michael Torres",
+      name: "Brandon Chase",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
     },
     publishedAt: "2024-01-15",
@@ -198,7 +198,7 @@ The 2024 Civic Type R is proof that passion still exists in the automotive indus
     category: "car-reviews",
     tags: ["Honda", "Hot Hatch", "Type R", "Performance"],
     author: {
-      name: "Michael Torres",
+      name: "Brandon Chase",
       avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
     },
     publishedAt: "2024-01-05",
