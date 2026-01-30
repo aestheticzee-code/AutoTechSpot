@@ -95,6 +95,150 @@ For enthusiasts who want a pure, visceral driving experience with a screaming V8
       },
     ],
   },
+  {
+    slug: "2026-nissan-frontier-unveiled",
+    title: "2026 Nissan Frontier Unveiled: Rugged Midsize Truck Gets Major Updates",
+    excerpt: "Nissan reveals the updated 2026 Frontier with refreshed styling, enhanced off-road capabilities, and improved technology. Here's everything you need to know about the new midsize pickup.",
+    content: `
+## 2026 Nissan Frontier: A Bold New Chapter
+
+Nissan has officially unveiled the 2026 Frontier, bringing significant updates to its capable midsize pickup truck. The new model features refreshed styling, enhanced powertrain options, and advanced technology that positions it as a strong competitor in the increasingly crowded midsize truck segment.
+
+### Exterior Design
+
+The 2026 Frontier receives a bold front-end redesign that emphasizes its rugged character. Key exterior updates include:
+
+- **Redesigned grille** with a more aggressive, three-dimensional pattern
+- **Updated LED headlights** with improved lighting performance
+- **New front bumper** with integrated fog lights and skid plate
+- **Fresh wheel designs** ranging from 17 to 18 inches
+- **Expanded color palette** including new Tactical Green and Baja Storm options
+- **Available blacked-out trim** for a more aggressive appearance
+
+The truck's overall proportions remain familiar, but the refined details give it a more modern, premium presence on the road.
+
+### Powerful Engine Options
+
+Under the hood, the 2026 Frontier continues with its proven powertrain:
+
+- **Engine:** 3.8-liter direct-injection V6
+- **Horsepower:** 310 HP @ 6,400 RPM
+- **Torque:** 281 lb-ft @ 4,400 RPM
+- **Transmission:** 9-speed automatic
+- **Towing Capacity:** Up to 6,720 lbs
+- **Payload Capacity:** Up to 1,610 lbs
+
+The V6 engine delivers smooth, confident power for both daily driving and demanding worksite tasks. The 9-speed automatic transmission provides refined shifts and optimal fuel efficiency.
+
+### Comfortable and Functional Interior
+
+Nissan has significantly upgraded the Frontier's interior for 2026:
+
+- **Zero Gravity front seats** for all-day comfort
+- **Improved materials** with soft-touch surfaces throughout
+- **Redesigned center console** with additional storage
+- **Available leather-appointed seating** with heating and ventilation
+- **Rear seats** with improved legroom and fold-flat functionality
+- **Multiple USB ports** including USB-C for modern devices
+
+The cabin strikes an excellent balance between work-ready durability and everyday comfort, making it suitable for both job sites and family adventures.
+
+### Advanced Off-Road and AWD Capabilities
+
+The 2026 Frontier offers impressive capability for adventure seekers:
+
+**PRO-4X Off-Road Package includes:**
+- Electronic locking rear differential
+- Bilstein off-road performance shocks
+- Hill descent control
+- All-terrain tires with unique styling
+- Underbody skid plates for protection
+
+**4WD System Features:**
+- Part-time 4WD with 2H, 4H, and 4L modes
+- Electronic transfer case for easy engagement
+- Hill start assist for steep inclines
+
+Whether tackling rocky trails or navigating snowy conditions, the Frontier delivers confident all-terrain performance.
+
+### Modern Infotainment and Connectivity
+
+Technology takes center stage in the 2026 Frontier:
+
+- **9-inch touchscreen display** (12.3-inch available on upper trims)
+- **Wireless Apple CarPlay and Android Auto**
+- **Nissan Connect with Wi-Fi hotspot**
+- **360-degree Around View Monitor** with off-road mode
+- **Premium Fender audio system** (optional)
+- **Digital rearview mirror** for improved visibility
+
+**Safety features include:**
+- Nissan Safety Shield 360 (standard)
+- Intelligent Forward Collision Warning
+- Automatic Emergency Braking with pedestrian detection
+- Blind Spot Warning and Rear Cross Traffic Alert
+- Lane Departure Warning
+- Intelligent Cruise Control
+
+### Fuel Efficiency and Ownership Value
+
+The 2026 Frontier delivers competitive fuel economy for its class:
+
+- **EPA Estimated:** 18 city / 24 highway / 20 combined mpg (2WD)
+- **EPA Estimated:** 17 city / 22 highway / 19 combined mpg (4WD)
+- **Fuel Tank:** 21.1 gallons
+
+Nissan offers a comprehensive warranty package:
+- 3-year/36,000-mile basic warranty
+- 5-year/60,000-mile powertrain warranty
+- 5-year/unlimited-mile corrosion warranty
+
+The Frontier is expected to maintain strong resale values, making it an excellent long-term investment for truck buyers.
+
+### Conclusion
+
+The 2026 Nissan Frontier represents a meaningful evolution of Nissan's midsize truck. With its refreshed styling, proven V6 power, enhanced technology, and impressive off-road capability, the Frontier offers a compelling package for buyers seeking a capable and versatile pickup truck.
+
+Pricing is expected to start around $32,000 for the base S trim, with fully-loaded PRO-4X models approaching $45,000. The 2026 Frontier will arrive at dealerships in late spring 2026.
+
+---
+
+*Disclaimer: Specifications, features, and pricing mentioned in this article are based on information available at the time of publication. Actual specifications may vary by trim level and region. Please consult your local Nissan dealer for the most current and accurate information before making a purchase decision.*
+    `,
+    featuredImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=630&fit=crop",
+    featuredImageAlt: "2026 Nissan Frontier pickup truck showcasing its rugged exterior design",
+    category: "news",
+    tags: ["Nissan", "Frontier", "Pickup Truck", "Midsize Truck", "Off-Road", "4WD"],
+    author: {
+      name: "Alexander Sterling",
+      avatar: "/images/alexander-sterling.png",
+    },
+    publishedAt: "2026-01-30",
+    readingTime: 7,
+    featured: false,
+    faqs: [
+      {
+        question: "What engine does the 2026 Nissan Frontier have?",
+        answer: "The 2026 Nissan Frontier is powered by a 3.8-liter direct-injection V6 engine producing 310 horsepower and 281 lb-ft of torque, paired with a 9-speed automatic transmission.",
+      },
+      {
+        question: "How much can the 2026 Nissan Frontier tow?",
+        answer: "The 2026 Nissan Frontier has a maximum towing capacity of up to 6,720 lbs when properly equipped.",
+      },
+      {
+        question: "What is the fuel economy of the 2026 Nissan Frontier?",
+        answer: "The 2026 Frontier achieves an EPA-estimated 18 city / 24 highway mpg for 2WD models and 17 city / 22 highway mpg for 4WD models.",
+      },
+      {
+        question: "When will the 2026 Nissan Frontier be available?",
+        answer: "The 2026 Nissan Frontier is expected to arrive at dealerships in late spring 2026.",
+      },
+      {
+        question: "What is the starting price of the 2026 Nissan Frontier?",
+        answer: "The 2026 Nissan Frontier is expected to start around $32,000 for the base S trim, with PRO-4X models reaching approximately $45,000.",
+      },
+    ],
+  },
 ];
 
 export function getArticleBySlug(slug: string): Article | undefined {
