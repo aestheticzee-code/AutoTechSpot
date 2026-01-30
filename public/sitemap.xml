@@ -19,15 +19,13 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Article Pages - Add new articles here -->
-  <!-- Example:
+  <!-- Article Pages -->
   <url>
-    <loc>https://autotechspot.com/article/your-article-slug</loc>
+    <loc>https://autotechspot.com/article/2024-ford-mustang-gt-review</loc>
     <lastmod>2026-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  -->
 
   <!-- Author Pages -->
   <url>
