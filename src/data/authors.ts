@@ -2,17 +2,17 @@ import { Author } from "@/types/author";
 
 export const authors: Author[] = [
   {
-    slug: "michael-torres",
-    name: "Michael Torres",
+    slug: "alexander-sterling",
+    name: "Alexander Sterling",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-    role: "Senior Automotive Editor",
-    bio: "Michael Torres has been writing about cars for over 15 years. A former racing driver and certified automotive technician, he brings hands-on expertise to every review. His passion for performance vehicles started in his father's garage, where he learned to appreciate the engineering excellence that goes into every sports car. Michael has driven over 500 vehicles for professional reviews and has been featured in major automotive publications worldwide.",
-    expertise: ["Sports Cars", "Performance Vehicles", "German Engineering"],
+    role: "Automotive Journalist & Editor",
+    bio: "Alexander Sterling is an automotive journalist and editor with over 5 years of experience. With dual backgrounds in automotive engineering and business analytics, he provides authoritative insights into vehicle technology, market trends, and sustainable mobility. Alexander has been featured in Automotive News, Car and Driver, and speaks regularly at industry conferences on the future of transportation.",
+    expertise: ["Autonomous Vehicles", "Sustainable Engineering", "Automotive Innovation"],
     socialLinks: {
-      twitter: "https://twitter.com/michaeltorres",
-      linkedin: "https://linkedin.com/in/michaeltorres",
+      twitter: "https://twitter.com/alexandersterling",
+      linkedin: "https://linkedin.com/in/alexandersterling",
     },
-    joinedAt: "2019-03-15",
+    joinedAt: "2026-02-01",
   },
   {
     slug: "sarah-chen",
