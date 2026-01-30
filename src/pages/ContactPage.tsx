@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, MapPin } from "lucide-react";
+import { Clock, Mail } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -91,13 +91,13 @@ const ContactPage = () => {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <MapPin className="h-5 w-5 text-primary" />
+                    <Clock className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold">Address</h3>
+                    <h3 className="font-semibold">Business Hours</h3>
                     <p className="text-muted-foreground">
-                      123 Auto Street<br />
-                      Car City, CA 90210
+                      Mon - Fri: 9:00 AM - 6:00 PM<br />
+                      Sat - Sun: Closed
                     </p>
                   </div>
                 </div>
