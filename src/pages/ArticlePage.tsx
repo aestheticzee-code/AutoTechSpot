@@ -9,6 +9,7 @@ import SocialShare from "@/components/SocialShare";
 
 import AdPlaceholder from "@/components/AdPlaceholder";
 import { getArticleBySlug, getRelatedArticles } from "@/data/articles";
+import { getAuthorByName } from "@/data/authors";
 import { formatDate, getCategoryInfo } from "@/types/article";
 
 const ArticlePage = () => {
@@ -36,6 +37,7 @@ const ArticlePage = () => {
   }
 
   const category = getCategoryInfo(article.category);
+  const author = getAuthorByName(article.author.name);
   const articleUrl = `https://autotechspot.com/article/${article.slug}`;
 
   // Convert markdown-like content to HTML (simple implementation)
@@ -108,6 +110,7 @@ const ArticlePage = () => {
       "@type": "Person",
       name: article.author.name,
       image: article.author.avatar,
+      url: author ? `https://autotechspot.com/author/${author.slug}` : undefined,
     },
     publisher: {
       "@type": "Organization",
@@ -242,17 +245,20 @@ const ArticlePage = () => {
               <p className="mt-4 text-lg text-muted-foreground">{article.excerpt}</p>
 
               <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
-                <div className="flex items-center gap-3">
+                <Link 
+                  to={author ? `/author/${author.slug}` : "#"}
+                  className="flex items-center gap-3 transition-opacity hover:opacity-80"
+                >
                   <img
                     src={article.author.avatar}
                     alt={article.author.name}
                     className="h-12 w-12 rounded-full object-cover"
                   />
                   <div>
-                    <p className="font-medium">{article.author.name}</p>
+                    <p className="font-medium hover:text-primary">{article.author.name}</p>
                     <p className="text-sm text-muted-foreground">Author</p>
                   </div>
-                </div>
+                </Link>
                 <SocialShare title={article.title} url={articleUrl} />
               </div>
             </header>

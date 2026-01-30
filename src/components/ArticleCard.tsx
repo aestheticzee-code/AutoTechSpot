@@ -3,6 +3,7 @@ import { Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Article, formatDate, getCategoryInfo } from "@/types/article";
+import { getAuthorByName } from "@/data/authors";
 import { cn } from "@/lib/utils";
 
 interface ArticleCardProps {
@@ -14,6 +15,7 @@ interface ArticleCardProps {
 
 const ArticleCard = ({ article, featured = false, className, style }: ArticleCardProps) => {
   const category = getCategoryInfo(article.category);
+  const author = getAuthorByName(article.author.name);
 
   if (featured) {
     return (
@@ -45,15 +47,19 @@ const ArticleCard = ({ article, featured = false, className, style }: ArticleCar
                 {article.title}
               </h2>
               <p className="mt-4 text-muted-foreground">{article.excerpt}</p>
-              <div className="mt-6 flex items-center gap-3">
+              <Link 
+                to={author ? `/author/${author.slug}` : "#"}
+                className="mt-6 flex items-center gap-3 transition-opacity hover:opacity-80"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <img
                   src={article.author.avatar}
                   alt={article.author.name}
                   className="h-10 w-10 rounded-full object-cover"
                   loading="lazy"
                 />
-                <span className="font-medium">{article.author.name}</span>
-              </div>
+                <span className="font-medium hover:text-primary">{article.author.name}</span>
+              </Link>
             </CardContent>
           </div>
         </Card>
@@ -90,15 +96,19 @@ const ArticleCard = ({ article, featured = false, className, style }: ArticleCar
           <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
             {article.excerpt}
           </p>
-          <div className="mt-4 flex items-center gap-2">
+          <Link 
+            to={author ? `/author/${author.slug}` : "#"}
+            className="mt-4 flex items-center gap-2 transition-opacity hover:opacity-80"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={article.author.avatar}
               alt={article.author.name}
               className="h-6 w-6 rounded-full object-cover"
               loading="lazy"
             />
-            <span className="text-sm font-medium">{article.author.name}</span>
-          </div>
+            <span className="text-sm font-medium hover:text-primary">{article.author.name}</span>
+          </Link>
         </CardContent>
       </Card>
     </Link>
