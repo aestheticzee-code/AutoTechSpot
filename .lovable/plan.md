@@ -1,111 +1,60 @@
 
 
-## 🚗 AutoDrive Blog — Your Professional Car Blog
+# Giscus Comments Integration Plan
 
-A clean, modern, and SEO-optimized car blog focused on car reviews and news, built for performance and future monetization.
+## Overview
 
----
+Integrate Giscus into your AutoTechSpot website using your provided configuration. This will enable GitHub Discussions-powered comments on all article pages.
 
-### Phase 1: Core Foundation (Starting Simple)
+## Your Configuration
 
-#### **Homepage**
-- Hero section with featured/latest article prominently displayed
-- Grid of recent articles with thumbnails, titles, excerpts, and categories
-- Clean navigation with logo, category links, and search icon
-- Newsletter signup section in the footer
+| Setting | Value |
+|---------|-------|
+| Repository | `aestheticzee-code/AutoTechSpot` |
+| Repo ID | `R_kgDORE2bNg` |
+| Category | Announcements |
+| Category ID | `DIC_kwDORE2bNs4C1pJ0` |
 
-#### **Article Pages**
-- Beautiful, readable article layout optimized for long-form content
-- Large featured images with proper alt text for SEO
-- Author info and publication date
-- Category and tag badges
-- Reading time estimate
-- Social sharing buttons
-- Related articles section at the bottom
+## What Will Change
 
-#### **Category Pages**
-- "Car Reviews" and "News & Updates" categories
-- Filtered article listings by category
-- Category description header for SEO
+### CommentsSection Component
 
-#### **Search Functionality**
-- Search overlay/page to find articles by title, excerpt, or content
-- Instant search results as you type
+The placeholder will be replaced with a working Giscus widget that:
 
----
+- **Loads the Giscus script** dynamically when the component mounts
+- **Maps to article URL** so each article has its own discussion thread
+- **Supports light/dark theme** matching your site's theme
+- **Cleans up properly** when navigating between articles
 
-### Phase 2: Content System
+## Features Included
 
-#### **Markdown-Based Articles**
-- Articles stored as Markdown files in the codebase
-- Easy-to-edit format with frontmatter for metadata (title, date, category, featured image, excerpt, tags)
-- Simple to add new articles by creating new files
+1. **Automatic theme detection** - Comments will match your site's current theme
+2. **Lazy loading** - Script only loads when comments section is visible
+3. **Article-specific discussions** - Each article URL gets its own GitHub Discussion
+4. **Responsive design** - Comments adapt to mobile and desktop
 
-#### **Sample Content**
-- 3-4 sample car review and news articles to demonstrate the layout
-- Placeholder images for car content
+## Technical Details
 
----
+```text
+┌─────────────────────────────────────────┐
+│           CommentsSection               │
+├─────────────────────────────────────────┤
+│ • useEffect to inject Giscus script     │
+│ • useRef for container element          │
+│ • Theme detection (light/dark)          │
+│ • Cleanup on unmount/route change       │
+└─────────────────────────────────────────┘
+```
 
-### Phase 3: SEO & Performance Optimization
+The component will:
+1. Create a container div with class `giscus`
+2. Inject the Giscus script with your configuration
+3. Use `pathname` mapping so comments are tied to article URLs
+4. Detect system/site theme preference
 
-#### **SEO Features**
-- Meta tags for every page (title, description, Open Graph, Twitter cards)
-- Semantic HTML structure (proper headings, article tags)
-- Clean URLs (e.g., `/reviews/2024-honda-civic`)
-- Sitemap-ready structure
-- Schema.org markup for articles (helps with Google rich results)
+## File to Edit
 
-#### **Performance**
-- Lazy loading images
-- Optimized image sizing recommendations
-- Minimal JavaScript bundle
-- Fast page transitions
-
-#### **AdSense Ready**
-- Designated ad placement zones (header, sidebar, in-article, footer)
-- Clean layout that won't be penalized by ad networks
-- Ad component placeholders ready for your AdSense code
-
----
-
-### Phase 4: Engagement Features
-
-#### **Comments (via Disqus or Giscus)**
-- Integration placeholder for 3rd party comments
-- Will provide instructions for adding Disqus/Giscus when you're ready
-
-#### **Newsletter Signup**
-- Email collection form (UI only initially)
-- Ready to connect to Mailchimp, ConvertKit, or similar service later
-
----
-
-### Design Details
-
-**Style:** Clean & Modern
-- Light theme with plenty of whitespace
-- Professional typography (readable body text, impactful headlines)
-- Accent colors that pop (automotive-inspired — perhaps a bold blue or red)
-- Card-based article previews with subtle shadows
-- Responsive design that looks great on all devices
-
-**Mobile Experience**
-- Hamburger menu navigation
-- Touch-friendly article cards
-- Optimized reading experience on small screens
-
----
-
-### What You'll Get
-
-✅ Professional, modern car blog ready to publish  
-✅ Mobile-responsive design  
-✅ SEO-optimized structure for Google visibility  
-✅ AdSense-friendly layout with ad placement zones  
-✅ Easy article management via Markdown files  
-✅ Categories: Car Reviews & News/Updates  
-✅ Search functionality  
-✅ 3rd party comments integration ready  
-✅ Fast, performance-optimized pages
+| File | Change |
+|------|--------|
+| `src/components/CommentsSection.tsx` | Replace placeholder with Giscus integration |
 
