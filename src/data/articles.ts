@@ -38,7 +38,7 @@ The 2024 Porsche 911 Carrera isn't just living off its legacy – it's actively 
     tags: ["Porsche", "Sports Car", "911", "German Cars"],
     author: {
       name: "Alexander Sterling",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      avatar: "/images/alexander-sterling.png",
     },
     publishedAt: "2024-01-15",
     readingTime: 6,
@@ -93,7 +93,7 @@ The Model 3 Highland isn't just an update – it's a statement. Tesla has shown 
     tags: ["Tesla", "Electric Vehicle", "Model 3", "EV"],
     author: {
       name: "Alexander Sterling",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      avatar: "/images/alexander-sterling.png",
     },
     publishedAt: "2024-01-10",
     readingTime: 5,
@@ -157,7 +157,7 @@ This announcement puts BMW in direct competition with emerging EV startups while
     tags: ["BMW", "Electric Vehicle", "Industry News", "Neue Klasse"],
     author: {
       name: "Alexander Sterling",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      avatar: "/images/alexander-sterling.png",
     },
     publishedAt: "2024-01-08",
     readingTime: 4,
@@ -199,7 +199,7 @@ The 2024 Civic Type R is proof that passion still exists in the automotive indus
     tags: ["Honda", "Hot Hatch", "Type R", "Performance"],
     author: {
       name: "Alexander Sterling",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      avatar: "/images/alexander-sterling.png",
     },
     publishedAt: "2024-01-05",
     readingTime: 5,
@@ -264,7 +264,7 @@ Industry analysts predict 20 million EV sales in 2025, with several new affordab
     tags: ["Electric Vehicle", "Industry News", "Sales Data", "EV Market"],
     author: {
       name: "Alexander Sterling",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      avatar: "/images/alexander-sterling.png",
     },
     publishedAt: "2024-01-02",
     readingTime: 4,
