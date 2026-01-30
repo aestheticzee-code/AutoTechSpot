@@ -13,9 +13,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="font-display text-lg font-bold text-primary-foreground">A</span>
+                <span className="font-display text-lg font-bold text-primary-foreground">AT</span>
               </div>
-              <span className="font-display text-xl font-bold">AutoDrive</span>
+              <span className="font-display text-xl font-bold">AutoTechSpot</span>
             </Link>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
               Your trusted source for in-depth car reviews, automotive news, and expert insights. 
@@ -57,7 +57,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} AutoDrive Blog. All rights reserved.
+            © {currentYear} AutoTechSpot. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

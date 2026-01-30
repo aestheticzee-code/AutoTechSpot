@@ -14,12 +14,12 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>AutoDrive Blog | Car Reviews & Automotive News</title>
+        <title>AutoTechSpot | Car Reviews & Automotive News</title>
         <meta
           name="description"
           content="Your trusted source for in-depth car reviews, automotive news, and expert insights. Stay updated with the latest from the car world."
         />
-        <link rel="canonical" href="https://autodrive-blog.com" />
+        <link rel="canonical" href="https://autotechspot.com" />
       </Helmet>
 
       {/* Ad Banner */}

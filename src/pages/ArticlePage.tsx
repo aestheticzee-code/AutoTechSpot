@@ -36,7 +36,7 @@ const ArticlePage = () => {
   }
 
   const category = getCategoryInfo(article.category);
-  const articleUrl = `https://autodrive-blog.com/article/${article.slug}`;
+  const articleUrl = `https://autotechspot.com/article/${article.slug}`;
 
   // Convert markdown-like content to HTML (simple implementation)
   const renderContent = (content: string) => {
@@ -101,10 +101,10 @@ const ArticlePage = () => {
     },
     publisher: {
       "@type": "Organization",
-      name: "AutoDrive Blog",
+      name: "AutoTechSpot",
       logo: {
         "@type": "ImageObject",
-        url: "https://autodrive-blog.com/logo.png",
+        url: "https://autotechspot.com/logo.png",
       },
     },
     datePublished: article.publishedAt,
@@ -114,7 +114,7 @@ const ArticlePage = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{article.title} | AutoDrive Blog</title>
+        <title>{article.title} | AutoTechSpot</title>
         <meta name="description" content={article.excerpt} />
         <link rel="canonical" href={articleUrl} />
 

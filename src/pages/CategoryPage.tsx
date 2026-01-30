@@ -32,20 +32,20 @@ const CategoryPage = () => {
     );
   }
 
-  const categoryUrl = `https://autodrive-blog.com/category/${category.slug}`;
+  const categoryUrl = `https://autotechspot.com/category/${category.slug}`;
 
   return (
     <Layout>
       <Helmet>
-        <title>{category.name} | AutoDrive Blog</title>
+        <title>{category.name} | AutoTechSpot</title>
         <meta name="description" content={category.description} />
         <link rel="canonical" href={categoryUrl} />
 
-        <meta property="og:title" content={`${category.name} | AutoDrive Blog`} />
+        <meta property="og:title" content={`${category.name} | AutoTechSpot`} />
         <meta property="og:description" content={category.description} />
         <meta property="og:type" content="website" />
 
-        <meta name="twitter:title" content={`${category.name} | AutoDrive Blog`} />
+        <meta name="twitter:title" content={`${category.name} | AutoTechSpot`} />
         <meta name="twitter:description" content={category.description} />
       </Helmet>
 
