@@ -1,60 +1,59 @@
 
 
-# Giscus Comments Integration Plan
+# Formspree Contact Form Integration
 
 ## Overview
 
-Integrate Giscus into your AutoTechSpot website using your provided configuration. This will enable GitHub Discussions-powered comments on all article pages.
+Integrate Formspree to handle contact form submissions. Formspree is a simple, no-backend solution that sends form submissions directly to your email.
 
-## Your Configuration
+## Prerequisites (Your Action Required)
 
-| Setting | Value |
-|---------|-------|
-| Repository | `aestheticzee-code/AutoTechSpot` |
-| Repo ID | `R_kgDORE2bNg` |
-| Category | Announcements |
-| Category ID | `DIC_kwDORE2bNs4C1pJ0` |
+1. Sign up at [formspree.io](https://formspree.io)
+2. Create a new form and copy your **Form ID** (looks like `xyzabcde`)
+3. Share the Form ID with me when ready
+
+## How It Works
+
+```text
+┌─────────────────┐      ┌─────────────────┐      ┌─────────────┐
+│  Contact Form   │ ──▶  │   Formspree     │ ──▶  │  Your Email │
+│  (Your Site)    │      │   (API)         │      │   Inbox     │
+└─────────────────┘      └─────────────────┘      └─────────────┘
+```
+
+No edge functions or backend code needed - submissions go directly to Formspree.
 
 ## What Will Change
 
-### CommentsSection Component
+### File: `src/pages/ContactPage.tsx`
 
-The placeholder will be replaced with a working Giscus widget that:
+| Current | After |
+|---------|-------|
+| Simulated submission with `setTimeout` | Real POST request to Formspree API |
+| No actual email sent | Emails delivered to your inbox |
 
-- **Loads the Giscus script** dynamically when the component mounts
-- **Maps to article URL** so each article has its own discussion thread
-- **Supports light/dark theme** matching your site's theme
-- **Cleans up properly** when navigating between articles
+### Code Changes
+
+1. **Add `name` attributes** to all form inputs (required by Formspree)
+2. **Replace `handleSubmit`** to POST form data to `https://formspree.io/f/{YOUR_FORM_ID}`
+3. **Handle responses** for success, error, and validation states
+4. **Add honeypot field** for spam protection (hidden from users)
 
 ## Features Included
 
-1. **Automatic theme detection** - Comments will match your site's current theme
-2. **Lazy loading** - Script only loads when comments section is visible
-3. **Article-specific discussions** - Each article URL gets its own GitHub Discussion
-4. **Responsive design** - Comments adapt to mobile and desktop
+- Real email notifications to your inbox
+- Spam protection via honeypot field
+- Loading state while submitting
+- Success/error toast messages
+- Form resets after successful submission
+- No backend infrastructure needed
 
-## Technical Details
+## Cost
 
-```text
-┌─────────────────────────────────────────┐
-│           CommentsSection               │
-├─────────────────────────────────────────┤
-│ • useEffect to inject Giscus script     │
-│ • useRef for container element          │
-│ • Theme detection (light/dark)          │
-│ • Cleanup on unmount/route change       │
-└─────────────────────────────────────────┘
-```
+- Formspree free tier: 50 submissions/month
+- Paid plans available for higher volume
 
-The component will:
-1. Create a container div with class `giscus`
-2. Inject the Giscus script with your configuration
-3. Use `pathname` mapping so comments are tied to article URLs
-4. Detect system/site theme preference
+## Next Step
 
-## File to Edit
-
-| File | Change |
-|------|--------|
-| `src/components/CommentsSection.tsx` | Replace placeholder with Giscus integration |
+Share your Formspree Form ID and I'll implement the integration immediately.
 
