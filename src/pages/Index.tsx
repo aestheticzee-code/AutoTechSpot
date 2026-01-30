@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
 import ArticleCard from "@/components/ArticleCard";
-import NewsletterSignup from "@/components/NewsletterSignup";
+import FeaturedCategories from "@/components/FeaturedCategories";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import HeroSection from "@/components/HeroSection";
 import { getFeaturedArticle, getRecentArticles } from "@/data/articles";
@@ -58,9 +58,9 @@ const Index = () => {
         {/* In-content Ad */}
         <AdPlaceholder size="in-article" />
 
-        {/* Newsletter */}
+        {/* Featured Categories */}
         <section className="mt-12 md:mt-16">
-          <NewsletterSignup />
+          <FeaturedCategories />
         </section>
       </div>
     </Layout>
