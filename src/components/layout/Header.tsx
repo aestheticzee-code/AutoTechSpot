@@ -16,12 +16,11 @@ const Header = ({ onSearchClick }: HeaderProps) => {
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img 
-            src="/images/logo.png" 
-            alt="AutoTechSpot" 
-            className="h-10 w-auto"
-          />
+        <Link to="/" className="flex items-center gap-2">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
+            <span className="font-display text-lg font-bold text-primary-foreground">AT</span>
+          </div>
+          <span className="font-display text-xl font-bold">AutoTechSpot</span>
         </Link>
 
         {/* Desktop Navigation */}
