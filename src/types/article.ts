@@ -33,7 +33,7 @@ export const categories: CategoryInfo[] = [
   },
   {
     slug: "news",
-    name: "News & Updates",
+    name: "Car Updates",
     description: "Breaking news from the automotive industry, including new releases, recalls, and industry trends.",
   },
 ];
