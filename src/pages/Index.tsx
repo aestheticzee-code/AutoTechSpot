@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import ArticleCard from "@/components/ArticleCard";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import AdPlaceholder from "@/components/AdPlaceholder";
+import HeroSection from "@/components/HeroSection";
 import { getFeaturedArticle, getRecentArticles } from "@/data/articles";
 
 const Index = () => {
@@ -22,12 +23,8 @@ const Index = () => {
         <link rel="canonical" href="https://autotechspot.com" />
       </Helmet>
 
-      {/* Ad Banner */}
-      <div className="border-b border-border bg-surface py-4">
-        <div className="container">
-          <AdPlaceholder size="leaderboard" />
-        </div>
-      </div>
+      {/* Hero Section */}
+      <HeroSection />
 
       <div className="container py-8 md:py-12">
         {/* Featured Article */}
