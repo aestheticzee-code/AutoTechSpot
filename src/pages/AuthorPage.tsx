@@ -137,46 +137,6 @@ const AuthorPage = () => {
                 className="aspect-square w-full object-cover"
               />
             </div>
-
-            {/* Social Links */}
-            {author.socialLinks && (
-              <div className="flex gap-3">
-                {author.socialLinks.twitter && (
-                  <a
-                    href={author.socialLinks.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-muted transition-colors hover:bg-primary hover:text-primary-foreground"
-                    aria-label={`${author.name} on Twitter`}
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                )}
-                {author.socialLinks.linkedin && (
-                  <a
-                    href={author.socialLinks.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-muted transition-colors hover:bg-primary hover:text-primary-foreground"
-                    aria-label={`${author.name} on LinkedIn`}
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                )}
-                {author.socialLinks.instagram && (
-                  <a
-                    href={author.socialLinks.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-muted transition-colors hover:bg-primary hover:text-primary-foreground"
-                    aria-label={`${author.name} on Instagram`}
-                  >
-                    <Instagram className="h-5 w-5" />
-                  </a>
-                )}
-              </div>
-            )}
-
             {/* Author Stats */}
             <div className="rounded-xl border border-border bg-card p-5">
               <div className="space-y-4 text-sm">
