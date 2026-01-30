@@ -43,6 +43,20 @@ The 2024 Porsche 911 Carrera isn't just living off its legacy – it's actively 
     publishedAt: "2024-01-15",
     readingTime: 6,
     featured: true,
+    faqs: [
+      {
+        question: "How much does the 2024 Porsche 911 Carrera cost?",
+        answer: "The 2024 Porsche 911 Carrera starts at approximately $116,950 MSRP, with prices varying based on options and configurations.",
+      },
+      {
+        question: "What engine does the 2024 Porsche 911 Carrera have?",
+        answer: "The 2024 911 Carrera features a 3.0-liter twin-turbocharged flat-six engine producing 379 horsepower and 331 lb-ft of torque.",
+      },
+      {
+        question: "How fast is the 2024 Porsche 911 Carrera?",
+        answer: "The 2024 911 Carrera accelerates from 0-60 mph in 4.0 seconds and has a top speed of 182 mph.",
+      },
+    ],
   },
   {
     slug: "tesla-model-3-highland-2024",
@@ -84,6 +98,20 @@ The Model 3 Highland isn't just an update – it's a statement. Tesla has shown 
     publishedAt: "2024-01-10",
     readingTime: 5,
     featured: false,
+    faqs: [
+      {
+        question: "What is the range of the Tesla Model 3 Highland?",
+        answer: "The Tesla Model 3 Highland Long Range offers up to 341 miles of EPA-estimated range on a single charge.",
+      },
+      {
+        question: "How fast can the Model 3 Highland charge?",
+        answer: "At a Tesla V3 Supercharger, the Model 3 Highland can gain approximately 170 miles of range in just 15 minutes.",
+      },
+      {
+        question: "What's new in the Tesla Model 3 Highland refresh?",
+        answer: "The Highland refresh includes new front and rear fascias, ambient lighting, ventilated seats, a rear passenger screen, and improved interior materials.",
+      },
+    ],
   },
   {
     slug: "bmw-announces-neue-klasse-platform",
@@ -175,6 +203,20 @@ The 2024 Civic Type R is proof that passion still exists in the automotive indus
     },
     publishedAt: "2024-01-05",
     readingTime: 5,
+    faqs: [
+      {
+        question: "How much horsepower does the 2024 Civic Type R have?",
+        answer: "The 2024 Honda Civic Type R produces 315 horsepower and 310 lb-ft of torque from its 2.0-liter turbocharged four-cylinder engine.",
+      },
+      {
+        question: "Does the Civic Type R come with a manual transmission?",
+        answer: "Yes, the Civic Type R is exclusively available with a six-speed manual transmission – there is no automatic option.",
+      },
+      {
+        question: "Is the Civic Type R practical for daily driving?",
+        answer: "Yes, unlike many track-focused cars, the Type R features a comfortable ride for daily commutes and practical hatchback cargo space.",
+      },
+    ],
   },
   {
     slug: "ev-sales-record-2024",
