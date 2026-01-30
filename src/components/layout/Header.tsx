@@ -18,9 +18,9 @@ const Header = ({ onSearchClick }: HeaderProps) => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-            <span className="font-display text-lg font-bold text-primary-foreground">A</span>
+            <span className="font-display text-lg font-bold text-primary-foreground">AT</span>
           </div>
-          <span className="font-display text-xl font-bold">AutoDrive</span>
+          <span className="font-display text-xl font-bold">AutoTechSpot</span>
         </Link>
 
         {/* Desktop Navigation */}
