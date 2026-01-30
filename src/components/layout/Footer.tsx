@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { categories } from "@/types/article";
-import NewsletterSignup from "@/components/NewsletterSignup";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,15 +42,29 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Quick Links */}
           <div>
             <h3 className="font-display text-sm font-semibold uppercase tracking-wider">
-              Newsletter
+              Quick Links
             </h3>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Get the latest car reviews and news delivered to your inbox.
-            </p>
-            <NewsletterSignup className="mt-4" compact />
+            <ul className="mt-4 space-y-3">
+              <li>
+                <Link
+                  to="/about"
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
