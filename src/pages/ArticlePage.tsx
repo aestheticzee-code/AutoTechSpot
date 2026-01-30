@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ArticleCard from "@/components/ArticleCard";
 import SocialShare from "@/components/SocialShare";
-import CommentsSection from "@/components/CommentsSection";
+
 import AdPlaceholder from "@/components/AdPlaceholder";
 import { getArticleBySlug, getRelatedArticles } from "@/data/articles";
 import { formatDate, getCategoryInfo } from "@/types/article";
@@ -221,8 +221,6 @@ const ArticlePage = () => {
               </aside>
             </div>
 
-            {/* Comments */}
-            <CommentsSection articleSlug={article.slug} />
 
             {/* Related Articles */}
             {relatedArticles.length > 0 && (
