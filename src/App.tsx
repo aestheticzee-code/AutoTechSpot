@@ -14,6 +14,7 @@ import DisclaimerPage from "./pages/DisclaimerPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import NotFound from "./pages/NotFound";
+import ScrollRestoration from "./components/ScrollRestoration";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollRestoration />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/article/:slug" element={<ArticlePage />} />
