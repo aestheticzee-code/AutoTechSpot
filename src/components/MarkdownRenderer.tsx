@@ -59,35 +59,127 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
     );
   };
 
-  // Format inline text (bold, italic, inline code, etc.)
+  // Format inline text (bold, italic, inline code, links, etc.)
   const formatInlineText = (text: string): React.ReactNode => {
-    // Split by inline code first, then handle bold within non-code parts
-    const codeParts = text.split(/(`[^`]+`)/g);
-    return codeParts.map((part, index) => {
-      // Inline code
-      if (part.startsWith("`") && part.endsWith("`")) {
-        return (
-          <code
-            key={index}
-            className="rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-primary"
-          >
-            {part.slice(1, -1)}
-          </code>
-        );
-      }
-      // Handle bold text within non-code parts
-      const boldParts = part.split(/(\*\*.*?\*\*)/g);
-      return boldParts.map((boldPart, boldIndex) => {
-        if (boldPart.startsWith("**") && boldPart.endsWith("**")) {
-          return (
-            <strong key={`${index}-${boldIndex}`} className="font-semibold text-foreground">
-              {boldPart.slice(2, -2)}
+    // Process text through multiple formatting passes
+    const processText = (input: string, keyPrefix: string = ""): React.ReactNode[] => {
+      const result: React.ReactNode[] = [];
+      let remaining = input;
+      let partIndex = 0;
+
+      while (remaining.length > 0) {
+        // Check for inline code first (highest priority)
+        const codeMatch = remaining.match(/^`([^`]+)`/);
+        if (codeMatch) {
+          result.push(
+            <code
+              key={`${keyPrefix}code-${partIndex++}`}
+              className="rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-primary"
+            >
+              {codeMatch[1]}
+            </code>
+          );
+          remaining = remaining.slice(codeMatch[0].length);
+          continue;
+        }
+
+        // Check for images ![alt](url)
+        const imageMatch = remaining.match(/^!\[([^\]]*)\]\(([^)]+)\)/);
+        if (imageMatch) {
+          result.push(
+            <img
+              key={`${keyPrefix}img-${partIndex++}`}
+              src={imageMatch[2]}
+              alt={imageMatch[1]}
+              className="my-4 max-w-full rounded-lg"
+            />
+          );
+          remaining = remaining.slice(imageMatch[0].length);
+          continue;
+        }
+
+        // Check for links [text](url)
+        const linkMatch = remaining.match(/^\[([^\]]+)\]\(([^)]+)\)/);
+        if (linkMatch) {
+          result.push(
+            <a
+              key={`${keyPrefix}link-${partIndex++}`}
+              href={linkMatch[2]}
+              className="text-primary underline underline-offset-2 hover:text-primary/80"
+              target={linkMatch[2].startsWith("http") ? "_blank" : undefined}
+              rel={linkMatch[2].startsWith("http") ? "noopener noreferrer" : undefined}
+            >
+              {linkMatch[1]}
+            </a>
+          );
+          remaining = remaining.slice(linkMatch[0].length);
+          continue;
+        }
+
+        // Check for bold **text**
+        const boldMatch = remaining.match(/^\*\*([^*]+)\*\*/);
+        if (boldMatch) {
+          result.push(
+            <strong key={`${keyPrefix}bold-${partIndex++}`} className="font-semibold text-foreground">
+              {boldMatch[1]}
             </strong>
           );
+          remaining = remaining.slice(boldMatch[0].length);
+          continue;
         }
-        return boldPart;
-      });
-    });
+
+        // Check for italic *text* (single asterisk, not followed by another)
+        const italicMatch = remaining.match(/^\*([^*]+)\*/);
+        if (italicMatch) {
+          result.push(
+            <em key={`${keyPrefix}italic-${partIndex++}`} className="italic">
+              {italicMatch[1]}
+            </em>
+          );
+          remaining = remaining.slice(italicMatch[0].length);
+          continue;
+        }
+
+        // Find the next special character or consume regular text
+        const nextSpecial = remaining.search(/[`*!\[]/);
+        if (nextSpecial === -1) {
+          // No more special characters, add remaining text
+          result.push(remaining);
+          break;
+        } else if (nextSpecial === 0) {
+          // Special character at start but didn't match patterns, consume it as text
+          result.push(remaining[0]);
+          remaining = remaining.slice(1);
+        } else {
+          // Add text before the next special character
+          result.push(remaining.slice(0, nextSpecial));
+          remaining = remaining.slice(nextSpecial);
+        }
+      }
+
+      return result;
+    };
+
+    return <>{processText(text)}</>;
+  };
+
+  // Render standalone image block
+  const renderImage = (alt: string, src: string, key: number): React.ReactNode => {
+    return (
+      <figure key={key} className="my-6">
+        <img
+          src={src}
+          alt={alt}
+          className="w-full rounded-lg"
+          loading="lazy"
+        />
+        {alt && (
+          <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+            {alt}
+          </figcaption>
+        )}
+      </figure>
+    );
   };
 
   // Render blockquote
@@ -262,6 +354,14 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
             {trimmedLine.replace("#### ", "")}
           </h4>
         );
+        i++;
+        continue;
+      }
+
+      // Standalone image block ![alt](url)
+      const imageBlockMatch = trimmedLine.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+      if (imageBlockMatch) {
+        elements.push(renderImage(imageBlockMatch[1], imageBlockMatch[2], elementKey++));
         i++;
         continue;
       }
