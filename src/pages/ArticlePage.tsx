@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ArticleCard from "@/components/ArticleCard";
 import SocialShare from "@/components/SocialShare";
-
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import { getArticleBySlug, getRelatedArticles } from "@/data/articles";
 import { getAuthorByName } from "@/data/authors";
@@ -39,56 +39,6 @@ const ArticlePage = () => {
   const category = getCategoryInfo(article.category);
   const author = getAuthorByName(article.author.name);
   const articleUrl = `https://autotechspot.com/article/${article.slug}`;
-
-  // Convert markdown-like content to HTML (simple implementation)
-  const renderContent = (content: string) => {
-    return content
-      .split("\n\n")
-      .map((paragraph, index) => {
-        // Headers
-        if (paragraph.startsWith("### ")) {
-          return (
-            <h3 key={index} className="mb-4 mt-8 font-display text-xl font-bold">
-              {paragraph.replace("### ", "")}
-            </h3>
-          );
-        }
-        if (paragraph.startsWith("## ")) {
-          return (
-            <h2 key={index} className="mb-4 mt-10 font-display text-2xl font-bold">
-              {paragraph.replace("## ", "")}
-            </h2>
-          );
-        }
-
-        // Lists
-        if (paragraph.includes("\n- ")) {
-          const lines = paragraph.split("\n");
-          return (
-            <ul key={index} className="my-4 list-inside list-disc space-y-2 text-muted-foreground">
-              {lines.map((line, i) => (
-                <li key={i}>{line.replace("- ", "")}</li>
-              ))}
-            </ul>
-          );
-        }
-
-        // Bold text
-        const formattedText = paragraph.replace(
-          /\*\*(.*?)\*\*/g,
-          "<strong class='text-foreground font-semibold'>$1</strong>"
-        );
-
-        // Regular paragraphs
-        return (
-          <p
-            key={index}
-            className="my-4 leading-relaxed text-muted-foreground"
-            dangerouslySetInnerHTML={{ __html: formattedText }}
-          />
-        );
-      });
-  };
 
   // Schema.org Article markup for rich snippets
   const schemaMarkup = {
@@ -266,7 +216,7 @@ const ArticlePage = () => {
             {/* Article Content */}
             <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_300px]">
               <div className="prose prose-lg max-w-none">
-                {renderContent(article.content)}
+                <MarkdownRenderer content={article.content} />
 
                 {/* Tags */}
                 <div className="mt-10 flex flex-wrap gap-2 border-t border-border pt-6">
