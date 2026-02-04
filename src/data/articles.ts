@@ -197,6 +197,8 @@ However, some reports note potential engine noise under acceleration. The GR Spo
 * Spacious interior
 * Strong towing capacity
 * Established reliability from Toyota
+
+
 **Cons:**
 * Potential engine noise during heavy acceleration
 * Base trims may use less premium materials
