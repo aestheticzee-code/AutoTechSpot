@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { List } from "lucide-react";
 
 interface TOCItem {
@@ -22,6 +22,8 @@ export const generateSlug = (text: string): string => {
 };
 
 const TableOfContents = ({ content }: TableOfContentsProps) => {
+  const [activeId, setActiveId] = useState<string>("");
+
   const headings = useMemo(() => {
     const lines = content.split("\n");
     const items: TOCItem[] = [];
@@ -42,6 +44,39 @@ const TableOfContents = ({ content }: TableOfContentsProps) => {
     return items;
   }, [content]);
 
+  // Track active section using Intersection Observer
+  useEffect(() => {
+    if (headings.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the first visible heading
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+        if (visibleEntries.length > 0) {
+          // Sort by position in document and take the first one
+          const sorted = visibleEntries.sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          );
+          setActiveId(sorted[0].target.id);
+        }
+      },
+      {
+        rootMargin: "-80px 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    // Observe all heading elements
+    headings.forEach((heading) => {
+      const element = document.getElementById(heading.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [headings]);
+
   if (headings.length === 0) return null;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -49,6 +84,7 @@ const TableOfContents = ({ content }: TableOfContentsProps) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setActiveId(id);
     }
   };
 
@@ -68,8 +104,13 @@ const TableOfContents = ({ content }: TableOfContentsProps) => {
               href={`#${heading.id}`}
               onClick={(e) => handleClick(e, heading.id)}
               className={`
-                block text-sm transition-colors hover:text-primary
-                ${heading.level === 2 ? "font-medium text-foreground" : "text-muted-foreground"}
+                block text-sm transition-colors
+                ${activeId === heading.id 
+                  ? "text-primary font-medium" 
+                  : heading.level === 2 
+                    ? "font-medium text-foreground hover:text-primary" 
+                    : "text-muted-foreground hover:text-primary"
+                }
               `}
             >
               {heading.text}
