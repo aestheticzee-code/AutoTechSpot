@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, HelpCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -187,6 +187,19 @@ const ArticlePage = () => {
                   <Clock className="h-4 w-4" />
                   {article.readingTime} min read
                 </div>
+                {article.faqs && article.faqs.length > 0 && (
+                  <a
+                    href="#faq"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors"
+                  >
+                    <HelpCircle className="h-4 w-4" />
+                    Jump to FAQ
+                  </a>
+                )}
               </div>
 
               <h1 className="mt-4 font-display text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
