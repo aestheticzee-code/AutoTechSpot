@@ -7,6 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { generateSlug } from "@/components/TableOfContents";
 
 interface MarkdownRendererProps {
   content: string;
@@ -304,12 +305,15 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
 
       // H1 Header
       if (trimmedLine.startsWith("# ")) {
+        const text = trimmedLine.replace("# ", "");
+        const id = generateSlug(text);
         elements.push(
           <h1
             key={elementKey++}
-            className="mb-4 mt-10 font-display text-3xl font-bold"
+            id={id}
+            className="mb-4 mt-10 font-display text-3xl font-bold scroll-mt-24"
           >
-            {trimmedLine.replace("# ", "")}
+            {text}
           </h1>
         );
         i++;
@@ -318,12 +322,15 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
 
       // H2 Header
       if (trimmedLine.startsWith("## ")) {
+        const text = trimmedLine.replace("## ", "");
+        const id = generateSlug(text);
         elements.push(
           <h2
             key={elementKey++}
-            className="mb-4 mt-10 font-display text-2xl font-bold"
+            id={id}
+            className="mb-4 mt-10 font-display text-2xl font-bold scroll-mt-24"
           >
-            {trimmedLine.replace("## ", "")}
+            {text}
           </h2>
         );
         i++;
@@ -332,12 +339,15 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
 
       // H3 Header
       if (trimmedLine.startsWith("### ")) {
+        const text = trimmedLine.replace("### ", "");
+        const id = generateSlug(text);
         elements.push(
           <h3
             key={elementKey++}
-            className="mb-4 mt-8 font-display text-xl font-bold"
+            id={id}
+            className="mb-4 mt-8 font-display text-xl font-bold scroll-mt-24"
           >
-            {trimmedLine.replace("### ", "")}
+            {text}
           </h3>
         );
         i++;
@@ -346,12 +356,15 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
 
       // H4 Header
       if (trimmedLine.startsWith("#### ")) {
+        const text = trimmedLine.replace("#### ", "");
+        const id = generateSlug(text);
         elements.push(
           <h4
             key={elementKey++}
-            className="mb-3 mt-6 font-display text-lg font-bold"
+            id={id}
+            className="mb-3 mt-6 font-display text-lg font-bold scroll-mt-24"
           >
-            {trimmedLine.replace("#### ", "")}
+            {text}
           </h4>
         );
         i++;

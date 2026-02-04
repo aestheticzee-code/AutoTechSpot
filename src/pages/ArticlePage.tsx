@@ -12,6 +12,7 @@ import { getArticleBySlug, getRelatedArticles } from "@/data/articles";
 import { getAuthorByName } from "@/data/authors";
 import { formatDate, getCategoryInfo } from "@/types/article";
 import FAQAccordion from "@/components/FAQAccordion";
+import TableOfContents from "@/components/TableOfContents";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -230,6 +231,7 @@ const ArticlePage = () => {
             {/* Article Content */}
             <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_300px]">
               <div className="prose prose-lg max-w-none">
+                <TableOfContents content={article.content} />
                 <MarkdownRenderer content={article.content} />
 
                 {/* Tags */}
