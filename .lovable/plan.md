@@ -1,98 +1,40 @@
 
 
-# Dedicated FAQ Accordion Component
+# Reduce FAQ Section Size
 
 ## Overview
-I'll create a new FAQ accordion component with expandable/collapsible sections, where each question-answer pair is displayed in its own styled card. This will replace the current inline markdown rendering of FAQ sections with a polished, interactive experience.
+The FAQ section currently appears too large compared to the article content. I'll reduce the typography, padding, and spacing to create better visual proportion.
 
-## What You'll Get
+## Current vs Proposed Sizing
 
-### Visual Design
-- Each FAQ displayed in an individual rounded card with subtle border
-- Smooth expand/collapse animation when clicking questions
-- Chevron icon that rotates when expanded
-- Question text styled bold with proper hierarchy
-- Answer text with muted styling for easy scanning
-- Section header with "Frequently Asked Questions" title
+| Element | Current | Proposed |
+|---------|---------|----------|
+| Section title | `text-2xl` | `text-xl` |
+| Section margin-top | `mt-10` | `mt-8` |
+| Section margin-bottom | `mb-6` | `mb-4` |
+| Card gap | `space-y-3` | `space-y-2` |
+| Question padding | `px-5 py-4` | `px-4 py-3` |
+| Question font | `font-semibold` | `font-medium text-sm` |
+| Answer padding | `px-5 pb-4` | `px-4 pb-3` |
+| Answer font | default | `text-sm` |
 
-### User Experience
-- Click any question to expand and reveal the answer
-- Click again to collapse
-- Only one answer open at a time (single accordion behavior)
-- Smooth CSS animations for professional feel
+## Visual Result
 
----
-
-## Technical Implementation
-
-### New File: `src/components/FAQAccordion.tsx`
-
-A new reusable component that:
-- Accepts an array of FAQ objects `{ question: string, answer: string }`
-- Uses the existing Radix UI Accordion primitives from `@/components/ui/accordion`
-- Wraps each FAQ in a Card component for the boxed layout
-- Applies consistent styling matching the site's design system
-
-**Component Structure:**
-```text
-FAQAccordion
-  Section Title ("Frequently Asked Questions")
-  Grid/Stack of Cards
-    Each Card contains:
-      AccordionItem
-        AccordionTrigger (Question + Chevron)
-        AccordionContent (Answer)
-```
-
-**Key Styling:**
-- Cards: `rounded-lg border bg-card shadow-sm`
-- Question: `font-semibold text-foreground`
-- Answer: `text-muted-foreground leading-relaxed`
-- Chevron: Rotates 180 degrees when open
-
-### Update: `src/pages/ArticlePage.tsx`
-
-- Import the new `FAQAccordion` component
-- Add a conditional section after the article content that renders the FAQ accordion when `article.faqs` exists and has items
-- Position the FAQ section between the tags and related articles
-
-**Placement in Article:**
-```text
-Article Content
-  MarkdownRenderer
-  Tags
-  FAQ Section (NEW - only if article has FAQs)
-Related Articles
-```
+The FAQ section will feel more integrated with the article content rather than standing out as oversized. Each question-answer card will be more compact while remaining fully readable and clickable.
 
 ---
 
-## Files Changed
+## Technical Changes
 
-| File | Change |
-|------|--------|
-| `src/components/FAQAccordion.tsx` | New file - dedicated FAQ accordion component |
-| `src/pages/ArticlePage.tsx` | Import and render FAQAccordion when article has FAQs |
+### File: `src/components/FAQAccordion.tsx`
 
----
-
-## Visual Preview
-
-Each FAQ will look like this when collapsed:
-```text
-+------------------------------------------+
-|  Is the 2026 RAV4 a good value?       v  |
-+------------------------------------------+
-```
-
-And when expanded:
-```text
-+------------------------------------------+
-|  Is the 2026 RAV4 a good value?       ^  |
-|------------------------------------------|
-|  Industry reports suggest competitive    |
-|  efficiency and features, particularly   |
-|  for hybrid-focused buyers...            |
-+------------------------------------------+
-```
+**Updates:**
+- Reduce section title from `text-2xl` to `text-xl`
+- Reduce top margin from `mt-10` to `mt-8`
+- Reduce title bottom margin from `mb-6` to `mb-4`
+- Reduce card spacing from `space-y-3` to `space-y-2`
+- Reduce question padding from `px-5 py-4` to `px-4 py-3`
+- Change question font from `font-semibold` to `font-medium text-sm`
+- Reduce answer padding from `px-5 pb-4` to `px-4 pb-3`
+- Add `text-sm` to answer text
 
