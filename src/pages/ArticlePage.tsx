@@ -11,6 +11,7 @@ import AdPlaceholder from "@/components/AdPlaceholder";
 import { getArticleBySlug, getRelatedArticles } from "@/data/articles";
 import { getAuthorByName } from "@/data/authors";
 import { formatDate, getCategoryInfo } from "@/types/article";
+import FAQAccordion from "@/components/FAQAccordion";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -226,6 +227,11 @@ const ArticlePage = () => {
                     </Badge>
                   ))}
                 </div>
+
+                {/* FAQ Section */}
+                {article.faqs && article.faqs.length > 0 && (
+                  <FAQAccordion faqs={article.faqs} />
+                )}
               </div>
 
               {/* Sidebar */}
