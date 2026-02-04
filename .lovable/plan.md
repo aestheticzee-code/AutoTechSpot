@@ -1,65 +1,64 @@
 
-
-# Vercel Deployment Preparation Plan
+# Enhanced Markdown Rendering for Articles
 
 ## Overview
-Your automotive website needs a small configuration update to work correctly on Vercel. The main issue is **SPA routing** — without proper config, direct links to pages like `/article/2024-ford-mustang-gt-review` would show a 404 error.
+Your article pages currently show raw markdown tables as plain text with pipe characters. I'll enhance the content rendering system to properly display tables, horizontal rules, blockquotes, and additional formatting elements.
+
+## What Will Be Fixed
+
+### Before (Current Issues)
+- Tables appear as raw text: `| Column | Column |`
+- Horizontal rules show as `---` text
+- Blockquotes (`> Note:`) not styled
+- H1 headers (`# Title`) not rendered
+
+### After (Improvements)
+- Professional styled tables with headers and rows
+- Clean horizontal dividers between sections
+- Styled blockquote callouts for notes
+- All header levels properly rendered
 
 ---
 
-## What I'll Create
+## Technical Changes
 
-### 1. Vercel Configuration File (`vercel.json`)
-A simple configuration file that tells Vercel how to handle your website:
+### File: `src/pages/ArticlePage.tsx`
 
-```text
-+------------------+     +------------------+     +------------------+
-|  User visits     | --> |  Vercel checks   | --> |  Routes to       |
-|  /article/...    |     |  vercel.json     |     |  index.html      |
-+------------------+     +------------------+     +------------------+
-                                                          |
-                                                          v
-                                                  +------------------+
-                                                  |  React Router    |
-                                                  |  handles page    |
-                                                  +------------------+
-```
+I'll rewrite the `renderContent` function to handle:
 
-This ensures all your pages work when accessed directly or refreshed.
+1. **Markdown Tables**
+   - Detect table patterns (lines with `|` characters)
+   - Parse header row, separator row, and data rows
+   - Render using the existing Table UI components
+   - Style with proper borders and spacing
 
----
+2. **Horizontal Rules**
+   - Detect `---` on its own line
+   - Render as a styled `<hr>` element
 
-## After This Change
+3. **Blockquotes**
+   - Detect lines starting with `>`
+   - Render with left border and muted background
 
-Your deployment steps on Vercel will be:
+4. **H1 Headers**
+   - Add support for `# ` prefix
+   - Style consistently with other headers
 
-1. **Connect GitHub** (Project Settings → GitHub in Lovable)
-2. **Import to Vercel** (from your Vercel dashboard)
-3. **Vercel auto-detects** the Vite framework and uses:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. **Deploy** — your site goes live!
+5. **Improved List Handling**
+   - Better detection for lists that start with `-`
+   - Handle nested formatting within lists
 
 ---
 
-## Technical Details
+## Component Updates
 
-### File: `vercel.json`
-```json
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
-}
-```
+### Table Rendering
+Tables will use your existing UI components:
+- `Table`, `TableHeader`, `TableBody`, `TableRow`, `TableHead`, `TableCell`
+- Responsive with horizontal scroll on mobile
+- Clean borders matching your design system
 
-This single rule redirects all routes to `index.html`, allowing React Router to handle navigation for pages like:
-- `/article/2024-ford-mustang-gt-review`
-- `/category/car-reviews`
-- `/author/alexander-sterling`
-
-### No Changes Needed To:
-- `package.json` — build scripts are already correct
-- `vite.config.ts` — configuration is Vercel-compatible
-- Any existing code
-
+### Visual Improvements
+- Blockquotes: Gray left border with subtle background
+- Horizontal rules: Thin separator matching your theme
+- Tables: Alternating row colors for readability
