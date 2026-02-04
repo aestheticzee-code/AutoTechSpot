@@ -15,7 +15,7 @@ const FAQAccordion = ({ faqs }: FAQAccordionProps) => {
   if (!faqs || faqs.length === 0) return null;
 
   return (
-    <section className="mt-10 border-t border-border pt-8">
+    <section id="faq" className="mt-10 border-t border-border pt-8 scroll-mt-24">
       <h2 className="font-display text-2xl font-bold mb-6">
         Frequently Asked Questions
       </h2>
