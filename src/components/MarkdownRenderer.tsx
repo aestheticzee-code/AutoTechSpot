@@ -59,19 +59,34 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
     );
   };
 
-  // Format inline text (bold, italic, etc.)
+  // Format inline text (bold, italic, inline code, etc.)
   const formatInlineText = (text: string): React.ReactNode => {
-    // Handle bold text
-    const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith("**") && part.endsWith("**")) {
+    // Split by inline code first, then handle bold within non-code parts
+    const codeParts = text.split(/(`[^`]+`)/g);
+    return codeParts.map((part, index) => {
+      // Inline code
+      if (part.startsWith("`") && part.endsWith("`")) {
         return (
-          <strong key={index} className="font-semibold text-foreground">
-            {part.slice(2, -2)}
-          </strong>
+          <code
+            key={index}
+            className="rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-primary"
+          >
+            {part.slice(1, -1)}
+          </code>
         );
       }
-      return part;
+      // Handle bold text within non-code parts
+      const boldParts = part.split(/(\*\*.*?\*\*)/g);
+      return boldParts.map((boldPart, boldIndex) => {
+        if (boldPart.startsWith("**") && boldPart.endsWith("**")) {
+          return (
+            <strong key={`${index}-${boldIndex}`} className="font-semibold text-foreground">
+              {boldPart.slice(2, -2)}
+            </strong>
+          );
+        }
+        return boldPart;
+      });
     });
   };
 
@@ -91,14 +106,81 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
     );
   };
 
-  // Render list
-  const renderList = (lines: string[], key: number): React.ReactNode => {
+  // Render unordered list
+  const renderUnorderedList = (lines: string[], key: number): React.ReactNode => {
     return (
       <ul key={key} className="my-4 list-inside list-disc space-y-2 text-muted-foreground">
         {lines.map((line, i) => (
           <li key={i}>{formatInlineText(line.replace(/^-\s?/, ""))}</li>
         ))}
       </ul>
+    );
+  };
+
+  // Render ordered list
+  const renderOrderedList = (lines: string[], key: number): React.ReactNode => {
+    return (
+      <ol key={key} className="my-4 list-inside list-decimal space-y-2 text-muted-foreground">
+        {lines.map((line, i) => (
+          <li key={i}>{formatInlineText(line.replace(/^\d+\.\s?/, ""))}</li>
+        ))}
+      </ol>
+    );
+  };
+
+  // Render code block with syntax highlighting
+  const renderCodeBlock = (code: string, language: string, key: number): React.ReactNode => {
+    // Basic syntax highlighting keywords
+    const highlightCode = (code: string, lang: string): React.ReactNode => {
+      const keywords = {
+        js: /\b(const|let|var|function|return|if|else|for|while|class|import|export|from|async|await|try|catch|throw|new|this|null|undefined|true|false)\b/g,
+        ts: /\b(const|let|var|function|return|if|else|for|while|class|import|export|from|async|await|try|catch|throw|new|this|null|undefined|true|false|type|interface|extends|implements|public|private|protected)\b/g,
+        python: /\b(def|class|import|from|return|if|elif|else|for|while|try|except|finally|with|as|lambda|True|False|None|and|or|not|in|is)\b/g,
+        css: /\b(color|background|margin|padding|border|display|flex|grid|position|width|height|font|text|align|justify)\b/g,
+        html: /(&lt;\/?[a-zA-Z][a-zA-Z0-9]*|&gt;)/g,
+      };
+
+      const stringRegex = /(["'`])(?:(?!\1)[^\\]|\\.)*?\1/g;
+      const commentRegex = /(\/\/.*$|\/\*[\s\S]*?\*\/|#.*$)/gm;
+      const numberRegex = /\b(\d+\.?\d*)\b/g;
+
+      let result = code
+        // Escape HTML
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+      // Highlight comments (green)
+      result = result.replace(commentRegex, '<span class="text-green-500">$1</span>');
+
+      // Highlight strings (amber)
+      result = result.replace(stringRegex, '<span class="text-amber-500">$&</span>');
+
+      // Highlight numbers (purple)
+      result = result.replace(numberRegex, '<span class="text-purple-400">$1</span>');
+
+      // Highlight keywords based on language
+      const langKey = lang.toLowerCase() as keyof typeof keywords;
+      const keywordPattern = keywords[langKey] || keywords.js;
+      if (keywordPattern) {
+        result = result.replace(keywordPattern, '<span class="text-primary font-medium">$&</span>');
+      }
+
+      return <span dangerouslySetInnerHTML={{ __html: result }} />;
+    };
+
+    return (
+      <div key={key} className="my-6 overflow-hidden rounded-lg border border-border">
+        {language && (
+          <div className="border-b border-border bg-muted/70 px-4 py-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            {language}
+          </div>
+        )}
+        <pre className="overflow-x-auto bg-muted/30 p-4">
+          <code className="text-sm leading-relaxed">
+            {highlightCode(code, language)}
+          </code>
+        </pre>
+      </div>
     );
   };
 
@@ -184,6 +266,20 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
         continue;
       }
 
+      // Code block detection (``` or ```)
+      if (trimmedLine.startsWith("```")) {
+        const language = trimmedLine.slice(3).trim();
+        const codeLines: string[] = [];
+        i++; // Skip opening ```
+        while (i < lines.length && !lines[i].trim().startsWith("```")) {
+          codeLines.push(lines[i]);
+          i++;
+        }
+        i++; // Skip closing ```
+        elements.push(renderCodeBlock(codeLines.join("\n"), language, elementKey++));
+        continue;
+      }
+
       // Table detection
       if (trimmedLine.includes("|") && i + 1 < lines.length) {
         const nextLine = lines[i + 1]?.trim();
@@ -214,14 +310,25 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
         continue;
       }
 
-      // List items
+      // Unordered list items
       if (trimmedLine.startsWith("- ")) {
         const listLines: string[] = [];
         while (i < lines.length && lines[i].trim().startsWith("- ")) {
           listLines.push(lines[i].trim());
           i++;
         }
-        elements.push(renderList(listLines, elementKey++));
+        elements.push(renderUnorderedList(listLines, elementKey++));
+        continue;
+      }
+
+      // Ordered list items (1. 2. 3. etc.)
+      if (/^\d+\.\s/.test(trimmedLine)) {
+        const listLines: string[] = [];
+        while (i < lines.length && /^\d+\.\s/.test(lines[i].trim())) {
+          listLines.push(lines[i].trim());
+          i++;
+        }
+        elements.push(renderOrderedList(listLines, elementKey++));
         continue;
       }
 
@@ -233,6 +340,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
         !lines[i].trim().startsWith("#") &&
         !lines[i].trim().startsWith(">") &&
         !lines[i].trim().startsWith("- ") &&
+        !/^\d+\.\s/.test(lines[i].trim()) &&
+        !lines[i].trim().startsWith("```") &&
         !lines[i].trim().includes("|") &&
         lines[i].trim() !== "---" &&
         lines[i].trim() !== "***" &&
