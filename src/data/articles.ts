@@ -5,7 +5,7 @@ export const articles: Article[] = [
 {
     slug: "2026-subaru-crosstrek-hybrid-specs-mpg-price-features-first-look", 
     title: "2026 Subaru Crosstrek Hybrid: Specs, MPG, Price, Features & First Look",
-    excerpt: "Explore the 2026 Subaru Crosstrek Hybrid: EPA 36 mpg combined, starting at $33,995, standard Symmetrical AWD, 194 hp hybrid powertrain, 8.7" ground clearance, and real-world review insights. Full US specs, trims, features, and comparison vs RAV4 Hybrid.",
+    excerpt: "Explore the 2026 Subaru Crosstrek Hybrid: EPA 36 mpg combined, starting at $33,995, standard Symmetrical AWD, 194 hp hybrid powertrain, 8.7\" ground clearance, and real-world review insights. Full US specs, trims, features, and comparison vs RAV4 Hybrid.",
     content: `
 # 2026 Subaru Crosstrek Hybrid: Specs, MPG, Price, Features & First Look
 
@@ -137,7 +137,7 @@ For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid o
 
 
     `,
-    featuredImage: "blob:https://labs.google/52d52da3-dbbb-4e8d-b38d-7be647afc915",
+    featuredImage: "/placeholder.svg",
     featuredImageAlt: "2026 Subaru Crosstrek Hybrid in Sand Dune Pearl – official US model",
     category: "car-reviews",
     tags: ["2026 Subaru Crosstrek Hybrid, Subaru Crosstrek Hybrid, Hybrid SUV"],
@@ -175,7 +175,7 @@ For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid o
 
   
 {
-    slug: "2026 Toyota RAV4", 
+    slug: "2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look", 
     title: "2026 Toyota RAV4: Full Redesign, Hybrid Specs, Price, Release Date & First Look",
     excerpt: " Discover the 2026 Toyota RAV4 redesign: all-hybrid lineup, estimated specs, starting price from $31,900, PHEV options, MPG ratings, trims, and expected release timeline for the US market.",
     content: `
