@@ -137,7 +137,7 @@ For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid o
 
 
     `,
-    featuredImage: "/placeholder.svg",
+    featuredImage: "https://image2url.com/r2/default/images/1770402703388-aaf40f24-b919-46d7-8d52-abef56ce81c8.jpeg",
     featuredImageAlt: "2026 Subaru Crosstrek Hybrid in Sand Dune Pearl – official US model",
     category: "car-reviews",
     tags: ["2026 Subaru Crosstrek Hybrid, Subaru Crosstrek Hybrid, Hybrid SUV"],
