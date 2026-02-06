@@ -136,22 +136,6 @@ Initial evaluations position the 2026 Subaru Crosstrek Hybrid as a natural exten
 For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid offers a balanced combination of efficiency, range, and capability based on current data and previews. Its estimated 597-mile range and robust AWD system make it a practical option for varied driving needs. We recommend consulting Subaru.com or a local dealer for the latest details and availability. This review is based on early US-market data, expert previews, and comparative analysis of compact hybrid SUVs.
 
 
-## FAQ Section
-
-** What is the MPG of the 2026 Subaru Crosstrek Hybrid? ** 
-The 2026 Crosstrek Hybrid achieves EPA-estimated 36 mpg city, 36 highway, and 36 combined, with real-world tests showing around 31 to 35 mpg.
-
-** How much does the 2026 Crosstrek Hybrid cost? **
-Starting MSRP is $33,995 for the Sport Hybrid and $34,995 for the Limited Hybrid, excluding the $1,450 destination fee.
-
-** Does the 2026 Subaru Crosstrek Hybrid have AWD? **
-Yes, Symmetrical All-Wheel Drive is standard, with X-Mode for enhanced off-road traction.
-
-** When will the 2026 Subaru Crosstrek Hybrid be available? **
-It went on sale in fall 2025 and is widely available at US dealers as of February 2026.
-
-** Is the 2026 Subaru Crosstrek Hybrid a plug-in hybrid? **
-No, it is a non-plug-in series-parallel hybrid, relying on regenerative braking for charging.
     `,
     featuredImage: "blob:https://labs.google/52d52da3-dbbb-4e8d-b38d-7be647afc915",
     featuredImageAlt: "2026 Subaru Crosstrek Hybrid in Sand Dune Pearl – official US model",
@@ -163,7 +147,7 @@ No, it is a non-plug-in series-parallel hybrid, relying on regenerative braking 
     },
     publishedAt: "2026-02-06",
     readingTime: 8,
-    featured: false,
+    featured: true,
     faqs: [
       {
         question: "What is the MPG of the 2026 Subaru Crosstrek Hybrid?",
