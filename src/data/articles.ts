@@ -1,101 +1,194 @@
 import { Article } from "@/types/article";
 
 export const articles: Article[] = [
-  {
-    slug: "2024-ford-mustang-gt-review",
-    title: "2024 Ford Mustang GT Review: American Muscle Reborn",
-    excerpt: "The seventh-generation Mustang GT delivers 480 horsepower of pure V8 thunder. We test Ford's iconic pony car to see if it can still dominate the muscle car segment.",
+
+{
+    slug: "2026-subaru-crosstrek-hybrid-specs-mpg-price-features-review", 
+    title: "2026 Subaru Crosstrek Hybrid: Specs, MPG, Price, Features & First Look",
+    excerpt: "Explore the 2026 Subaru Crosstrek Hybrid: EPA 36 mpg combined, starting at $33,995, standard Symmetrical AWD, 194 hp hybrid powertrain, 8.7" ground clearance, and real-world review insights. Full US specs, trims, features, and comparison vs RAV4 Hybrid.",
     content: `
-## The Legend Returns
+# 2026 Subaru Crosstrek Hybrid: Specs, MPG, Price, Features & First Look
 
-The 2024 Ford Mustang GT represents a new chapter for America's favorite pony car. Now in its seventh generation, the Mustang GT continues to deliver what enthusiasts crave: a naturally-aspirated V8, rear-wheel drive, and that unmistakable muscle car presence.
+As an automotive enthusiast or potential buyer researching compact hybrid SUVs in the US market, you might be seeking a vehicle that combines fuel efficiency with reliable all-weather performance for everyday commutes and weekend adventures. The 2026 Subaru Crosstrek Hybrid aims to meet those needs by integrating Subaru's renowned Symmetrical All-Wheel Drive with an advanced hybrid powertrain, offering an estimated 36 mpg combined, 194 total horsepower, and a starting price around $33,995. Based on official Subaru announcements and early expert previews, this model represents a thoughtful update for drivers prioritizing practicality and capability. In this detailed overview, we'll explore the key specifications, features, and comparisons to help inform your decision.
 
-### Design & Exterior
 
-Ford's designers have given the Mustang a more aggressive stance for 2024. The fastback roofline flows seamlessly into a ducktail spoiler, while the front fascia features a larger grille and redesigned tri-bar LED headlights that pay homage to the original 1960s design.
+## What’s New for the 2026 Subaru Crosstrek Hybrid
 
-The wider fenders accommodate a broader track, giving the Mustang GT a planted, athletic look. Available in 11 colors including the iconic Grabber Blue and new Vapor Blue, there's a shade for every personality.
+According to Subaru's official announcements, the 2026 model year introduces notable advancements to the Crosstrek lineup, focusing on hybrid technology tailored for US consumers.
 
-### Performance
+### End of the plug-in era → new series-parallel hybrid system
 
-At the heart of the 2024 Mustang GT lies the legendary 5.0-liter Coyote V8. This fourth-generation engine produces:
+The previous plug-in hybrid variant, last available in 2023, has been replaced by a non-plug-in series-parallel hybrid design. This system pairs a 2.5-liter Boxer engine with electric motors, emphasizing seamless efficiency gains. Early reports indicate it could provide up to 38 percent improved city fuel economy compared to non-hybrid versions, with the battery recharged via regenerative braking and engine operation.
 
-- **Horsepower:** 480 HP @ 7,000 RPM
-- **Torque:** 415 lb-ft @ 4,900 RPM
-- **0-60 mph:** 4.3 seconds
-- **Quarter Mile:** 12.4 seconds @ 118 mph
-- **Top Speed:** 155 mph (electronically limited)
+### Shared platform with the new Forester Hybrid
 
-The engine pairs with either a rev-matching 6-speed manual transmission or a paddle-shifted 10-speed automatic. Both are excellent, but purists will appreciate the tactile engagement of the manual.
+Drawing from the 2026 Subaru Forester Hybrid's architecture, the Crosstrek Hybrid incorporates similar hybrid components. This approach, as detailed in Subaru's press materials, supports enhanced torque delivery while upholding the brand's reputation for dependable performance in diverse conditions.
 
-### Handling & Dynamics
+### Hybrid-exclusive colors and badging
 
-The new chassis is stiffer than ever, with double-ball-joint front suspension and an independent rear setup. The optional MagneRide dampers read the road 1,000 times per second, delivering a remarkable balance between daily comfort and track capability.
+To distinguish the hybrid models, Subaru has introduced specific elements such as a dedicated Hybrid badge on the tailgate and unique color options, including Sand Dune Pearl and Citron Yellow Pearl, based on available US-market data.
 
-The steering is precise with excellent feedback, though some may find the electric power steering slightly less communicative than hydraulic systems of old. New Brembo brakes with 6-piston front calipers provide exceptional stopping power.
+## 2026 Subaru Crosstrek Hybrid Trims and Pricing (US Market)
 
-### Interior & Technology
+Subaru offers two trims for the 2026 Crosstrek Hybrid in the US, providing options that align with different preferences while maintaining competitive pricing relative to segment standards.
 
-Step inside, and you'll find a driver-focused cockpit with a 12.4-inch digital instrument cluster and a 13.2-inch SYNC 4 touchscreen. The flat-bottom steering wheel feels great in hand, and the redesigned seats offer improved bolstering for spirited driving.
+| Trim | Starting MSRP (excl. $1,450 dest.) | Key Additions |
+|-----|-----------------------------------|---------------|
+| Sport Hybrid | $33,995 | 18-inch dark gray wheels, cloth with yellow stitching, dual-function X-Mode, wireless Apple CarPlay and Android Auto |
+| Limited Hybrid | $34,995 | Leather seats, heated front seats, Harman Kardon 10-speaker audio, power moonroof, blind-spot monitoring |
 
-Notable features include:
-- Recaro sport seats (optional)
-- B&O premium audio system
-- Wireless Apple CarPlay and Android Auto
-- Digital instrument cluster with customizable displays
-- Drive mode selector with Normal, Sport, Track, and Drag Strip modes
+These prices reflect standard inclusions like Symmetrical All-Wheel Drive and the EyeSight safety system. According to Subaru's build-and-price tools, optional packages may increase the equipped price to approximately $38,410, depending on selections. The Sport Hybrid trim, in particular, offers a balanced entry point for value-oriented buyers.
 
-### Daily Livability
+## Hybrid Powertrain Specs & Performance
 
-Despite its performance focus, the Mustang GT is surprisingly livable. The trunk offers 13.5 cubic feet of cargo space, and the rear seats can accommodate passengers for short trips. Fuel economy sits at 15 city / 24 highway mpg – reasonable for a 480-hp V8.
+The hybrid setup in the 2026 Subaru Crosstrek Hybrid enhances overall output, drawing on Subaru's engineering expertise to deliver responsive driving characteristics.
 
-### Competition
+### Engine & Electric Motors Breakdown
 
-The Mustang GT faces stiff competition from the Chevrolet Camaro SS and Dodge Challenger R/T Scat Pack. While the Camaro offers sharper handling and the Challenger provides more space, the Mustang strikes an ideal balance between the two while offering the most modern interior.
+The core components include an Atkinson-cycle 2.5-liter flat-four Boxer engine complemented by a main traction motor and a secondary generator motor. A Lineartronic CVT manages power distribution, enabling brief periods of electric-only operation in low-speed scenarios.
 
-### Verdict
+| Component | Specification |
+|----------|---------------|
+| 2.5L Boxer-4 (gas) | 162 hp / 154 lb-ft |
+| Electric traction motor | 118 hp / 199 lb-ft |
+| Total system output | 194 hp |
+| Battery | 1.1 kWh lithium-ion |
+| Transmission | Lineartronic CVT (series-parallel) |
 
-The 2024 Ford Mustang GT is everything a muscle car should be: loud, fast, and undeniably fun. It honors its heritage while embracing modern technology, making it the best Mustang GT ever built. Whether you're cruising downtown or attacking your favorite back road, this car delivers an experience that electric vehicles simply cannot replicate.
+Based on expert previews, acceleration from 0 to 60 mph is estimated at around 7.7 seconds, which positions it as capable within its class. However, some reviews note potential CVT-related noise during aggressive driving. Towing capacity is rated at 1,500 pounds, appropriate for occasional light-duty tasks.
 
-For enthusiasts who want a pure, visceral driving experience with a screaming V8 soundtrack, the Mustang GT is the definitive choice.
+## 2026 Crosstrek Hybrid MPG, Range & Efficiency
 
-**Rating: 9.2/10**
+Fuel economy remains a key highlight for the 2026 Crosstrek Hybrid, appealing to US drivers focused on long-distance travel and cost savings.
+
+EPA estimates indicate 36 mpg in city, highway, and combined driving, representing a notable improvement over the gas-powered Crosstrek's figures of 27 to 30 mpg combined. With the 16.6-gallon fuel tank, the estimated driving range extends to approximately 597 miles under ideal conditions.
+
+| Model | City / Hwy / Comb MPG | Combined Range |
+|------|-----------------------|----------------|
+| 2026 Crosstrek Hybrid | 36 / 36 / 36 | 597 mi |
+| 2026 Crosstrek 2.5L Gas | 26 / 33 / 29 | ~480 mi |
+| Toyota RAV4 Hybrid | 41 / 38 / 39 | ~580 mi |
+
+According to early reports from Car and Driver, real-world testing yielded about 35 mpg on highways and 31 mpg in mixed use, demonstrating consistent performance across varied scenarios.
+
+## Exterior, Interior & Key Features
+
+The 2026 Subaru Crosstrek Hybrid builds on familiar design elements while incorporating functional enhancements for everyday usability.
+
+### Exterior Design & Ground Clearance (8.7 inches)
+
+Protective cladding, integrated roof rails, and 18-inch alloy wheels contribute to its versatile appearance. The 8.7-inch ground clearance supports moderate off-pavement exploration, aligning with Subaru's adventure-oriented heritage.
+
+### Interior Space & Cargo (18.6 / 54.7 cu ft)
+
+Accommodating up to five passengers within 100.2 cubic feet of interior volume, the cabin provides 18.6 cubic feet of cargo space behind the rear seats, expandable to 54.7 cubic feet when folded. Durable materials and trim-specific details, such as yellow stitching on the Sport model, enhance the practical layout.
+
+### Tech & Safety (11.6-inch touchscreen, EyeSight 4.0, available 360-degree camera)
+
+The central 11.6-inch touchscreen facilitates wireless connectivity for Apple CarPlay and Android Auto. The standard EyeSight suite encompasses features like adaptive cruise control, automatic emergency braking, and lane-keeping assistance.
+
+## Off-Road & AWD Capability for American Conditions
+
+Symmetrical All-Wheel Drive, a hallmark of Subaru vehicles, equips the 2026 Crosstrek Hybrid to handle varied US terrains effectively. The dual-function X-Mode system optimizes performance in challenging environments such as snow, mud, or loose surfaces. With 8.7 inches of ground clearance, it performs reliably on paths like those found in national parks or rural areas. Expert previews commend its stability in such settings, making it suitable for drivers in regions with unpredictable weather.
+
+## Pros & Cons (Based on Early Reviews)
+
+Pros:
+- Effective hybrid system integration  
+- Standard Symmetrical AWD for versatile handling  
+- Estimated 36 mpg efficiency  
+- Distinctive hybrid-exclusive colors and wheels  
+- Supportive ride quality for routine driving  
+
+Cons:
+- Potential price increase compared to gas variants  
+- Audible CVT operation under load  
+- Fuel economy slightly below some competitors  
+- Interior finishes that may appear conventional relative to segment leaders  
+
+## 2026 Subaru Crosstrek Hybrid vs Competitors
+
+Within the compact hybrid SUV category, the 2026 Subaru Crosstrek Hybrid distinguishes itself through its emphasis on all-wheel-drive reliability.
+
+### vs 2026 Toyota RAV4 Hybrid
+
+The RAV4 Hybrid provides higher estimated fuel economy at 39 mpg combined and greater interior room. However, its AWD relies more on electric assistance, which may differ in feel from the Crosstrek's mechanical system in demanding conditions.
+
+### vs 2026 Honda CR-V Hybrid
+
+Offering 37 to 40 mpg combined and a more spacious cabin, the CR-V Hybrid starts at a higher price point of around $37,080. Its AWD, while effective, is not optimized for the same level of off-road engagement as Subaru's setup.
+
+| Feature | 2026 Crosstrek Hybrid | 2026 Toyota RAV4 Hybrid | 2026 Honda CR-V Hybrid |
+|--------|----------------------|-------------------------|------------------------|
+| Starting MSRP | $33,995 | $31,225 | $37,080 |
+| MPG (Combined) | 36 | 39 | 37 to 40 |
+| Ground Clearance | 8.7 in | 8.1 in | 8.2 in |
+| AWD Type | Symmetrical (mechanical) | Electric-assist | Real-time (mechanical) |
+| Cargo (behind seats) | 18.6 cu ft | 37.6 cu ft | 39.2 cu ft |
+| Warranty (basic) | 3 yr / 36k mi | 3 yr / 36k mi | 3 yr / 36k mi |
+
+## First Look & Expert Reviews Summary
+
+Initial evaluations position the 2026 Subaru Crosstrek Hybrid as a natural extension of the brand's strengths. Car and Driver observes that it maintains a Subaru-centric driving experience enhanced by hybrid efficiency, highlighting its trail-handling abilities while noting minor engine sounds. MotorTrend describes it as responsive on highways due to ample torque, appealing to established Subaru owners. Consumer Reports acknowledges the fuel savings but suggests evaluating the cost differential against gas models. In summary, it suits individuals who value AWD functionality alongside moderate efficiency improvements.
+
+## Final Thought
+
+For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid offers a balanced combination of efficiency, range, and capability based on current data and previews. Its estimated 597-mile range and robust AWD system make it a practical option for varied driving needs. We recommend consulting Subaru.com or a local dealer for the latest details and availability. This review is based on early US-market data, expert previews, and comparative analysis of compact hybrid SUVs.
+
+
+## FAQ Section
+
+** What is the MPG of the 2026 Subaru Crosstrek Hybrid? ** 
+The 2026 Crosstrek Hybrid achieves EPA-estimated 36 mpg city, 36 highway, and 36 combined, with real-world tests showing around 31 to 35 mpg.
+
+** How much does the 2026 Crosstrek Hybrid cost? **
+Starting MSRP is $33,995 for the Sport Hybrid and $34,995 for the Limited Hybrid, excluding the $1,450 destination fee.
+
+** Does the 2026 Subaru Crosstrek Hybrid have AWD? **
+Yes, Symmetrical All-Wheel Drive is standard, with X-Mode for enhanced off-road traction.
+
+** When will the 2026 Subaru Crosstrek Hybrid be available? **
+It went on sale in fall 2025 and is widely available at US dealers as of February 2026.
+
+** Is the 2026 Subaru Crosstrek Hybrid a plug-in hybrid? **
+No, it is a non-plug-in series-parallel hybrid, relying on regenerative braking for charging.
     `,
-    featuredImage: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=1200&h=630&fit=crop",
-    featuredImageAlt: "2024 Ford Mustang GT in red, showcasing its aggressive front fascia and iconic design",
+    featuredImage: "blob:https://labs.google/52d52da3-dbbb-4e8d-b38d-7be647afc915",
+    featuredImageAlt: "2026 Subaru Crosstrek Hybrid in Sand Dune Pearl – official US model",
     category: "car-reviews",
-    tags: ["Ford", "Mustang", "Muscle Car", "V8", "American Cars", "Sports Car"],
+    tags: ["2026 Subaru Crosstrek Hybrid, Subaru Crosstrek Hybrid, Hybrid SUV"],
     author: {
       name: "Alexander Sterling",
       avatar: "/images/alexander-sterling.png",
     },
-    publishedAt: "2026-01-30",
-    readingTime: 6,
-    featured: true,
+    publishedAt: "2026-02-06",
+    readingTime: 8,
+    featured: false,
     faqs: [
       {
-        question: "How much horsepower does the 2024 Ford Mustang GT have?",
-        answer: "The 2024 Ford Mustang GT produces 480 horsepower and 415 lb-ft of torque from its 5.0-liter Coyote V8 engine.",
+        question: "What is the MPG of the 2026 Subaru Crosstrek Hybrid?",
+        answer: " The 2026 Crosstrek Hybrid achieves EPA-estimated 36 mpg city, 36 highway, and 36 combined, with real-world tests showing around 31 to 35 mpg.",
       },
       {
-        question: "How fast is the 2024 Ford Mustang GT 0-60?",
-        answer: "The 2024 Mustang GT accelerates from 0-60 mph in 4.3 seconds and completes the quarter mile in 12.4 seconds.",
+        question: " Does the 2026 Subaru Crosstrek Hybrid have AWD?",
+        answer: " Yes, Symmetrical All-Wheel Drive is standard, with X-Mode for enhanced off-road traction.",
       },
       {
-        question: "Does the 2024 Mustang GT come with a manual transmission?",
-        answer: "Yes, the 2024 Mustang GT offers a 6-speed manual transmission with rev-matching, as well as an optional 10-speed automatic.",
+        question: " How much does the 2026 Crosstrek Hybrid cost?",
+        answer: " Starting MSRP is $33,995 for the Sport Hybrid and $34,995 for the Limited Hybrid, excluding the $1,450 destination fee.",
       },
       {
-        question: "What is the starting price of the 2024 Ford Mustang GT?",
-        answer: "The 2024 Ford Mustang GT starts at approximately $42,515 MSRP, with fully loaded models reaching around $60,000.",
+        question: " When will the 2026 Subaru Crosstrek Hybrid be available?",
+        answer: " It went on sale in fall 2025 and is widely available at US dealers as of February 2026.",
       },
       {
-        question: "What fuel economy does the 2024 Mustang GT get?",
-        answer: "The 2024 Mustang GT achieves an EPA-estimated 15 mpg city and 24 mpg highway with the automatic transmission.",
+        question: "Is the 2026 Subaru Crosstrek Hybrid a plug-in hybrid? ",
+        answer: " No, it is a non-plug-in series-parallel hybrid, relying on regenerative braking for charging.",
       },
     ],
   },
 
+  
 {
     slug: "2026 Toyota RAV4", 
     title: "2026 Toyota RAV4: Full Redesign, Hybrid Specs, Price, Release Date & First Look",
