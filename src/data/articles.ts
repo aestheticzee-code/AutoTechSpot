@@ -3,7 +3,7 @@ import { Article } from "@/types/article";
 export const articles: Article[] = [
 
 {
-    slug: "2026-subaru-crosstrek-hybrid-specs-mpg-price-features-review", 
+    slug: "2026-subaru-crosstrek-hybrid-specs-mpg-price-features-first-look", 
     title: "2026 Subaru Crosstrek Hybrid: Specs, MPG, Price, Features & First Look",
     excerpt: "Explore the 2026 Subaru Crosstrek Hybrid: EPA 36 mpg combined, starting at $33,995, standard Symmetrical AWD, 194 hp hybrid powertrain, 8.7" ground clearance, and real-world review insights. Full US specs, trims, features, and comparison vs RAV4 Hybrid.",
     content: `
