@@ -1,40 +1,50 @@
 
 
-# Reduce FAQ Section Size
+# Fix Build Errors in articles.ts
 
-## Overview
-The FAQ section currently appears too large compared to the article content. I'll reduce the typography, padding, and spacing to create better visual proportion.
+## Problem Summary
+The deployment is failing due to TypeScript syntax errors in `src/data/articles.ts`. The build logs show multiple "comma expected" and "identifier expected" errors starting around line 8.
 
-## Current vs Proposed Sizing
+## Root Causes Identified
 
-| Element | Current | Proposed |
-|---------|---------|----------|
-| Section title | `text-2xl` | `text-xl` |
-| Section margin-top | `mt-10` | `mt-8` |
-| Section margin-bottom | `mb-6` | `mb-4` |
-| Card gap | `space-y-3` | `space-y-2` |
-| Question padding | `px-5 py-4` | `px-4 py-3` |
-| Question font | `font-semibold` | `font-medium text-sm` |
-| Answer padding | `px-5 pb-4` | `px-4 pb-3` |
-| Answer font | default | `text-sm` |
+### 1. Unescaped Quotation Mark in Excerpt (Line 8)
+The excerpt string contains `8.7"` which has an unescaped double quote that breaks the string literal:
+```typescript
+// Current (broken)
+excerpt: "...194 hp hybrid powertrain, 8.7" ground clearance..."
+                                        ↑ This quote breaks the string
 
-## Visual Result
+// Fix: Escape the quote
+excerpt: "...194 hp hybrid powertrain, 8.7\" ground clearance..."
+```
 
-The FAQ section will feel more integrated with the article content rather than standing out as oversized. Each question-answer card will be more compact while remaining fully readable and clickable.
+### 2. Invalid blob: URL for Featured Image (Line 140)
+The `featuredImage` property uses a temporary browser `blob:` URL that won't work in production:
+```typescript
+// Current (invalid)
+featuredImage: "blob:https://labs.google/52d52da3-dbbb-4e8d-b38d-7be647afc915"
+
+// Fix: Use a placeholder or valid image URL
+featuredImage: "/placeholder.svg"
+```
+
+### 3. Invalid Slug with Spaces (Line 178)
+The second article has a slug with spaces, which is not URL-friendly and likely causes routing issues:
+```typescript
+// Current (broken)
+slug: "2026 Toyota RAV4"
+
+// Fix: Use URL-friendly slug
+slug: "2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look"
+```
 
 ---
 
 ## Technical Changes
 
-### File: `src/components/FAQAccordion.tsx`
+### File: `src/data/articles.ts`
 
-**Updates:**
-- Reduce section title from `text-2xl` to `text-xl`
-- Reduce top margin from `mt-10` to `mt-8`
-- Reduce title bottom margin from `mb-6` to `mb-4`
-- Reduce card spacing from `space-y-3` to `space-y-2`
-- Reduce question padding from `px-5 py-4` to `px-4 py-3`
-- Change question font from `font-semibold` to `font-medium text-sm`
-- Reduce answer padding from `px-5 pb-4` to `px-4 pb-3`
-- Add `text-sm` to answer text
+1. **Line 8**: Escape the double quote in `8.7"` by changing it to `8.7\"`
+2. **Line 140**: Replace the invalid `blob:` URL with a valid placeholder image path
+3. **Line 178**: Fix the slug to be URL-friendly with hyphens instead of spaces
 
