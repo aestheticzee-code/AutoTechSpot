@@ -1,50 +1,76 @@
 
+# Automatic Sitemap Generation at Build Time
 
-# Fix Build Errors in articles.ts
+## Overview
+Create an automated sitemap generation system that runs during the Vite build process. The sitemap will dynamically include all articles, authors, categories, and static pages - no manual editing required after adding new content.
 
-## Problem Summary
-The deployment is failing due to TypeScript syntax errors in `src/data/articles.ts`. The build logs show multiple "comma expected" and "identifier expected" errors starting around line 8.
+## How It Works
 
-## Root Causes Identified
-
-### 1. Unescaped Quotation Mark in Excerpt (Line 8)
-The excerpt string contains `8.7"` which has an unescaped double quote that breaks the string literal:
-```typescript
-// Current (broken)
-excerpt: "...194 hp hybrid powertrain, 8.7" ground clearance..."
-                                        ↑ This quote breaks the string
-
-// Fix: Escape the quote
-excerpt: "...194 hp hybrid powertrain, 8.7\" ground clearance..."
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│                     BUILD TIME FLOW                              │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  src/data/articles.ts ──┐                                       │
+│  src/data/authors.ts ───┼──► Vite Plugin ──► /public/sitemap.xml│
+│  src/types/article.ts ──┘    (generate)                         │
+│                                                                  │
+│  When you run: npm run build                                    │
+│  The sitemap is automatically regenerated                       │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-### 2. Invalid blob: URL for Featured Image (Line 140)
-The `featuredImage` property uses a temporary browser `blob:` URL that won't work in production:
-```typescript
-// Current (invalid)
-featuredImage: "blob:https://labs.google/52d52da3-dbbb-4e8d-b38d-7be647afc915"
+## Sitemap Structure
 
-// Fix: Use a placeholder or valid image URL
-featuredImage: "/placeholder.svg"
-```
+| URL Type | Example | Priority | Change Frequency |
+|----------|---------|----------|------------------|
+| Homepage | `/` | 1.0 | daily |
+| Categories | `/category/car-reviews` | 0.8 | weekly |
+| Articles | `/article/[slug]` | 0.7 | monthly |
+| Authors | `/author/[slug]` | 0.6 | monthly |
+| Static | `/about`, `/contact` | 0.5 | monthly |
+| Legal | `/privacy`, `/terms`, `/disclaimer` | 0.3 | yearly |
 
-### 3. Invalid Slug with Spaces (Line 178)
-The second article has a slug with spaces, which is not URL-friendly and likely causes routing issues:
-```typescript
-// Current (broken)
-slug: "2026 Toyota RAV4"
+## What Happens When You Add a New Article
 
-// Fix: Use URL-friendly slug
-slug: "2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look"
-```
+1. Add article object to `src/data/articles.ts`
+2. Run `npm run build`
+3. Sitemap automatically includes the new article with correct `<lastmod>` date
 
 ---
 
 ## Technical Changes
 
-### File: `src/data/articles.ts`
+### New File: `scripts/generate-sitemap.ts`
 
-1. **Line 8**: Escape the double quote in `8.7"` by changing it to `8.7\"`
-2. **Line 140**: Replace the invalid `blob:` URL with a valid placeholder image path
-3. **Line 178**: Fix the slug to be URL-friendly with hyphens instead of spaces
+A Node.js script that:
+- Imports articles from `src/data/articles.ts`
+- Imports authors from `src/data/authors.ts`
+- Imports categories from `src/types/article.ts`
+- Generates valid XML sitemap following sitemaps.org schema
+- Outputs to `public/sitemap.xml`
 
+### Modified File: `vite.config.ts`
+
+Add a custom Vite plugin that runs the sitemap generation during the `buildStart` hook:
+- Uses dynamic imports to load the TypeScript data files
+- Generates sitemap XML before the main build completes
+- Writes output to `public/sitemap.xml`
+
+### Modified File: `package.json`
+
+Add a standalone script for manual sitemap generation:
+```json
+"scripts": {
+  "generate:sitemap": "npx tsx scripts/generate-sitemap.ts"
+}
+```
+
+### File: `public/robots.txt`
+
+Already configured correctly with sitemap reference - no changes needed.
+
+### New Dev Dependency: `tsx`
+
+Required to run TypeScript scripts directly from Node.js for the build process.
