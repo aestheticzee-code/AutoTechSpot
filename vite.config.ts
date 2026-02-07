@@ -19,13 +19,25 @@ function sitemapPlugin(): Plugin {
         const authorsContent = fs.readFileSync(authorsPath, 'utf-8');
         const typesContent = fs.readFileSync(typesPath, 'utf-8');
         
-        // Extract article slugs and dates using regex
-        const articleMatches = [...articlesContent.matchAll(/slug:\s*["']([^"']+)["'][\s\S]*?publishedAt:\s*["']([^"']+)["'](?:[\s\S]*?updatedAt:\s*["']([^"']+)["'])?/g)];
-        const articles = articleMatches.map(m => ({
-          slug: m[1],
-          publishedAt: m[2],
-          updatedAt: m[3] || undefined,
-        }));
+        // Extract article data including featured images using regex
+        const articleBlocks = articlesContent.split(/\n\s*\{[\s\n]*slug:/g).slice(1);
+        const articles = articleBlocks.map(block => {
+          const slugMatch = block.match(/^[\s]*["']([^"']+)["']/);
+          const publishedMatch = block.match(/publishedAt:\s*["']([^"']+)["']/);
+          const updatedMatch = block.match(/updatedAt:\s*["']([^"']+)["']/);
+          const imageMatch = block.match(/featuredImage:\s*["']([^"']+)["']/);
+          const titleMatch = block.match(/title:\s*["']([^"']+)["']/);
+          const altMatch = block.match(/featuredImageAlt:\s*["']([^"']+)["']/);
+          
+          return {
+            slug: slugMatch?.[1] || '',
+            publishedAt: publishedMatch?.[1] || '',
+            updatedAt: updatedMatch?.[1],
+            featuredImage: imageMatch?.[1],
+            title: titleMatch?.[1],
+            featuredImageAlt: altMatch?.[1],
+          };
+        }).filter(a => a.slug);
         
         // Extract author slugs using regex
         const authorMatches = [...authorsContent.matchAll(/slug:\s*["']([^"']+)["']/g)];
@@ -43,9 +55,15 @@ function sitemapPlugin(): Plugin {
           lastmod?: string;
           changefreq: string;
           priority: number;
+          image?: {
+            loc: string;
+            title?: string;
+            caption?: string;
+          };
         }
 
         const urls: SitemapUrl[] = [];
+        const escapeXml = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
         // Homepage
         urls.push({ loc: `${BASE_URL}/`, lastmod: today, changefreq: 'daily', priority: 1.0 });
@@ -55,14 +73,29 @@ function sitemapPlugin(): Plugin {
           urls.push({ loc: `${BASE_URL}/category/${cat.slug}`, lastmod: today, changefreq: 'weekly', priority: 0.8 });
         }
 
-        // Articles
+        // Articles with images
         for (const article of articles) {
-          urls.push({
+          const url: SitemapUrl = {
             loc: `${BASE_URL}/article/${article.slug}`,
             lastmod: article.updatedAt || article.publishedAt,
             changefreq: 'monthly',
             priority: 0.7,
-          });
+          };
+          
+          // Add image if valid URL (not blob: or placeholder)
+          if (article.featuredImage && 
+              !article.featuredImage.startsWith('blob:') && 
+              !article.featuredImage.includes('placeholder')) {
+            url.image = {
+              loc: article.featuredImage.startsWith('http') 
+                ? article.featuredImage 
+                : `${BASE_URL}${article.featuredImage}`,
+              title: article.title,
+              caption: article.featuredImageAlt,
+            };
+          }
+          
+          urls.push(url);
         }
 
         // Authors
@@ -79,15 +112,30 @@ function sitemapPlugin(): Plugin {
         urls.push({ loc: `${BASE_URL}/terms`, changefreq: 'yearly', priority: 0.3 });
         urls.push({ loc: `${BASE_URL}/disclaimer`, changefreq: 'yearly', priority: 0.3 });
 
-        // Generate XML
-        const escapeXml = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>
+        // Generate XML with image namespace
+        const generateUrlEntry = (u: SitemapUrl) => {
+          let entry = `  <url>
     <loc>${escapeXml(u.loc)}</loc>${u.lastmod ? `\n    <lastmod>${u.lastmod.split('T')[0]}</lastmod>` : ''}
     <changefreq>${u.changefreq}</changefreq>
-    <priority>${u.priority.toFixed(1)}</priority>
-  </url>`).join('\n')}
+    <priority>${u.priority.toFixed(1)}</priority>`;
+          
+          if (u.image) {
+            entry += `
+    <image:image>
+      <image:loc>${escapeXml(u.image.loc)}</image:loc>${u.image.title ? `
+      <image:title>${escapeXml(u.image.title)}</image:title>` : ''}${u.image.caption ? `
+      <image:caption>${escapeXml(u.image.caption)}</image:caption>` : ''}
+    </image:image>`;
+          }
+          
+          entry += `\n  </url>`;
+          return entry;
+        };
+
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urls.map(generateUrlEntry).join('\n')}
 </urlset>`;
 
         fs.writeFileSync(path.resolve(__dirname, 'public/sitemap.xml'), xml, 'utf-8');
