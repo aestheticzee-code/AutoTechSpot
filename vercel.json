@@ -1,4 +1,26 @@
 {
+  "redirects": [
+    {
+      "source": "/article/2026-subaru-crosstrek-hybrid-specs-mpg-price-features-first-look",
+      "destination": "/car-reviews/2026-subaru-crosstrek-hybrid-specs-mpg-price-features-first-look",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look",
+      "destination": "/car-reviews/2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/car-reviews",
+      "destination": "/car-reviews",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/news",
+      "destination": "/car-updates",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
