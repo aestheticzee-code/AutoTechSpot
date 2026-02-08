@@ -32,7 +32,7 @@ const CategoryPage = () => {
     );
   }
 
-  const categoryUrl = `https://autotechspot.com/category/${category.slug}`;
+  const categoryUrl = `https://autotechspot.com/${category.slug}`;
 
   return (
     <Layout>
@@ -69,7 +69,7 @@ const CategoryPage = () => {
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
-                to={`/category/${cat.slug}`}
+                to={`/${cat.slug}`}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   cat.slug === category.slug
                     ? "bg-primary text-primary-foreground"

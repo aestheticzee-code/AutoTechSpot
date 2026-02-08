@@ -1,4 +1,4 @@
-export type ArticleCategory = "car-reviews" | "news";
+export type ArticleCategory = "car-reviews" | "car-updates";
 
 export interface FAQ {
   question: string;
@@ -38,11 +38,15 @@ export const categories: CategoryInfo[] = [
     description: "In-depth reviews of the latest vehicles, from performance sports cars to practical family SUVs.",
   },
   {
-    slug: "news",
+    slug: "car-updates",
     name: "Car Updates",
     description: "Breaking news from the automotive industry, including new releases, recalls, and industry trends.",
   },
 ];
+
+export function getArticleUrl(article: { category: ArticleCategory; slug: string }): string {
+  return `/${article.category}/${article.slug}`;
+}
 
 export function getCategoryInfo(slug: ArticleCategory): CategoryInfo | undefined {
   return categories.find((cat) => cat.slug === slug);

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Article, formatDate, getCategoryInfo } from "@/types/article";
+import { Article, formatDate, getCategoryInfo, getArticleUrl } from "@/types/article";
 import { getAuthorByName } from "@/data/authors";
 import { cn } from "@/lib/utils";
 
@@ -19,7 +19,7 @@ const ArticleCard = ({ article, featured = false, className, style }: ArticleCar
 
   if (featured) {
     return (
-      <Link to={`/article/${article.slug}`} className={cn("group block", className)} style={style}>
+      <Link to={getArticleUrl(article)} className={cn("group block", className)} style={style}>
         <Card className="overflow-hidden border-0 bg-transparent shadow-none">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
             <div className="relative aspect-[16/10] overflow-hidden rounded-xl lg:aspect-[4/3]">
@@ -68,7 +68,7 @@ const ArticleCard = ({ article, featured = false, className, style }: ArticleCar
   }
 
   return (
-    <Link to={`/article/${article.slug}`} className={cn("group block", className)} style={style}>
+    <Link to={getArticleUrl(article)} className={cn("group block", className)} style={style}>
       <Card className="h-full overflow-hidden transition-shadow hover:shadow-lg">
         <div className="relative aspect-[16/10] overflow-hidden">
           <img
