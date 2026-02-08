@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { getRecentArticles } from "@/data/articles";
-import { formatDate, getCategoryInfo, categories } from "@/types/article";
+import { formatDate, getCategoryInfo, categories, getArticleUrl } from "@/types/article";
 
 const NotFound = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -60,16 +60,16 @@ const NotFound = () => {
                 Home
               </Button>
             </Link>
-            <Link to="/category/car-reviews">
+            <Link to="/car-reviews">
               <Button variant="outline" className="gap-2">
                 <Car className="h-4 w-4" />
                 Car Reviews
               </Button>
             </Link>
-            <Link to="/category/news">
+            <Link to="/car-updates">
               <Button variant="outline" className="gap-2">
                 <Newspaper className="h-4 w-4" />
-                Latest News
+                Car Updates
               </Button>
             </Link>
           </div>
@@ -86,7 +86,7 @@ const NotFound = () => {
               return (
                 <Link
                   key={article.slug}
-                  to={`/article/${article.slug}`}
+                  to={getArticleUrl(article)}
                   className="group overflow-hidden rounded-lg border border-border bg-card transition-shadow hover:shadow-lg"
                 >
                   <div className="aspect-video overflow-hidden">
@@ -121,7 +121,7 @@ const NotFound = () => {
           </h2>
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
-              <Link key={cat.slug} to={`/category/${cat.slug}`}>
+              <Link key={cat.slug} to={`/${cat.slug}`}>
                 <Badge
                   variant="outline"
                   className="cursor-pointer px-4 py-2 text-sm transition-colors hover:bg-primary hover:text-primary-foreground"

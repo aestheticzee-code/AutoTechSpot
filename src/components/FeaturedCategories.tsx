@@ -7,9 +7,9 @@ interface FeaturedCategoriesProps {
   className?: string;
 }
 
-const categoryIcons = {
+const categoryIcons: Record<string, typeof Car> = {
   "car-reviews": Car,
-  "news": Newspaper,
+  "car-updates": Newspaper,
 };
 
 const FeaturedCategories = ({ className }: FeaturedCategoriesProps) => {
@@ -27,7 +27,7 @@ const FeaturedCategories = ({ className }: FeaturedCategoriesProps) => {
             return (
               <Link
                 key={category.slug}
-                to={`/category/${category.slug}`}
+                to={`/${category.slug}`}
                 className="group rounded-xl border border-border bg-background p-6 text-left transition-all hover:border-primary hover:shadow-lg"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary/20">

@@ -28,8 +28,10 @@ const App = () => (
           <ScrollRestoration />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/article/:slug" element={<ArticlePage />} />
-            <Route path="/category/:slug" element={<CategoryPage />} />
+            <Route path="/car-reviews" element={<CategoryPage />} />
+            <Route path="/car-reviews/:slug" element={<ArticlePage />} />
+            <Route path="/car-updates" element={<CategoryPage />} />
+            <Route path="/car-updates/:slug" element={<ArticlePage />} />
             <Route path="/author/:slug" element={<AuthorPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />

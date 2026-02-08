@@ -28,6 +28,7 @@ function sitemapPlugin(): Plugin {
           const imageMatch = block.match(/featuredImage:\s*["']([^"']+)["']/);
           const titleMatch = block.match(/title:\s*["']([^"']+)["']/);
           const altMatch = block.match(/featuredImageAlt:\s*["']([^"']+)["']/);
+          const categoryMatch = block.match(/category:\s*["']([^"']+)["']/);
           
           return {
             slug: slugMatch?.[1] || '',
@@ -36,6 +37,7 @@ function sitemapPlugin(): Plugin {
             featuredImage: imageMatch?.[1],
             title: titleMatch?.[1],
             featuredImageAlt: altMatch?.[1],
+            category: categoryMatch?.[1] || '',
           };
         }).filter(a => a.slug);
         
@@ -70,13 +72,13 @@ function sitemapPlugin(): Plugin {
 
         // Categories
         for (const cat of categories) {
-          urls.push({ loc: `${BASE_URL}/category/${cat.slug}`, lastmod: today, changefreq: 'weekly', priority: 0.8 });
+          urls.push({ loc: `${BASE_URL}/${cat.slug}`, lastmod: today, changefreq: 'weekly', priority: 0.8 });
         }
 
         // Articles with images
         for (const article of articles) {
           const url: SitemapUrl = {
-            loc: `${BASE_URL}/article/${article.slug}`,
+            loc: `${BASE_URL}/${article.category}/${article.slug}`,
             lastmod: article.updatedAt || article.publishedAt,
             changefreq: 'monthly',
             priority: 0.7,

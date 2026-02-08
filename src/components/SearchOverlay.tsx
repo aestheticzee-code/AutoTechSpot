@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { searchArticles } from "@/data/articles";
-import { formatDate, getCategoryInfo } from "@/types/article";
+import { formatDate, getCategoryInfo, getArticleUrl } from "@/types/article";
 import { cn } from "@/lib/utils";
 
 interface SearchOverlayProps {
@@ -91,7 +91,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
                   return (
                     <Link
                       key={article.slug}
-                      to={`/article/${article.slug}`}
+                      to={getArticleUrl(article)}
                       onClick={onClose}
                       className="block rounded-lg p-3 transition-colors hover:bg-muted"
                     >

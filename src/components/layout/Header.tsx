@@ -34,7 +34,7 @@ const Header = ({ onSearchClick }: HeaderProps) => {
           {categories.map((category) => (
             <Link
               key={category.slug}
-              to={`/category/${category.slug}`}
+              to={`/${category.slug}`}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {category.name}
@@ -84,7 +84,7 @@ const Header = ({ onSearchClick }: HeaderProps) => {
           {categories.map((category) => (
             <Link
               key={category.slug}
-              to={`/category/${category.slug}`}
+              to={`/${category.slug}`}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               onClick={() => setMobileMenuOpen(false)}
             >

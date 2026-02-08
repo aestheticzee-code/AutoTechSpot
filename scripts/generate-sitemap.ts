@@ -60,7 +60,7 @@ export async function generateSitemap(): Promise<string> {
   // Category pages
   for (const category of categories) {
     urls.push({
-      loc: `${BASE_URL}/category/${category.slug}`,
+      loc: `${BASE_URL}/${category.slug}`,
       lastmod: today,
       changefreq: 'weekly',
       priority: 0.8,
@@ -70,7 +70,7 @@ export async function generateSitemap(): Promise<string> {
   // Article pages
   for (const article of articles) {
     urls.push({
-      loc: `${BASE_URL}/article/${article.slug}`,
+      loc: `${BASE_URL}/${article.category}/${article.slug}`,
       lastmod: article.updatedAt || article.publishedAt,
       changefreq: 'monthly',
       priority: 0.7,

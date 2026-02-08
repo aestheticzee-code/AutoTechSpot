@@ -10,16 +10,22 @@ import MarkdownRenderer from "@/components/MarkdownRenderer";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import { getArticleBySlug, getRelatedArticles } from "@/data/articles";
 import { getAuthorByName } from "@/data/authors";
-import { formatDate, getCategoryInfo } from "@/types/article";
+import { formatDate, getCategoryInfo, getArticleUrl, ArticleCategory, categories } from "@/types/article";
 import FAQAccordion from "@/components/FAQAccordion";
 import TableOfContents from "@/components/TableOfContents";
 
 const ArticlePage = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { category: categorySlug, slug } = useParams<{ category: string; slug: string }>();
+  
+  // Validate category
+  const validCategorySlugs = categories.map(c => c.slug);
+  const isValidCategory = categorySlug && validCategorySlugs.includes(categorySlug as ArticleCategory);
+  
   const article = slug ? getArticleBySlug(slug) : undefined;
   const relatedArticles = slug ? getRelatedArticles(slug, 3) : [];
 
-  if (!article) {
+  // Show 404 if category is invalid or article not found or category doesn't match
+  if (!isValidCategory || !article || article.category !== categorySlug) {
     return (
       <Layout>
         <div className="container flex min-h-[50vh] flex-col items-center justify-center py-16 text-center">
@@ -40,7 +46,7 @@ const ArticlePage = () => {
 
   const category = getCategoryInfo(article.category);
   const author = getAuthorByName(article.author.name);
-  const articleUrl = `https://autotechspot.com/article/${article.slug}`;
+  const articleUrl = `https://autotechspot.com${getArticleUrl(article)}`;
 
   // Schema.org Article markup for rich snippets
   const schemaMarkup = {
@@ -96,7 +102,7 @@ const ArticlePage = () => {
         "@type": "ListItem",
         position: 2,
         name: category?.name,
-        item: `https://autotechspot.com/category/${article.category}`,
+        item: `https://autotechspot.com/${article.category}`,
       },
       {
         "@type": "ListItem",
@@ -175,7 +181,7 @@ const ArticlePage = () => {
             {/* Article Header */}
             <header>
               <div className="flex flex-wrap items-center gap-3">
-                <Link to={`/category/${article.category}`}>
+                <Link to={`/${article.category}`}>
                   <Badge className="bg-primary hover:bg-primary/90">
                     {category?.name}
                   </Badge>
