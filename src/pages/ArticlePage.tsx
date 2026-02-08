@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, Clock, Calendar, HelpCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -15,7 +15,12 @@ import FAQAccordion from "@/components/FAQAccordion";
 import TableOfContents from "@/components/TableOfContents";
 
 const ArticlePage = () => {
-  const { category: categorySlug, slug } = useParams<{ category: string; slug: string }>();
+  const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
+  
+  // Extract category from the URL path (e.g., /car-reviews/article-slug -> car-reviews)
+  const pathSegments = location.pathname.split('/').filter(Boolean);
+  const categorySlug = pathSegments[0];
   
   // Validate category
   const validCategorySlugs = categories.map(c => c.slug);
