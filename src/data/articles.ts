@@ -171,8 +171,6 @@ For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid o
       },
     ],
   },
-
-
   
 {
     slug: "2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look", 
@@ -348,7 +346,7 @@ As with any upcoming vehicle, buyers are advised to follow official Toyota annou
     {
     slug: "2026-honda-cr-v-hybrid", 
     title: "2026 Honda CR-V Hybrid: Specs, MPG, Price, TrailSport Trim & First Look",
-    excerpt: "Discover the 2026 Honda CR-V Hybrid: full specs, EPA MPG ratings up to 40 combined, starting price around $37,080, new TrailSport trim details, family space, AWD capability, and expert insights for US buyers.",
+    excerpt: " Discover the 2026 Honda CR-V Hybrid: full specs, EPA MPG ratings up to 40 combined, starting price around $37,080, new TrailSport trim details, family space, AWD capability, and expert insights for US buyers.",
     content: `
 
 ## Introduction
@@ -447,10 +445,10 @@ The 2026 Honda CR-V Hybrid serves as a capable compact SUV option, offering effi
       },
       {
         question: "Is the TrailSport trim good for off-roading?",
-        answer: Yes, for light trails with all-terrain tires and AWD, but it's more of a soft-roader than a dedicated off-roader.",
+        answer: "Yes, for light trails with all-terrain tires and AWD, but it's more of a soft-roader than a dedicated off-roader.",
       },
       {
-        question: " What safety features are standard?",
+        question: "What safety features are standard?",
         answer: "Honda Sensing includes adaptive cruise, lane-keeping assist, collision mitigation, and more.",
       },
       {
