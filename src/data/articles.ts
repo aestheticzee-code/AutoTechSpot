@@ -14,7 +14,7 @@ As an automotive enthusiast or potential buyer researching compact hybrid SUVs i
 
 ## What’s New for the 2026 Subaru Crosstrek Hybrid
 
-According to Subaru's official announcements, the 2026 model year introduces notable advancements to the Crosstrek lineup, focusing on hybrid technology tailored for US consumers.
+According to [Subaru's](https://www.subaru.com/vehicles/crosstrek/hybrid/2026.html) official announcements, the 2026 model year introduces notable advancements to the Crosstrek lineup, focusing on hybrid technology tailored for US consumers.
 
 ### End of the plug-in era → new series-parallel hybrid system
 
@@ -69,7 +69,7 @@ EPA estimates indicate 36 mpg in city, highway, and combined driving, representi
 | 2026 Crosstrek 2.5L Gas | 26 / 33 / 29 | ~480 mi |
 | Toyota RAV4 Hybrid | 41 / 38 / 39 | ~580 mi |
 
-According to early reports from Car and Driver, real-world testing yielded about 35 mpg on highways and 31 mpg in mixed use, demonstrating consistent performance across varied scenarios.
+According to early reports from [Car and Driver](https://www.caranddriver.com/subaru/crosstrek-hybrid), real-world testing yielded about 35 mpg on highways and 31 mpg in mixed use, demonstrating consistent performance across varied scenarios.
 
 ## Exterior, Interior & Key Features
 
@@ -112,11 +112,11 @@ Within the compact hybrid SUV category, the 2026 Subaru Crosstrek Hybrid disting
 
 ### vs 2026 Toyota RAV4 Hybrid
 
-The RAV4 Hybrid provides higher estimated fuel economy at 39 mpg combined and greater interior room. However, its AWD relies more on electric assistance, which may differ in feel from the Crosstrek's mechanical system in demanding conditions.
+The [Toyota RAV4 Hybrid](https://autotechspot.com/car-reviews/2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look) provides higher estimated fuel economy at 39 mpg combined and greater interior room. However, its AWD relies more on electric assistance, which may differ in feel from the Crosstrek's mechanical system in demanding conditions.
 
 ### vs 2026 Honda CR-V Hybrid
 
-Offering 37 to 40 mpg combined and a more spacious cabin, the CR-V Hybrid starts at a higher price point of around $37,080. Its AWD, while effective, is not optimized for the same level of off-road engagement as Subaru's setup.
+Offering 37 to 40 mpg combined and a more spacious cabin, the [Honda CR-V Hybrid](https://autotechspot.com/car-reviews/2026-honda-cr-v-hybrid) starts at a higher price point of around $37,080. Its AWD, while effective, is not optimized for the same level of off-road engagement as Subaru's setup.
 
 | Feature | 2026 Crosstrek Hybrid | 2026 Toyota RAV4 Hybrid | 2026 Honda CR-V Hybrid |
 |--------|----------------------|-------------------------|------------------------|
