@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft } from "lucide-react";
 import Layout from "@/components/layout/Layout";
@@ -9,7 +9,8 @@ import { getArticlesByCategory } from "@/data/articles";
 import { getCategoryInfo, ArticleCategory, categories } from "@/types/article";
 
 const CategoryPage = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
+  const slug = location.pathname.split('/').filter(Boolean)[0];
   const category = slug ? getCategoryInfo(slug as ArticleCategory) : undefined;
   const articles = slug ? getArticlesByCategory(slug) : [];
 
