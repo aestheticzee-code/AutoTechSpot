@@ -33,13 +33,13 @@ const HeroSection = () => {
             
             <div className="flex flex-wrap gap-4 pt-2">
               <Button asChild size="lg" className="gap-2">
-                <Link to="/category/car-reviews">
+                <Link to="/car-reviews">
                   Explore Reviews
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="gap-2">
-                <Link to="/category/news">
+                <Link to="/car-updates">
                   <Play className="h-4 w-4" />
                   Latest Updates
                 </Link>
