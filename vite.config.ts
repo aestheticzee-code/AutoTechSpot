@@ -4,10 +4,10 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 
-// Sitemap generator plugin - runs at build time
-function sitemapPlugin(): Plugin {
+// Sitemap & RSS generator plugin - runs at build time
+function sitemapAndRssPlugin(): Plugin {
   return {
-    name: 'generate-sitemap',
+    name: 'generate-sitemap-rss',
     async buildStart() {
       try {
         // Read and parse data files directly (avoiding alias resolution issues)
@@ -29,6 +29,7 @@ function sitemapPlugin(): Plugin {
           const titleMatch = block.match(/title:\s*["']([^"']+)["']/);
           const altMatch = block.match(/featuredImageAlt:\s*["']([^"']+)["']/);
           const categoryMatch = block.match(/category:\s*["']([^"']+)["']/);
+          const excerptMatch = block.match(/excerpt:\s*["']([^"']+)["']/);
           
           return {
             slug: slugMatch?.[1] || '',
@@ -38,6 +39,7 @@ function sitemapPlugin(): Plugin {
             title: titleMatch?.[1],
             featuredImageAlt: altMatch?.[1],
             category: categoryMatch?.[1] || '',
+            excerpt: excerptMatch?.[1],
           };
         }).filter(a => a.slug);
         
@@ -84,7 +86,6 @@ function sitemapPlugin(): Plugin {
             priority: 0.7,
           };
           
-          // Add image if valid URL (not blob: or placeholder)
           if (article.featuredImage && 
               !article.featuredImage.startsWith('blob:') && 
               !article.featuredImage.includes('placeholder')) {
@@ -114,7 +115,7 @@ function sitemapPlugin(): Plugin {
         urls.push({ loc: `${BASE_URL}/terms`, changefreq: 'yearly', priority: 0.3 });
         urls.push({ loc: `${BASE_URL}/disclaimer`, changefreq: 'yearly', priority: 0.3 });
 
-        // Generate XML with image namespace
+        // Generate Sitemap XML
         const generateUrlEntry = (u: SitemapUrl) => {
           let entry = `  <url>
     <loc>${escapeXml(u.loc)}</loc>${u.lastmod ? `\n    <lastmod>${u.lastmod.split('T')[0]}</lastmod>` : ''}
@@ -134,16 +135,60 @@ function sitemapPlugin(): Plugin {
           return entry;
         };
 
-        const xml = `<?xml version="1.0" encoding="UTF-8"?>
+        const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.map(generateUrlEntry).join('\n')}
 </urlset>`;
 
-        fs.writeFileSync(path.resolve(__dirname, 'public/sitemap.xml'), xml, 'utf-8');
+        fs.writeFileSync(path.resolve(__dirname, 'public/sitemap.xml'), sitemapXml, 'utf-8');
         console.log('✅ Sitemap generated successfully');
+
+        // Generate RSS Feed
+        const sortedArticles = [...articles].sort((a, b) => 
+          new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        );
+
+        const rssItems = sortedArticles.map(article => {
+          const articleUrl = `${BASE_URL}/${article.category}/${article.slug}`;
+          const imageUrl = article.featuredImage && !article.featuredImage.startsWith('blob:')
+            ? (article.featuredImage.startsWith('http') ? article.featuredImage : `${BASE_URL}${article.featuredImage}`)
+            : '';
+          const pubDate = new Date(article.publishedAt).toUTCString();
+
+          return `    <item>
+      <title>${escapeXml(article.title || '')}</title>
+      <link>${escapeXml(articleUrl)}</link>
+      <guid isPermaLink="true">${escapeXml(articleUrl)}</guid>
+      <description>${escapeXml(article.excerpt || '')}</description>
+      <pubDate>${pubDate}</pubDate>
+      <category>${escapeXml(article.category)}</category>${imageUrl ? `
+      <enclosure url="${escapeXml(imageUrl)}" type="image/jpeg" length="0" />` : ''}
+    </item>`;
+        }).join('\n');
+
+        const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AutoTechSpot | Car Reviews &amp; Automotive Updates</title>
+    <link>${BASE_URL}</link>
+    <description>Your trusted source for in-depth car reviews, automotive news, and expert insights.</description>
+    <language>en-us</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>${BASE_URL}/favicon.png</url>
+      <title>AutoTechSpot</title>
+      <link>${BASE_URL}</link>
+    </image>
+${rssItems}
+  </channel>
+</rss>`;
+
+        fs.writeFileSync(path.resolve(__dirname, 'public/rss.xml'), rssXml, 'utf-8');
+        console.log('✅ RSS feed generated successfully');
       } catch (error) {
-        console.warn('⚠️ Sitemap generation skipped:', error);
+        console.warn('⚠️ Sitemap/RSS generation skipped:', error);
       }
     },
   };
@@ -161,7 +206,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    mode === "production" && sitemapPlugin(),
+    mode === "production" && sitemapAndRssPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {
