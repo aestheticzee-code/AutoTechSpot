@@ -13,6 +13,14 @@ import { getAuthorByName } from "@/data/authors";
 import { formatDate, getCategoryInfo, getArticleUrl, ArticleCategory, categories } from "@/types/article";
 import FAQAccordion from "@/components/FAQAccordion";
 import TableOfContents from "@/components/TableOfContents";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -132,6 +140,28 @@ const ArticlePage = () => {
     })),
   } : null;
 
+  // Review schema for car-reviews category only
+  const reviewSchema = article.category === "car-reviews" ? {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "Car",
+      name: article.title.replace(/review/i, "").trim(),
+      image: article.featuredImage,
+    },
+    author: {
+      "@type": "Person",
+      name: article.author.name,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "AutoTechSpot",
+    },
+    datePublished: article.publishedAt,
+    description: article.excerpt,
+    name: article.title,
+  } : null;
+
   return (
     <Layout>
       <Helmet>
@@ -153,11 +183,17 @@ const ArticlePage = () => {
         <meta name="twitter:description" content={article.excerpt} />
         <meta name="twitter:image" content={article.featuredImage} />
 
+        {/* Google Discover */}
+        <meta name="robots" content="max-image-preview:large" />
+
         {/* Schema.org */}
         <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         {faqSchema && (
           <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        )}
+        {reviewSchema && (
+          <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
         )}
       </Helmet>
 
@@ -168,20 +204,34 @@ const ArticlePage = () => {
             src={article.featuredImage}
             alt={article.featuredImageAlt}
             className="h-full w-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         </div>
 
         <div className="container">
           <div className="relative -mt-32 rounded-t-2xl bg-background px-6 py-8 md:-mt-40 md:px-12 md:py-12">
-            {/* Back Link */}
-            <Link
-              to="/"
-              className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to articles
-            </Link>
+            {/* Breadcrumb Navigation */}
+            <Breadcrumb className="mb-6">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Home</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to={`/${article.category}`}>{category?.name}</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="line-clamp-1 max-w-[300px]">{article.title}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
 
             {/* Article Header */}
             <header>
