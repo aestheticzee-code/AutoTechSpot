@@ -28,7 +28,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="max-w-lg text-lg text-muted-foreground md:text-xl">
-              Expert reviews, breaking news, and in-depth analysis. Stay ahead with the latest from the automotive world.
+              We share early details, release updates, and honest coverage of future vehicles coming to the U.S. market — so you always know what's coming next.
             </p>
             
             <div className="flex flex-wrap gap-4 pt-2">
