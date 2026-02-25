@@ -11,11 +11,11 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <span className="font-display text-lg font-bold text-primary-foreground">AT</span>
-              </div>
-              <span className="font-display text-xl font-bold">AutoTechSpot</span>
+            <Link to="/" className="flex items-center gap-2.5">
+              <img src="/favicon.png" alt="AutoTechSpot logo" className="h-9 w-9 rounded-lg object-cover" />
+              <span className="font-display text-lg font-bold tracking-tight">
+                Auto<span className="text-cyan-400">Tech</span>Spot
+              </span>
             </Link>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
               Your trusted source for in-depth car reviews, automotive news, and expert insights. 
