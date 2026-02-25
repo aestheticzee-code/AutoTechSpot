@@ -152,6 +152,9 @@ const HeroSection = () => {
             <StatCard key={stat.label} {...stat} delay={400 + i * 150} />
           ))}
         </div>
+        <p className="pt-4 text-center text-sm font-medium text-muted-foreground">
+          Future Cars • Early Previews • Honest Coverage
+        </p>
       </div>
     </section>
   );
