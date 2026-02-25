@@ -44,13 +44,13 @@ const StatCard = ({ value, suffix, label, icon: Icon, delay }: { value: number; 
   return (
     <div
       ref={ref}
-      className="group relative flex flex-1 flex-col items-center gap-3 rounded-2xl border border-primary/10 bg-card/50 px-6 py-8 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 animate-fade-in"
+      className="group relative flex flex-1 flex-col items-center gap-2 rounded-xl border border-primary/10 bg-card/50 px-4 py-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 animate-fade-in"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
-        <Icon className="h-5 w-5 text-primary" />
+      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
+        <Icon className="h-4 w-4 text-primary" />
       </div>
-      <p className="font-display text-4xl font-bold text-primary">
+      <p className="font-display text-2xl font-bold text-primary">
         {count}{suffix}
       </p>
       <p className="text-sm font-medium text-muted-foreground">{label}</p>
