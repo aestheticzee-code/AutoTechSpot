@@ -18,8 +18,7 @@ const Footer = () => {
               </span>
             </Link>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              Your trusted source for in-depth car reviews, automotive news, and expert insights. 
-              Stay updated with the latest from the car world.
+              We share early details, release updates, and honest coverage of future vehicles coming to the U.S. market — so you always know what's coming next.
             </p>
           </div>
 
