@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2.5">
               <img src="/favicon.png" alt="AutoTechSpot logo" className="h-12 w-12 rounded-lg object-cover" />
-              <span className="font-display text-lg font-bold tracking-tight">
+              <span className="font-display text-xl font-bold tracking-tight">
                 Auto<span className="text-cyan-400">Tech</span>Spot
               </span>
             </Link>
