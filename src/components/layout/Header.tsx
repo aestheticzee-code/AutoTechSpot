@@ -18,11 +18,9 @@ const Header = ({ onSearchClick }: HeaderProps) => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5">
           <img src="/favicon.png" alt="AutoTechSpot logo" className="h-9 w-9 rounded-lg object-cover" />
-          <div className="flex flex-col leading-none">
             <span className="font-display text-lg font-bold tracking-tight">
-              Auto<span className="text-cyan-400">Tech</span>Spot
+              Auto<span className="text-cyan-400 tech-glow">Tech</span>Spot
             </span>
-          </div>
         </Link>
 
         {/* Desktop Navigation */}
