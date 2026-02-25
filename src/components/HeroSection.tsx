@@ -61,22 +61,6 @@ const HeroSection = () => {
                 <span>Built for automotive enthusiasts and buyers</span>
               </div>
             </div>
-            
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-4 md:gap-12">
-              <div>
-                <p className="font-display text-3xl font-bold text-primary">30+</p>
-                <p className="text-sm text-muted-foreground">Total Articles</p>
-              </div>
-              <div>
-                <p className="font-display text-3xl font-bold text-primary">1K+</p>
-                <p className="text-sm text-muted-foreground">Monthly Readers</p>
-              </div>
-              <div>
-                <p className="font-display text-3xl font-bold text-primary">5+</p>
-                <p className="text-sm text-muted-foreground">Years Experience</p>
-              </div>
-            </div>
           </div>
           
           {/* Hero Image */}
@@ -103,6 +87,22 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Stats - Centered below grid */}
+        <div className="flex justify-center gap-8 pt-16 md:gap-16">
+          <div className="text-center">
+            <p className="font-display text-3xl font-bold text-primary">30+</p>
+            <p className="text-sm text-muted-foreground">Total Articles</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-3xl font-bold text-primary">1K+</p>
+            <p className="text-sm text-muted-foreground">Monthly Readers</p>
+          </div>
+          <div className="text-center">
+            <p className="font-display text-3xl font-bold text-primary">5+</p>
+            <p className="text-sm text-muted-foreground">Years Experience</p>
           </div>
         </div>
       </div>
