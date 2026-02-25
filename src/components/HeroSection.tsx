@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -49,15 +49,15 @@ const HeroSection = () => {
             {/* Trust Badges */}
             <div className="flex flex-col gap-2.5 pt-6">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="text-primary font-bold">✔</span>
+                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>Coverage focused on upcoming U.S. car releases</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="text-primary font-bold">✔</span>
+                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>Regular updates with accurate information</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="text-primary font-bold">✔</span>
+                <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
                 <span>Built for automotive enthusiasts and buyers</span>
               </div>
             </div>
