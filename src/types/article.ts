@@ -35,7 +35,7 @@ export const categories: CategoryInfo[] = [
   {
     slug: "car-reviews",
     name: "Car Reviews",
-    description: "In-depth reviews of the latest vehicles, from performance sports cars to practical family SUVs.",
+    description: "In-depth reviews of the latest cars, from high-performance sports cars to practical family SUVs and everything in between.",
   },
   {
     slug: "car-updates",
