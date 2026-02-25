@@ -1,6 +1,62 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, CheckCircle } from "lucide-react";
+import { ArrowRight, Play, CheckCircle, FileText, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
+
+const useCountUp = (end: number, duration = 2000) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          const startTime = performance.now();
+          const animate = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return { count, ref };
+};
+
+const stats = [
+  { value: 30, suffix: "+", label: "Total Articles", icon: FileText },
+  { value: 1, suffix: "K+", label: "Monthly Readers", icon: Users },
+  { value: 5, suffix: "+", label: "Years Experience", icon: Award },
+];
+
+const StatCard = ({ value, suffix, label, icon: Icon, delay }: { value: number; suffix: string; label: string; icon: typeof FileText; delay: number }) => {
+  const { count, ref } = useCountUp(value);
+  return (
+    <div
+      ref={ref}
+      className="group relative flex flex-1 flex-col items-center gap-3 rounded-2xl border border-primary/10 bg-card/50 px-6 py-8 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 animate-fade-in"
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
+        <Icon className="h-5 w-5 text-primary" />
+      </div>
+      <p className="font-display text-4xl font-bold text-primary">
+        {count}{suffix}
+      </p>
+      <p className="text-sm font-medium text-muted-foreground">{label}</p>
+    </div>
+  );
+};
 
 const HeroSection = () => {
   return (
@@ -91,19 +147,10 @@ const HeroSection = () => {
         </div>
         
         {/* Stats - Centered below grid */}
-        <div className="flex justify-center gap-8 pt-16 md:gap-16">
-          <div className="text-center">
-            <p className="font-display text-3xl font-bold text-primary">30+</p>
-            <p className="text-sm text-muted-foreground">Total Articles</p>
-          </div>
-          <div className="text-center">
-            <p className="font-display text-3xl font-bold text-primary">1K+</p>
-            <p className="text-sm text-muted-foreground">Monthly Readers</p>
-          </div>
-          <div className="text-center">
-            <p className="font-display text-3xl font-bold text-primary">5+</p>
-            <p className="text-sm text-muted-foreground">Years Experience</p>
-          </div>
+        <div className="grid grid-cols-1 gap-4 pt-16 sm:grid-cols-3 md:gap-6">
+          {stats.map((stat, i) => (
+            <StatCard key={stat.label} {...stat} delay={400 + i * 150} />
+          ))}
         </div>
       </div>
     </section>
