@@ -46,19 +46,19 @@ const HeroSection = () => {
               </Button>
             </div>
             
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-6 md:gap-12">
-              <div>
-                <p className="font-display text-3xl font-bold text-primary">30+</p>
-                <p className="text-sm text-muted-foreground">Total Articles</p>
+            {/* Trust Badges */}
+            <div className="flex flex-col gap-2.5 pt-6">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="text-primary font-bold">✔</span>
+                <span>Coverage focused on upcoming U.S. car releases</span>
               </div>
-              <div>
-                <p className="font-display text-3xl font-bold text-primary">1K+</p>
-                <p className="text-sm text-muted-foreground">Monthly Readers</p>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="text-primary font-bold">✔</span>
+                <span>Regular updates with accurate information</span>
               </div>
-              <div>
-                <p className="font-display text-3xl font-bold text-primary">5+</p>
-                <p className="text-sm text-muted-foreground">Years Experience</p>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="text-primary font-bold">✔</span>
+                <span>Built for automotive enthusiasts and buyers</span>
               </div>
             </div>
           </div>
