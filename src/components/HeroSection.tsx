@@ -21,9 +21,9 @@ const HeroSection = () => {
             </div>
             
             <h1 className="font-display text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-              Discover the World of{" "}
+              Stay Updated on the Cars{" "}
               <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Automotive Excellence
+                Everyone Will Be Talking About!
               </span>
             </h1>
             
