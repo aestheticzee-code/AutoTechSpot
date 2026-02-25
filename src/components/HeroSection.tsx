@@ -147,7 +147,7 @@ const HeroSection = () => {
         </div>
         
         {/* Stats - Centered below grid */}
-        <div className="grid grid-cols-1 gap-4 pt-16 sm:grid-cols-3 md:gap-6">
+        <div className="grid grid-cols-1 gap-3 pt-16 sm:grid-cols-3 md:gap-4">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} {...stat} delay={400 + i * 150} />
           ))}
