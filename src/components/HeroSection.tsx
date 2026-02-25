@@ -152,7 +152,7 @@ const HeroSection = () => {
             <StatCard key={stat.label} {...stat} delay={400 + i * 150} />
           ))}
         </div>
-        <div className="flex items-center justify-center gap-3 pt-4">
+        <div className="flex items-center justify-center gap-3 pt-4 animate-fade-in" style={{ animationDelay: "800ms", animationFillMode: "backwards" }}>
           <span className="h-px w-8 bg-primary/30"></span>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
             Future Cars <span className="text-primary">•</span> Early Previews <span className="text-primary">•</span> Honest Coverage
