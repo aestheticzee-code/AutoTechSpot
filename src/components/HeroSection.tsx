@@ -152,9 +152,13 @@ const HeroSection = () => {
             <StatCard key={stat.label} {...stat} delay={400 + i * 150} />
           ))}
         </div>
-        <p className="pt-4 text-center text-sm font-medium text-muted-foreground">
-          Future Cars • Early Previews • Honest Coverage
-        </p>
+        <div className="flex items-center justify-center gap-3 pt-4">
+          <span className="h-px w-8 bg-primary/30"></span>
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+            Future Cars <span className="text-primary">•</span> Early Previews <span className="text-primary">•</span> Honest Coverage
+          </p>
+          <span className="h-px w-8 bg-primary/30"></span>
+        </div>
       </div>
     </section>
   );
