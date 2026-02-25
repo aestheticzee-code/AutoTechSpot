@@ -84,9 +84,9 @@ const CategoryPage = () => {
       </Helmet>
 
       {/* Category Header */}
-      <div className="border-b border-border bg-surface">
-        <div className="container py-12 md:py-16">
-          <Breadcrumb className="mb-4">
+      <div className="border-b border-border bg-gradient-to-b from-primary/5 to-background">
+        <div className="container py-14 md:py-20">
+          <Breadcrumb className="mb-6 flex justify-center">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -99,26 +99,26 @@ const CategoryPage = () => {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-          <h1 className="font-display text-4xl font-bold md:text-5xl">{category.name}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+          <h1 className="text-center font-display text-4xl font-bold md:text-5xl">{category.name}</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted-foreground">
             {category.description}
           </p>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground/80">
+          <p className="mx-auto mt-3 max-w-3xl text-center text-base text-muted-foreground/80">
             {category.slug === "car-reviews"
               ? "Browse our comprehensive collection of expert car reviews covering everything from performance sedans to family SUVs. Each review includes real-world driving impressions, detailed specs, pricing breakdowns, and honest comparisons to help you make an informed buying decision."
               : "Stay up to date with the latest automotive industry news, upcoming model announcements, recalls, and market trends. Our team delivers timely coverage of everything happening in the car world so you never miss an important update."}
           </p>
 
           {/* Category Navigation */}
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex justify-center gap-4">
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
                 to={`/${cat.slug}`}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-200 ${
                   cat.slug === category.slug
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                    ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
+                    : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
                 }`}
               >
                 {cat.name}
