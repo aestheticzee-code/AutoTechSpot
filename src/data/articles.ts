@@ -93,14 +93,14 @@ Symmetrical All-Wheel Drive, a hallmark of Subaru vehicles, equips the 2026 Cros
 
 ## Pros & Cons (Based on Early Reviews)
 
-Pros:
+**Pros**:
 - Effective hybrid system integration  
 - Standard Symmetrical AWD for versatile handling  
 - Estimated 36 mpg efficiency  
 - Distinctive hybrid-exclusive colors and wheels  
 - Supportive ride quality for routine driving  
 
-Cons:
+**Cons**:
 - Potential price increase compared to gas variants  
 - Audible CVT operation under load  
 - Fuel economy slightly below some competitors  
@@ -269,18 +269,18 @@ However, some reports note potential engine noise under acceleration. The GR Spo
 # Pros and Cons of the 2026 Toyota RAV4
 
  **Pros:**
-* Confirmed fuel efficiency with hybrid MPG ratings
-* Versatile trim options
-* Spacious interior
-* Strong towing capacity
-* Established reliability from Toyota
+- Confirmed fuel efficiency with hybrid MPG ratings
+- Versatile trim options
+- Spacious interior
+- Strong towing capacity
+- Established reliability from Toyota
 
 
 **Cons:**
-* Potential engine noise during heavy acceleration
-* Base trims may use less premium materials
-* Handling could be less dynamic compared to some competitors
-* Reduced cargo space in PHEV models
+- Potential engine noise during heavy acceleration
+- Base trims may use less premium materials
+- Handling could be less dynamic compared to some competitors
+- Reduced cargo space in PHEV models
 
 These points are based on early reviews and official details.
 
@@ -399,17 +399,17 @@ Based on Honda's published figures, the 2026 Honda CR-V Hybrid has a starting MS
 
 ## Pros, Cons, and Real-World Reviews
 
-### Pros
-• Strong EPA-estimated fuel economy paired with a refined hybrid operation for routine use.  
-• Ample interior room and construction quality, as highlighted in evaluations.  
-• Comprehensive safety technologies and established brand reliability.  
-• Adaptable AWD system for handling common US weather patterns.
+**Pros**
+- Strong EPA-estimated fuel economy paired with a refined hybrid operation for routine use.  
+- Ample interior room and construction quality, as highlighted in evaluations.  
+- Comprehensive safety technologies and established brand reliability.  
+- Adaptable AWD system for handling common US weather patterns.
 
-### Cons
-• Entry pricing exceeds that of non-hybrid counterparts.  
-• Acceleration performance is sufficient but not exceptional, with reported 0-60 times of 7.6-8.0 seconds.  
-• The TrailSport's capabilities are geared toward milder off-road scenarios.  
-• Absence of a plug-in hybrid variant limits pure electric driving range.
+**Cons**
+- Entry pricing exceeds that of non-hybrid counterparts.  
+- Acceleration performance is sufficient but not exceptional, with reported 0-60 times of 7.6-8.0 seconds.  
+- The TrailSport's capabilities are geared toward milder off-road scenarios.  
+- Absence of a plug-in hybrid variant limits pure electric driving range.
 
 Evaluations from sources indicate balanced attributes: [Car and Driver]( https://www.caranddriver.com/honda/cr-v-hybrid) awards a 10/10 score, recognizing its composure and inclusion in their 2026 10 Best selections. Edmunds provides a 7.5/10, emphasizing drivability, and MotorTrend an 8.6/10 for practicality.
 
