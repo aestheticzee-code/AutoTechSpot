@@ -9,13 +9,13 @@
 
   <!-- Category Pages -->
   <url>
-    <loc>https://autotechspot.com/category/car-reviews</loc>
+    <loc>https://autotechspot.com/car-reviews</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autotechspot.com/category/news</loc>
-    <changefreq>daily</changefreq>
+    <loc>https://autotechspot.com/car-updates</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
