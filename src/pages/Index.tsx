@@ -21,6 +21,30 @@ const Index = () => {
           content="Explore expert car reviews, detailed comparisons, and the latest automotive news for 2025–2026. AutoTechSpot helps you find the perfect vehicle with unbiased insights and buying guides."
         />
         <link rel="canonical" href="https://autotechspot.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "AutoTechSpot",
+            "url": "https://autotechspot.com",
+            "logo": "https://autotechspot.com/favicon.png",
+            "description": "Expert car reviews, detailed comparisons, and the latest automotive news. Unbiased insights and buying guides to help you find the perfect vehicle.",
+            "sameAs": [],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "myrononix@gmail.com",
+              "contactType": "customer service"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "AutoTechSpot",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://autotechspot.com/favicon.png"
+              }
+            }
+          })}
+        </script>
       </Helmet>
 
       {/* Hero Section */}
