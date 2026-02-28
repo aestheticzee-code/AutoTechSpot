@@ -1,4 +1,5 @@
 import React from "react";
+import DOMPurify from "dompurify";
 import {
   Table,
   TableBody,
@@ -258,7 +259,8 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
         result = result.replace(keywordPattern, '<span class="text-primary font-medium">$&</span>');
       }
 
-      return <span dangerouslySetInnerHTML={{ __html: result }} />;
+      const sanitized = DOMPurify.sanitize(result, { ALLOWED_TAGS: ['span'], ALLOWED_ATTR: ['class'] });
+      return <span dangerouslySetInnerHTML={{ __html: sanitized }} />;
     };
 
     return (
