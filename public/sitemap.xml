@@ -21,14 +21,26 @@
 
   <!-- Article Pages -->
   <url>
-    <loc>https://autotechspot.com/article/2024-ford-mustang-gt-review</loc>
-    <lastmod>2026-01-30</lastmod>
+    <loc>https://autotechspot.com/car-reviews/2026-subaru-crosstrek-hybrid-specs-mpg-price-features-first-look</loc>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://autotechspot.com/article/2026-nissan-frontier-unveiled</loc>
-    <lastmod>2026-01-30</lastmod>
+    <loc>https://autotechspot.com/car-reviews/2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autotechspot.com/car-reviews/2026-honda-cr-v-hybrid</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://autotechspot.com/car-reviews/2026-hyundai-tucson-hybrid</loc>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
