@@ -22,6 +22,7 @@
     }
   ],
   "rewrites": [
+    { "source": "/goods/(.*)", "destination": "/api/goods/$1" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
