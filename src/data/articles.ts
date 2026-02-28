@@ -466,7 +466,7 @@ The 2026 Honda CR-V Hybrid serves as a capable compact SUV option, offering effi
     content: `
 Here's a quick snapshot of key specs and pricing for the 2026 Hyundai Tucson Hybrid:
 
-**Quick Specs Summary (for featured snippets):**
+**Quick Specs Summary**
 
 | Key Spec | Details |
 | :--- | :--- |
@@ -565,8 +565,16 @@ Over five years, expect around $6,195 in maintenance and $894 in repairs for a L
 
 **Pros and Cons of the 2026 Tucson Hybrid**
 
-* **Pros:** Strong value as a best hybrid SUV for 2026; spacious for families; responsive handling; excellent Hyundai hybrid reliability.
-* **Cons:** Real-world MPG tests show 28-35 MPG highway; base trim skips some comforts; trails RAV4 in max efficiency.
+**Pros:**
+  - Strong value as a best hybrid SUV for 2026
+  - Spacious for families
+  - Responsive handling
+  - Excellent Hyundai hybrid reliability
+
+**Cons:**
+  - Real-world MPG tests show 28–35 MPG highway
+  - Base trim skips some comforts
+  - Trails RAV4 in max efficiency
 
 **Expert Reviews and Owner Insights**
 
@@ -590,14 +598,14 @@ Facing the 2026 Toyota RAV4 Hybrid ($31,900 start, up to 39 MPG, 219 hp), [Honda
 For US buyers seeking an AWD hybrid SUV under $35K with strong warranty protection, the Tucson Hybrid represents one of the best value propositions in the segment.
 
 **Buy it if:**
-* You want standard AWD
-* You prioritize warranty coverage
-* You need family-friendly cargo space
+- You want standard AWD
+- You prioritize warranty coverage
+- You need family-friendly cargo space
 
 **Consider rivals if:**
-* Maximum fuel efficiency is your top priority (RAV4 Hybrid)
-* You want the highest resale value
-* You prefer a CVT-based smoother feel
+- Maximum fuel efficiency is your top priority (RAV4 Hybrid)
+- You want the highest resale value
+- You prefer a CVT-based smoother feel
 
 Overall, for balanced performance, pricing, and long-term ownership protection, it remains one of the best hybrid SUVs for 2026.
 
