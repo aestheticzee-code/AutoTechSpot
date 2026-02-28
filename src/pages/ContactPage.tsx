@@ -57,7 +57,7 @@ const ContactPage = () => {
         <title>Contact Us | AutoTechSpot</title>
         <meta
           name="description"
-          content="Get in touch with AutoTechSpot. We'd love to hear from you about car reviews, partnerships, or any questions."
+          content="Have questions about a car review or want to collaborate? Contact the AutoTechSpot team for partnerships, press inquiries, or feedback."
         />
       </Helmet>
 
