@@ -8,7 +8,7 @@ const DisclaimerPage = () => {
         <title>Disclaimer | AutoTechSpot</title>
         <meta
           name="description"
-          content="Read the disclaimer for AutoTechSpot regarding our car reviews, content, and affiliate partnerships."
+          content="Read AutoTechSpot's disclaimer regarding the accuracy of car reviews, automotive news, and affiliate partnerships on our website."
         />
       </Helmet>
 

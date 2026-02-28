@@ -8,7 +8,7 @@ const AboutPage = () => {
         <title>About Us | AutoTechSpot</title>
         <meta
           name="description"
-          content="Learn more about AutoTechSpot - your trusted source for car reviews, automotive news, and expert insights."
+          content="Meet the team behind AutoTechSpot — automotive journalists and industry experts delivering honest, in-depth car reviews and unbiased vehicle comparisons since day one."
         />
       </Helmet>
 

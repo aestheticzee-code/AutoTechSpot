@@ -8,7 +8,7 @@ const PrivacyPage = () => {
         <title>Privacy Policy | AutoTechSpot</title>
         <meta
           name="description"
-          content="Read AutoTechSpot's privacy policy to understand how we collect, use, and protect your personal information."
+          content="Learn how AutoTechSpot collects, uses, and protects your personal data. Read our full privacy policy for details on cookies, analytics, and your rights."
         />
       </Helmet>
 

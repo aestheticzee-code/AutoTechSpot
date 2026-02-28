@@ -8,7 +8,7 @@ const TermsPage = () => {
         <title>Terms of Service | AutoTechSpot</title>
         <meta
           name="description"
-          content="Read AutoTechSpot's terms of service to understand the rules and guidelines for using our website."
+          content="Review AutoTechSpot's terms of service covering site usage, content licensing, and user responsibilities."
         />
       </Helmet>
 

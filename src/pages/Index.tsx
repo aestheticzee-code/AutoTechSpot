@@ -18,7 +18,7 @@ const Index = () => {
         <title>AutoTechSpot | Car Reviews & Automotive News</title>
         <meta
           name="description"
-          content="Your trusted source for in-depth car reviews, automotive news, and expert insights. Stay updated with the latest from the car world."
+          content="Explore expert car reviews, detailed comparisons, and the latest automotive news for 2025–2026. AutoTechSpot helps you find the perfect vehicle with unbiased insights and buying guides."
         />
         <link rel="canonical" href="https://autotechspot.com" />
       </Helmet>
