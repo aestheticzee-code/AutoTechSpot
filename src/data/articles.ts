@@ -801,8 +801,8 @@ In my professional opinion, the 2026 Kia Sportage Hybrid is worth buying—it's 
     featured: false,
     faqs: [
       {
-        question: " What is the MPG of the 2026 Kia Sportage Hybrid?",
-        answer: " The EPA rates the FWD LX at 41 city/44 highway/42 combined mpg, while AWD models achieve 35/36/35. Real-world figures can vary, often around 31-35 mpg combined based on MotorTrend tests.",
+        question: "What is the MPG of the 2026 Kia Sportage Hybrid?",
+        answer: "The EPA rates the FWD LX at 41 city/44 highway/42 combined mpg, while AWD models achieve 35/36/35. Real-world figures can vary, often around 31-35 mpg combined based on MotorTrend tests.",
       },
       {
         question: "How much does the 2026 Sportage Hybrid cost?",
@@ -810,7 +810,7 @@ In my professional opinion, the 2026 Kia Sportage Hybrid is worth buying—it's 
       },
       {
         question: "Is the 2026 Kia Sportage Hybrid reliable?",
-        answer: Backed by a 10-year/100,000-mile powertrain warranty, early reviews from Car and Driver suggest strong build quality and minimal issues.",
+        answer: "Backed by a 10-year/100,000-mile powertrain warranty, early reviews from Car and Driver suggest strong build quality and minimal issues.",
       },
       {
         question: "How does the 2026 Kia Sportage Hybrid handle in snow?",
