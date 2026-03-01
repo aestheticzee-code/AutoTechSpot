@@ -745,6 +745,7 @@ In city stop-and-go, the hybrid shines: silent EV mode creeps through traffic ef
 - Loaded tech at fair prices
 - Stellar warranty
 - Efficient in mixed driving
+
 **Cons:** 
 - Real MPG slips with AWD
 - Steering lacks feel
