@@ -1,33 +1,17 @@
 
 
-## Fix SEO Audit Issues
+## Build Failure: TypeScript Version Conflict
 
-### 1. Shorten meta description to ≤160 characters
-**Files: `index.html` and `src/pages/Index.tsx`**
+The Vercel deployment is failing at `npm install` due to conflicting TypeScript version requirements:
 
-Current (185 chars):
-> "Explore expert car reviews, detailed comparisons, and the latest automotive news for 2025–2026. AutoTechSpot helps you find the perfect vehicle with unbiased insights and buying guides."
+- **Root project** requires `typescript@^5.8.3`
+- **`typescript-eslint@8.38.0`** requires `typescript@>=4.8.4 <5.9.0`
+- **`@vercel/node@5.6.9`** pulls in `typescript@5.9.3` (which is outside the `<5.9.0` range)
 
-New (≤155 chars):
-> "Expert car reviews, detailed comparisons, and the latest automotive news for 2025–2026. Find your perfect vehicle with unbiased insights and buying guides."
+### Fix
 
-### 2. Align keywords between title and description
-The title uses "Car Reviews" and "Automotive News" — the shortened description above now shares these keywords ("car reviews", "automotive news"), resolving the "no common keywords" warning.
+1. **Pin TypeScript to `5.8.3`** in `package.json` (change `"^5.8.3"` to `"5.8.3"`) to prevent npm from resolving to 5.9.x
+2. **Add an `.npmrc` file** with `legacy-peer-deps=true` so Vercel's `npm install` tolerates the peer dependency conflict from `@vercel/node`
 
-### 3. Add an `<h1>` tag to `index.html`
-Add a visually hidden `<h1>` in the HTML body (or `<noscript>` block) so non-JS crawlers see a heading:
-```html
-<noscript>
-  <h1>AutoTechSpot — Expert Car Reviews & Automotive News</h1>
-  <p>Explore expert car reviews, comparisons, and the latest automotive news for 2025–2026.</p>
-</noscript>
-```
-This also addresses the "no H2" and "no content" warnings for non-JS audit tools.
-
-### Summary of real vs. false-positive issues
-| Issue | Status |
-|-------|--------|
-| Meta description too long | **Real** — will fix |
-| No common keywords | **Real** — will fix |
-| No H1/H2/links/content | **False positive** (CSR) — mitigated with `<noscript>` fallback |
+This two-part fix ensures the install succeeds without changing any tooling behavior.
 
