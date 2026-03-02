@@ -13,6 +13,7 @@ import ContactPage from "./pages/ContactPage";
 import DisclaimerPage from "./pages/DisclaimerPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
+import GonePage from "./pages/GonePage";
 import NotFound from "./pages/NotFound";
 import ScrollRestoration from "./components/ScrollRestoration";
 
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/gone" element={<GonePage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

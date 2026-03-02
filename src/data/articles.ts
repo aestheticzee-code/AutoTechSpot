@@ -12,7 +12,7 @@ export const articles: Article[] = [
 As an automotive enthusiast or potential buyer researching compact hybrid SUVs in the US market, you might be seeking a vehicle that combines fuel efficiency with reliable all-weather performance for everyday commutes and weekend adventures. The 2026 Subaru Crosstrek Hybrid aims to meet those needs by integrating Subaru's renowned Symmetrical All-Wheel Drive with an advanced hybrid powertrain, offering an estimated 36 mpg combined, 194 total horsepower, and a starting price around $33,995. Based on official Subaru announcements and early expert previews, this model represents a thoughtful update for drivers prioritizing practicality and capability. In this detailed overview, we'll explore the key specifications, features, and comparisons to help inform your decision.
 
 
-## What’s New for the 2026 Subaru Crosstrek Hybrid
+## What's New for the 2026 Subaru Crosstrek Hybrid
 
 According to [Subaru's](https://www.subaru.com/vehicles/crosstrek/hybrid/2026.html) official announcements, the 2026 model year introduces notable advancements to the Crosstrek lineup, focusing on hybrid technology tailored for US consumers.
 
@@ -179,7 +179,7 @@ For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid o
     content: `
 The 2026 Toyota RAV4 represents the sixth generation of this compact SUV, which has maintained popularity in the US market for its blend of efficiency, versatility, and reliability. Toyota is expected to place a strong emphasis on hybrid and plug-in hybrid (PHEV) powertrains for the 2026 RAV4 lineup, based on early announcements and industry reports. According to early availability reports, hybrid variants are beginning to reach US dealerships, while plug-in hybrid (PHEV) models are expected to arrive later in 2026.
 
-This redesign includes updated styling, enhanced technology, and improved safety features, aimed at meeting the needs of US buyers seeking fuel-efficient vehicles for daily commuting and family use. Starting manufacturer’s suggested retail prices (MSRP) for hybrid trims begin at $31,900, excluding destination fees of approximately $1,395. While specific PHEV pricing remains pending, industry reports suggest it could range from the mid- $40,000s to low $50,000s.
+This redesign includes updated styling, enhanced technology, and improved safety features, aimed at meeting the needs of US buyers seeking fuel-efficient vehicles for daily commuting and family use. Starting manufacturer's suggested retail prices (MSRP) for hybrid trims begin at $31,900, excluding destination fees of approximately $1,395. While specific PHEV pricing remains pending, industry reports suggest it could range from the mid- $40,000s to low $50,000s.
 
 This overview draws from official Toyota announcements and reviews from sources like Car and Driver and Edmunds to provide a balanced look at the 2026 Toyota RAV4 specs, trims, and features. Specifications and pricing may change before the full lineup's official launch.
 
@@ -1019,7 +1019,7 @@ The 2026 Mazda CX-50 Hybrid redefines compact hybrid crossovers by prioritizing 
       },
       {
         question: "How well does the 2026 Mazda CX-50 Hybrid perform in snowy conditions?",
-        answer: “Excellent with e-AWD and Trail mode; TFLcar tests confirm grip in mountains.",
+        answer: "Excellent with e-AWD and Trail mode. TFLcar tests confirm grip in mountains.",
       },
       {
         question: "What exterior color options are available for the 2026 Mazda CX-50 Hybrid?",
