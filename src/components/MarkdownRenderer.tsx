@@ -103,13 +103,15 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
         // Check for links [text](url)
         const linkMatch = remaining.match(/^\[([^\]]+)\]\(([^)]+)\)/);
         if (linkMatch) {
+          const href = linkMatch[2];
+          const isExternal = /^https?:\/\//i.test(href) && !href.includes("autotechspot.com");
           result.push(
             <a
               key={`${keyPrefix}link-${partIndex++}`}
-              href={linkMatch[2]}
+              href={href}
               className="text-primary underline underline-offset-2 hover:text-primary/80"
-              target={linkMatch[2].startsWith("http") ? "_blank" : undefined}
-              rel={linkMatch[2].startsWith("http") ? "noopener noreferrer" : undefined}
+              target="_blank"
+              rel={isExternal ? "dofollow noopener noreferrer" : "noopener noreferrer"}
             >
               {linkMatch[1]}
             </a>
