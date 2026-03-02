@@ -971,15 +971,21 @@ In US hybrid crossover comparisons, the CX-50 stands out for handling, per Car a
 
 ### vs. 2026 Toyota RAV4 Hybrid
 
-Mazda's sharper dynamics and upscale cabin vs. Toyota's superior MPG (40 combined) and space. **Micro-Verdict:** Mazda for fun; Toyota for max efficiency. See 2026 [Toyota RAV4 Hybrid Review]( https://autotechspot.com/car-reviews/2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look).
+Mazda's sharper dynamics and upscale cabin vs. Toyota's superior MPG (40 combined) and space.
+
+**Micro-Verdict:** Mazda for fun; Toyota for max efficiency. See 2026 [Toyota RAV4 Hybrid Review]( https://autotechspot.com/car-reviews/2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look).
 
 ### vs. 2026 Honda CR-V Hybrid
 
-Mazda edges in MPG (38 vs. 37) and premium feel; Honda wins on roominess. **Micro-Verdict:** Mazda for refinement; Honda for utility. Check [Honda CR-V Hybrid]( https://autotechspot.com/car-reviews/2026-honda-cr-v-hybrid).
+Mazda edges in MPG (38 vs. 37) and premium feel; Honda wins on roominess.
+
+**Micro-Verdict:** Mazda for refinement; Honda for utility. Check [Honda CR-V Hybrid]( https://autotechspot.com/car-reviews/2026-honda-cr-v-hybrid).
 
 ### vs. 2026 Hyundai Tucson Hybrid
 
-Mazda's luxury vibe vs. Hyundai's 226 hp and warranty. **Micro-Verdict:** Mazda for handling; Hyundai for power. Explore [Hyundai Tucson Hybrid]( https://autotechspot.com/car-reviews/2026-hyundai-tucson-hybrid) Comparison.
+Mazda's luxury vibe vs. Hyundai's 226 hp and warranty.
+
+**Micro-Verdict:** Mazda for handling; Hyundai for power. Explore [Hyundai Tucson Hybrid]( https://autotechspot.com/car-reviews/2026-hyundai-tucson-hybrid) Comparison.
 
 | Model | Starting Price | MPG (Combined) | HP | Ground Clearance |
 | :--- | :--- | :--- | :--- | :--- |
