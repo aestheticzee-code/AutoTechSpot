@@ -819,8 +819,7 @@ In my professional opinion, the 2026 Kia Sportage Hybrid is worth buying—it's 
       },
     ],
   },
-
-
+    
     {
     slug: "2026-mazda-cx-50-hybrid", 
     title: "2026 Mazda CX-50 Hybrid – 219 HP, 38 MPG, Fun-to-Drive Hybrid & Premium Interior",
