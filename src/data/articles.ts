@@ -1006,7 +1006,7 @@ The 2026 Mazda CX-50 Hybrid redefines compact hybrid crossovers by prioritizing 
       name: "Alexander Sterling",
       avatar: "/images/alexander-sterling.png",
     },
-    publishedAt: "2026-03-01",
+    publishedAt: "2026-03-02",
     readingTime: 12,
     featured: false,
     faqs: [
