@@ -925,17 +925,17 @@ Synthesizing expert and user feedback, the CX-50 Hybrid excels in efficiency and
 
 ### Key Pros
 
-*   **Outstanding Fuel Efficiency and Eco Benefits:** 38 mpg combined reduces CO2 emissions by ~20% vs. gas models, with $500+ annual savings, as per EPA and Consumer Reports data.
-*   **Premium Handling and Ride Quality:** Sharper than RAV4 Hybrid, with upscale interior; Car and Driver lauds its "enjoyable to drive" nature.
-*   **Value-Packed Features:** Standard e-AWD and safety tech provide bang-for-buck in the premium hybrid crossover space.
-*   **Reliable Hybrid Integration:** Smooth operation, with short EV mode for city efficiency.
-*   **Adventure Versatility:** Ground clearance and modes suit light trails, as tested in WSJ's review.
+- **Outstanding Fuel Efficiency and Eco Benefits:** 38 mpg combined reduces CO2 emissions by ~20% vs. gas models, with $500+ annual savings, as per EPA and Consumer Reports data.
+- **Premium Handling and Ride Quality:** Sharper than RAV4 Hybrid, with upscale interior; Car and Driver lauds its "enjoyable to drive" nature.
+- **Value-Packed Features:** Standard e-AWD and safety tech provide bang-for-buck in the premium hybrid crossover space.
+- **Reliable Hybrid Integration:** Smooth operation, with short EV mode for city efficiency.
+- **Adventure Versatility:** Ground clearance and modes suit light trails, as tested in WSJ's review.
 
 ### Notable Cons
 
-*   **Limited Cargo Capacity:** Battery reduces space vs. rivals, a common hybrid SUV drawback noted in The Drive.
-*   **CVT Noise Under Load:** Droning during acceleration, though mitigated compared to older systems.
-*   **Moderate Power Delivery:** Adequate but not thrilling; Reddit users critique lane assist vs. Honda's.
+- **Limited Cargo Capacity:** Battery reduces space vs. rivals, a common hybrid SUV drawback noted in The Drive.
+- **CVT Noise Under Load:** Droning during acceleration, though mitigated compared to older systems.
+- **Moderate Power Delivery:** Adequate but not thrilling; Reddit users critique lane assist vs. Honda's.
 
 High scores (e.g., 90/100 Consumer Reports) affirm its strengths.
 
@@ -949,21 +949,21 @@ Yes, emphatically—for efficiency-minded drivers in 2026's hybrid SUV market. W
 
 ### Who Should Buy the 2026 Mazda CX-50 Hybrid?
 
-Perfect for:
+**Perfect for**:
 
-*   **Commuters** in traffic-heavy cities like Atlanta, valuing 38 mpg and smooth hybrids.
-*   **Outdoor enthusiasts** in the Rockies, using e-AWD for trails.
-*   **Families** prioritizing safety and premium interiors in reliable compact crossovers.
-*   **Eco-buyers** seeking sustainable SUVs with low emissions.
+- Commuters in traffic-heavy cities like Atlanta, valuing 38 mpg and smooth hybrids.
+- Outdoor enthusiasts in the Rockies, using e-AWD for trails.
+- Families prioritizing safety and premium interiors in reliable compact crossovers.
+- Eco-buyers seeking sustainable SUVs with low emissions.
 
 ### Who Should Skip the 2026 Mazda CX-50 Hybrid?
 
-Avoid if:
+**Avoid if**:
 
-*   **Cargo is paramount**—opt for larger hybrids.
-*   **You crave turbo power**; non-hybrids offer more zip.
-*   **Budget under $30k**; entry-level rivals exist.
-*   **Heavy towing needed** (1,500 lbs max).
+- Cargo is paramount—opt for larger hybrids.
+- You crave turbo power; non-hybrids offer more zip.
+- Budget under $30k; entry-level rivals exist.
+- Heavy towing needed (1,500 lbs max).
 
 ## 2026 Mazda CX-50 Hybrid vs. Competitors
 
@@ -971,7 +971,7 @@ In US hybrid crossover comparisons, the CX-50 stands out for handling, per Car a
 
 ### vs. 2026 Toyota RAV4 Hybrid
 
-Mazda's sharper dynamics and upscale cabin vs. Toyota's superior MPG (40 combined) and space. **Micro-Verdict:** Mazda for fun; Toyota for max efficiency. See 2026 {Toyota RAV4 Hybrid Review]( https://autotechspot.com/car-reviews/2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look).
+Mazda's sharper dynamics and upscale cabin vs. Toyota's superior MPG (40 combined) and space. **Micro-Verdict:** Mazda for fun; Toyota for max efficiency. See 2026 [Toyota RAV4 Hybrid Review]( https://autotechspot.com/car-reviews/2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look).
 
 ### vs. 2026 Honda CR-V Hybrid
 
