@@ -1,6 +1,10 @@
 {
   "redirects": [
     {
+      "source": "/goods/:path*",
+      "statusCode": 410
+    },
+    {
       "source": "/article/2026-subaru-crosstrek-hybrid-specs-mpg-price-features-first-look",
       "destination": "/car-reviews/2026-subaru-crosstrek-hybrid-specs-mpg-price-features-first-look",
       "statusCode": 301
@@ -22,7 +26,6 @@
     }
   ],
   "rewrites": [
-    { "source": "/goods/(.*)", "destination": "/api/goods/$1" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
