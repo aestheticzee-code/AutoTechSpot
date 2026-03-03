@@ -94,6 +94,7 @@ The 2026 model once again earned [IIHS Top Safety Pick+ honors]( https://www.iih
 Based on Subaru’s AWD engineering philosophy, the full-time mechanical system gives the Forester Hybrid a planted, secure feel that on-demand rivals simply can’t match — especially in real-world winter conditions I’ve experienced in the Northeast.
 
 **Pros**  
+
 • Unbeatable traction in snow, rain, and light off-road  
 
 • Exceptional visibility and spacious family cabin  
@@ -105,6 +106,7 @@ Based on Subaru’s AWD engineering philosophy, the full-time mechanical system 
 • Standard advanced safety on every trim  
 
 **Cons**  
+
 • Acceleration is adequate rather than brisk  
 
 • MPG trails on-demand AWD competitors  
