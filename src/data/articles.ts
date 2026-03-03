@@ -153,7 +153,7 @@ After testing dozens of hybrid crossovers, I can confidently say the 2026 Subaru
     },
     publishedAt: "2026-03-03",
     readingTime: 8,
-    featured: false,
+    featured: true,
     faqs: [
       {
         question: "What is the real-world MPG of the 2026 Forester Hybrid?",
@@ -323,19 +323,19 @@ For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid o
     },
     publishedAt: "2026-02-06",
     readingTime: 8,
-    featured: true,
+    featured: false,
     faqs: [
       {
         question: "What is the MPG of the 2026 Subaru Crosstrek Hybrid?",
         answer: " The 2026 Crosstrek Hybrid achieves EPA-estimated 36 mpg city, 36 highway, and 36 combined, with real-world tests showing around 31 to 35 mpg.",
       },
       {
-        question: " Does the 2026 Subaru Crosstrek Hybrid have AWD?",
-        answer: " Yes, Symmetrical All-Wheel Drive is standard, with X-Mode for enhanced off-road traction.",
+        question: "Does the 2026 Subaru Crosstrek Hybrid have AWD?",
+        answer: "Yes, Symmetrical All-Wheel Drive is standard, with X-Mode for enhanced off-road traction.",
       },
       {
-        question: " How much does the 2026 Crosstrek Hybrid cost?",
-        answer: " Starting MSRP is $33,995 for the Sport Hybrid and $34,995 for the Limited Hybrid, excluding the $1,450 destination fee.",
+        question: "How much does the 2026 Crosstrek Hybrid cost?",
+        answer: "Starting MSRP is $33,995 for the Sport Hybrid and $34,995 for the Limited Hybrid, excluding the $1,450 destination fee.",
       },
       {
         question: " When will the 2026 Subaru Crosstrek Hybrid be available?",
@@ -343,7 +343,7 @@ For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid o
       },
       {
         question: "Is the 2026 Subaru Crosstrek Hybrid a plug-in hybrid? ",
-        answer: " No, it is a non-plug-in series-parallel hybrid, relying on regenerative braking for charging.",
+        answer: "No, it is a non-plug-in series-parallel hybrid, relying on regenerative braking for charging.",
       },
     ],
   },
@@ -351,7 +351,7 @@ For US buyers evaluating compact hybrid SUVs, the 2026 Subaru Crosstrek Hybrid o
 {
     slug: "2026-toyota-rav4-full-redesign-hybrid-specs-price-release-date-first-look", 
     title: "2026 Toyota RAV4: Full Redesign, Hybrid Specs, Price, Release Date & First Look",
-    excerpt: " Discover the 2026 Toyota RAV4 redesign: all-hybrid lineup, estimated specs, starting price from $31,900, PHEV options, MPG ratings, trims, and expected release timeline for the US market.",
+    excerpt: "Discover the 2026 Toyota RAV4 redesign: all-hybrid lineup, estimated specs, starting price from $31,900, PHEV options, MPG ratings, trims, and expected release timeline for the US market.",
     content: `
 The 2026 Toyota RAV4 represents the sixth generation of this compact SUV, which has maintained popularity in the US market for its blend of efficiency, versatility, and reliability. Toyota is expected to place a strong emphasis on hybrid and plug-in hybrid (PHEV) powertrains for the 2026 RAV4 lineup, based on early announcements and industry reports. According to early availability reports, hybrid variants are beginning to reach US dealerships, while plug-in hybrid (PHEV) models are expected to arrive later in 2026.
 
