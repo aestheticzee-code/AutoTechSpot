@@ -11,7 +11,7 @@ export const articles: Article[] = [
     
 ### Quick Verdict
 
-- **Overall Rating: 8.5/10**  
+- **Overall Rating:** 8.5/10
 
 - **Best For:** Growing families who need true all-weather capability, class-leading visibility, and hybrid efficiency without sacrificing Subaru toughness.  
 
