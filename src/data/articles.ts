@@ -183,7 +183,6 @@ After testing dozens of hybrid crossovers, I can confidently say the 2026 Subaru
     title: "2026 Subaru Crosstrek Hybrid: Specs, MPG, Price, Features & First Look",
     excerpt: "Explore the 2026 Subaru Crosstrek Hybrid: EPA 36 mpg combined, starting at $33,995, standard Symmetrical AWD, 194 hp hybrid powertrain, 8.7\" ground clearance, and real-world review insights. Full US specs, trims, features, and comparison vs RAV4 Hybrid.",
     content: `
-# 2026 Subaru Crosstrek Hybrid: Specs, MPG, Price, Features & First Look
 
 As an automotive enthusiast or potential buyer researching compact hybrid SUVs in the US market, you might be seeking a vehicle that combines fuel efficiency with reliable all-weather performance for everyday commutes and weekend adventures. The 2026 Subaru Crosstrek Hybrid aims to meet those needs by integrating Subaru's renowned Symmetrical All-Wheel Drive with an advanced hybrid powertrain, offering an estimated 36 mpg combined, 194 total horsepower, and a starting price around $33,995. Based on official Subaru announcements and early expert previews, this model represents a thoughtful update for drivers prioritizing practicality and capability. In this detailed overview, we'll explore the key specifications, features, and comparisons to help inform your decision.
 
