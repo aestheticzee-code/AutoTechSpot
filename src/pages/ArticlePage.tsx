@@ -91,7 +91,6 @@ const ArticlePage = () => {
         url: "https://autotechspot.com/favicon.png",
         width: 512,
         height: 512,
-        height: 60,
       },
     },
     datePublished: article.publishedAt.includes('T') ? article.publishedAt : `${article.publishedAt}T00:00:00Z`,
