@@ -80,7 +80,7 @@ const ArticlePage = () => {
     author: {
       "@type": "Person",
       name: article.author.name,
-      image: article.author.avatar,
+      image: article.author.avatar.startsWith('http') ? article.author.avatar : `https://autotechspot.com${article.author.avatar}`,
       url: author ? `https://autotechspot.com/author/${author.slug}` : undefined,
     },
     publisher: {
@@ -88,9 +88,9 @@ const ArticlePage = () => {
       name: "AutoTechSpot",
       logo: {
         "@type": "ImageObject",
-        url: "https://autotechspot.com/logo.png",
-        width: 200,
-        height: 60,
+        url: "https://autotechspot.com/favicon.png",
+        width: 512,
+        height: 512,
       },
     },
     datePublished: article.publishedAt.includes('T') ? article.publishedAt : `${article.publishedAt}T00:00:00Z`,
@@ -146,7 +146,7 @@ const ArticlePage = () => {
     "@type": "Review",
     itemReviewed: {
       "@type": "Car",
-      name: article.title.replace(/review/i, "").trim(),
+      name: article.title.replace(/\s*[:–—|]\s*review\b.*$/i, "").replace(/\breview\s*[:–—|]?\s*/i, "").trim() || article.title,
       image: article.featuredImage,
     },
     author: {
