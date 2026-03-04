@@ -1,29 +1,95 @@
 
 
-## Two Issues to Fix
+# JSON-LD Structured Data Audit Report
 
-### 1. Vercel Deployment Failure (`vercel.json`)
-The error message says: *"redirects[0] missing required property 'destination'"*
+## 1. Article Schema — ⚠️ PASS with issues
 
-Vercel's `redirects` only support status codes 301, 302, 307, 308 — **not 410**. The `/goods/:path*` entry with `statusCode: 410` is invalid. 
+| Check | Result | Detail |
+|-------|--------|--------|
+| `@type` | ✅ PASS | Uses `"Article"` |
+| `headline` | ✅ PASS | Uses `article.title`, matches the H1 |
+| `author.name` | ✅ PASS | Consistently "Alexander Sterling" across all articles |
+| `author.url` | ✅ PASS | Links to `/author/alexander-sterling` |
+| `datePublished` | ✅ PASS | Present, with ISO 8601 timezone fallback |
+| `dateModified` | ✅ PASS | Falls back to `publishedAt` if no `updatedAt` |
+| `mainEntityOfPage` | ✅ PASS | Correctly defined with `@id` = canonical URL |
+| `image` | ⚠️ WARN | Hardcoded `width: 1200, height: 630` — these may not match actual image dimensions. Acceptable but not ideal |
+| `author.image` | ❌ FAIL | Uses **relative path** `/images/alexander-sterling.png` — must be absolute URL for schema validators |
+| `publisher.logo.url` | ❌ FAIL | Points to `https://autotechspot.com/logo.png` — this file does **not exist** in `public/`. Will fail validation |
 
-**Fix**: Move the `/goods/:path*` rule out of `redirects` and handle it via Vercel's `rewrites` combined with a small custom 410 page, OR simply use `headers` to return a 410. The simplest valid approach: rewrite `/goods/*` to a static `/gone.html` page that returns informational content, and set the status via Vercel's `headers` config. 
+## 2. FAQ Schema — ✅ PASS
 
-Actually the cleanest approach: Remove the 410 redirect entry and add it as a **rewrite** to a static `/410.html` page placed in `public/`, combined with a custom header returning 410 status. However, Vercel `headers` can't override HTTP status codes.
+| Check | Result | Detail |
+|-------|--------|--------|
+| `@type` | ✅ PASS | `"FAQPage"` |
+| Questions match visible text | ✅ PASS | Generated directly from `article.faqs` array, same data renders both schema and UI |
+| No duplicates | ✅ PASS | Only one FAQPage schema injected, conditionally |
+| Valid JSON | ✅ PASS | `JSON.stringify` ensures valid output |
 
-**Simplest working approach**: Use Vercel Edge Middleware or accept that a pure static 410 isn't possible without serverless functions. The pragmatic fix is to change the 410 to a **301 redirect** to a `/gone` page that displays a "This page no longer exists" message, or simply remove the rule if the `/goods/` paths no longer receive traffic.
+## 3. Organization / Publisher Schema — ❌ FAIL
 
-**Recommended**: Redirect `/goods/*` with a 301 to a simple `/gone` route that shows a "page removed" message — or just remove the entry entirely if these URLs aren't indexed anymore.
+| Check | Result | Detail |
+|-------|--------|--------|
+| Publisher name | ✅ PASS | "AutoTechSpot" |
+| Logo URL valid | ❌ FAIL | `https://autotechspot.com/logo.png` does not exist |
+| Standalone Organization schema | ❌ FAIL | **No Organization schema exists anywhere** — not in `index.html`, not injected via Helmet. The memory/docs claim it exists but it doesn't |
+| `sameAs` links | ⚠️ N/A | None defined |
 
-### 2. Build Error in `articles.ts` (line 1022)
-The line contains `answer: "Excellent with e-AWD and Trail mode; TFLcar tests confirm grip in mountains."` — the TypeScript compiler reports an invalid character. This is likely an invisible Unicode character (zero-width space, smart quote, or similar) embedded in the text. 
+## 4. Breadcrumb Schema — ✅ PASS
 
-**Fix**: Re-type the affected string on line 1022 to ensure only standard ASCII characters are present.
+| Check | Result | Detail |
+|-------|--------|--------|
+| `@type` BreadcrumbList | ✅ PASS | Correctly defined |
+| Hierarchy | ✅ PASS | Home → Category → Article (3 levels) |
+| Absolute URLs | ✅ PASS | All use `https://autotechspot.com/...` |
 
-### Changes
+## 5. Technical Validation — ⚠️ PASS with issues
+
+| Check | Result | Detail |
+|-------|--------|--------|
+| No duplicate Article schema | ⚠️ WARN | For `car-reviews` articles, both an `Article` AND a `Review` schema are injected. The `Review` schema duplicates `author`, `publisher`, `datePublished`, and `description`. Google may flag conflicting signals |
+| Schema conflicts | ⚠️ WARN | `Review` schema's `itemReviewed.name` uses `article.title.replace(/review/i, "").trim()` — a naive regex that may produce awkward names (e.g., "2026 Subaru Forester Hybrid : Specs, MPG...") |
+| Valid JSON | ✅ PASS | All schemas use `JSON.stringify` |
+
+---
+
+## Summary of Required Fixes
+
+### Fix 1: Author image — use absolute URL
+**File:** `src/pages/ArticlePage.tsx` line 83
+
+```js
+// Before
+image: article.author.avatar,
+// After
+image: `https://autotechspot.com${article.author.avatar}`,
+```
+
+### Fix 2: Publisher logo — use existing favicon
+**File:** `src/pages/ArticlePage.tsx` lines 91-92 (and line 158 in Review schema)
+
+```js
+// Before
+url: "https://autotechspot.com/logo.png",
+// After  
+url: "https://autotechspot.com/favicon.png",
+```
+
+### Fix 3: Add standalone Organization schema to `index.html`
+Add a `<script type="application/ld+json">` block with Organization schema including `name`, `url`, `logo`, and `contactPoint`.
+
+### Fix 4: Clean up Review schema for car-reviews
+The Review schema's `itemReviewed.name` regex is fragile. Replace with a dedicated field or improve the stripping logic. Also consider merging author/publisher into the Article schema via `@graph` to avoid duplication.
+
+### Fix 5: Add WebSite schema with SearchAction (recommendation)
+Not required but strongly recommended for sitelinks search box in Google results.
+
+---
+
+## Changes Summary
+
 | File | Change |
 |------|--------|
-| `vercel.json` | Remove the invalid 410 redirect entry (or convert to 301 pointing to `/gone`) |
-| `src/data/articles.ts` | Re-write line 1022 to eliminate invisible characters |
-| `src/pages/GonePage.tsx` | *(Optional)* Create a simple "page removed" page if we redirect `/goods/*` |
+| `src/pages/ArticlePage.tsx` | Fix author image to absolute URL, fix logo URL to `favicon.png`, improve Review schema `itemReviewed.name` |
+| `index.html` | Add Organization JSON-LD schema block |
 
