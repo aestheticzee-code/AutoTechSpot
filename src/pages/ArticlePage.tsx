@@ -88,8 +88,9 @@ const ArticlePage = () => {
       name: "AutoTechSpot",
       logo: {
         "@type": "ImageObject",
-        url: "https://autotechspot.com/logo.png",
-        width: 200,
+        url: "https://autotechspot.com/favicon.png",
+        width: 512,
+        height: 512,
         height: 60,
       },
     },
