@@ -157,7 +157,7 @@ const ArticlePage = () => {
       "@type": "Organization",
       name: "AutoTechSpot",
     },
-    datePublished: article.publishedAt,
+    datePublished: article.publishedAt.includes('T') ? article.publishedAt : `${article.publishedAt}T00:00:00Z`,
     description: article.excerpt,
     name: article.title,
   } : null;
