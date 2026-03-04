@@ -80,7 +80,7 @@ const ArticlePage = () => {
     author: {
       "@type": "Person",
       name: article.author.name,
-      image: article.author.avatar,
+      image: article.author.avatar.startsWith('http') ? article.author.avatar : `https://autotechspot.com${article.author.avatar}`,
       url: author ? `https://autotechspot.com/author/${author.slug}` : undefined,
     },
     publisher: {
