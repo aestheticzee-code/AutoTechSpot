@@ -147,7 +147,7 @@ const ArticlePage = () => {
     "@type": "Review",
     itemReviewed: {
       "@type": "Car",
-      name: article.title.replace(/review/i, "").trim(),
+      name: article.title.replace(/\s*[:–—|]\s*review\b.*$/i, "").replace(/\breview\s*[:–—|]?\s*/i, "").trim() || article.title,
       image: article.featuredImage,
     },
     author: {
