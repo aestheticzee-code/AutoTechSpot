@@ -116,7 +116,9 @@ Kia’s strong safety engineering has earned top marks from IIHS and NHTSA in re
 Beyond the low sticker price, the 2026 Kia Niro Hybrid keeps long-term costs down—especially on fuel.
 
 **Estimated annual fuel cost (EPA, 15,000 miles/year, current national average gas prices): ** $850–$900
+
 **Average hybrid SUV in the class:** ~$1,300–$1,800  
+
 **Savings:** ~$400–$900 per year compared to typical competitors  
 
 Over five years, that adds up to $2,000–$4,500 in fuel savings alone versus non-hybrids or less-efficient hybrids. [Edmunds]( https://www.edmunds.com/kia/niro/2026/cost-to-own/) 5-year cost to own estimate for the 2026 Kia Niro Hybrid
