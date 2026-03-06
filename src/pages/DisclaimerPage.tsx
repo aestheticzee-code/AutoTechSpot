@@ -8,8 +8,8 @@ const DisclaimerPage = () => {
         <title>Disclaimer | AutoTechSpot</title>
         <meta
           name="description"
-          content="Read AutoTechSpot's disclaimer regarding the accuracy of car reviews, automotive news, and affiliate partnerships on our website."
-        />
+          content="Read AutoTechSpot's disclaimer regarding the accuracy of car reviews, automotive news, and affiliate partnerships on our website." />
+        
       </Helmet>
 
       <div className="container py-12 md:py-16">
@@ -97,8 +97,8 @@ const DisclaimerPage = () => {
               </h2>
               <p className="mt-3">
                 If you have any questions about this Disclaimer, please contact us at{" "}
-                <a href="mailto:contact@autotechspot.com" className="text-primary hover:underline">
-                  contact@autotechspot.com
+                <a className="text-primary hover:underline" href="mailto:\u200Bmyrononix@gmail.com ">
+                  ​myrononix@gmail.com 
                 </a>
                 .
               </p>
@@ -106,8 +106,8 @@ const DisclaimerPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default DisclaimerPage;
