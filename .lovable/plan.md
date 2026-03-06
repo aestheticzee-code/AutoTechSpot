@@ -1,29 +1,63 @@
 
 
-## Two Issues to Fix
+# SEO Improvements to Help Articles Get Indexed
 
-### 1. Vercel Deployment Failure (`vercel.json`)
-The error message says: *"redirects[0] missing required property 'destination'"*
+After auditing the full codebase, here are the actionable improvements grouped by impact:
 
-Vercel's `redirects` only support status codes 301, 302, 307, 308 — **not 410**. The `/goods/:path*` entry with `statusCode: 410` is invalid. 
+---
 
-**Fix**: Move the `/goods/:path*` rule out of `redirects` and handle it via Vercel's `rewrites` combined with a small custom 410 page, OR simply use `headers` to return a 410. The simplest valid approach: rewrite `/goods/*` to a static `/gone.html` page that returns informational content, and set the status via Vercel's `headers` config. 
+## High Impact
 
-Actually the cleanest approach: Remove the 410 redirect entry and add it as a **rewrite** to a static `/410.html` page placed in `public/`, combined with a custom header returning 410 status. However, Vercel `headers` can't override HTTP status codes.
+### 1. Remove duplicate Organization schema from Index.tsx
+The Organization schema now lives in `index.html` (added in the previous fix), but `Index.tsx` still injects a second one via React Helmet (lines 24-47). Google may flag conflicting or duplicate schemas.
 
-**Simplest working approach**: Use Vercel Edge Middleware or accept that a pure static 410 isn't possible without serverless functions. The pragmatic fix is to change the 410 to a **301 redirect** to a `/gone` page that displays a "This page no longer exists" message, or simply remove the rule if the `/goods/` paths no longer receive traffic.
+**File:** `src/pages/Index.tsx` — Remove the entire `<script type="application/ld+json">` block containing the Organization schema from the Helmet.
 
-**Recommended**: Redirect `/goods/*` with a 301 to a simple `/gone` route that shows a "page removed" message — or just remove the entry entirely if these URLs aren't indexed anymore.
+### 2. Fix Author page Person schema — use absolute image URL
+`AuthorPage.tsx` line 48 uses `author.avatar` (relative path like `/images/alexander-sterling.png`). Same bug we fixed on ArticlePage.
 
-### 2. Build Error in `articles.ts` (line 1022)
-The line contains `answer: "Excellent with e-AWD and Trail mode; TFLcar tests confirm grip in mountains."` — the TypeScript compiler reports an invalid character. This is likely an invisible Unicode character (zero-width space, smart quote, or similar) embedded in the text. 
+**File:** `src/pages/AuthorPage.tsx` — Prefix with `https://autotechspot.com` if it's a relative path.
 
-**Fix**: Re-type the affected string on line 1022 to ensure only standard ASCII characters are present.
+### 3. Add `<noscript>` content with internal links to `index.html`
+The current `<noscript>` block only has a heading and paragraph. Since this is a CSR app, adding actual internal links to key pages in `<noscript>` helps crawlers that don't execute JS discover articles directly.
 
-### Changes
+**File:** `index.html` — Expand the `<noscript>` block to include links to category pages and recent articles.
+
+### 4. Update sitemap.xml with all current articles
+The static `sitemap.xml` only has 4 articles but there appear to be more (the Nissan Rogue PHEV, Kia models, etc. based on image files). Need to regenerate or manually add missing entries.
+
+**File:** `public/sitemap.xml` — Run the sitemap generator script or manually add missing article URLs.
+
+---
+
+## Medium Impact
+
+### 5. Add `CollectionPage` schema to category pages
+Category pages (`CategoryPage.tsx`) have no structured data beyond basic meta tags. Adding an `ItemList` or `CollectionPage` schema helps Google understand the page's purpose and may generate rich results.
+
+**File:** `src/pages/CategoryPage.tsx` — Add `ItemList` JSON-LD with each article as a `ListItem`.
+
+### 6. Add missing redirects to `vercel.json`
+Only 2 old `/article/` paths have 301 redirects. If there are more articles that previously lived under `/article/[slug]`, those need redirects too (e.g., Honda CR-V, Hyundai Tucson, Nissan Rogue).
+
+**File:** `vercel.json` — Add 301 redirects for any remaining old `/article/` URLs.
+
+### 7. Add `noindex` to the 404 page
+The `NotFound` component doesn't have `<meta name="robots" content="noindex">`. If crawlers hit invalid URLs, Google may waste crawl budget on soft 404s.
+
+**File:** `src/pages/NotFound.tsx` — Add `<Helmet>` with `noindex, nofollow`.
+
+---
+
+## Summary of Changes
+
 | File | Change |
 |------|--------|
-| `vercel.json` | Remove the invalid 410 redirect entry (or convert to 301 pointing to `/gone`) |
-| `src/data/articles.ts` | Re-write line 1022 to eliminate invisible characters |
-| `src/pages/GonePage.tsx` | *(Optional)* Create a simple "page removed" page if we redirect `/goods/*` |
+| `src/pages/Index.tsx` | Remove duplicate Organization JSON-LD schema |
+| `src/pages/AuthorPage.tsx` | Fix Person schema `image` to use absolute URL |
+| `index.html` | Expand `<noscript>` block with internal links to categories and articles |
+| `public/sitemap.xml` | Add missing article URLs (Nissan Rogue PHEV, Kia Sportage, etc.) |
+| `src/pages/CategoryPage.tsx` | Add `ItemList` JSON-LD structured data |
+| `vercel.json` | Add 301 redirects for remaining old `/article/` paths |
+| `src/pages/NotFound.tsx` | Add `noindex` meta via Helmet |
 
