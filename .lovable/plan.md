@@ -1,53 +1,29 @@
 
 
-# "Crawled – Currently Not Indexed" Fix
+## Two Issues to Fix
 
-The screenshot shows 52 pages flagged in Google Search Console. Most are legacy `/goods/` spam URLs, plus one legitimate article URL (`/car-reviews/2026-subaru-forester-hybrid-review`).
+### 1. Vercel Deployment Failure (`vercel.json`)
+The error message says: *"redirects[0] missing required property 'destination'"*
 
-## Root Cause
+Vercel's `redirects` only support status codes 301, 302, 307, 308 — **not 410**. The `/goods/:path*` entry with `statusCode: 410` is invalid. 
 
-1. **`/goods/` URLs**: The `Disallow: /goods/` rule only applies to the wildcard `User-agent: *` block — **not to Googlebot**, which has its own block with just `Allow: /`. Googlebot ignores the `*` block when a specific `Googlebot` block exists. So Google is still crawling `/goods/` URLs.
+**Fix**: Move the `/goods/:path*` rule out of `redirects` and handle it via Vercel's `rewrites` combined with a small custom 410 page, OR simply use `headers` to return a 410. The simplest valid approach: rewrite `/goods/*` to a static `/gone.html` page that returns informational content, and set the status via Vercel's `headers` config. 
 
-2. **Legitimate article**: The Forester article is "crawled but not indexed" — this is a content/authority issue, not a technical one. No code fix needed for this.
+Actually the cleanest approach: Remove the 410 redirect entry and add it as a **rewrite** to a static `/410.html` page placed in `public/`, combined with a custom header returning 410 status. However, Vercel `headers` can't override HTTP status codes.
 
-## Changes
+**Simplest working approach**: Use Vercel Edge Middleware or accept that a pure static 410 isn't possible without serverless functions. The pragmatic fix is to change the 410 to a **301 redirect** to a `/gone` page that displays a "This page no longer exists" message, or simply remove the rule if the `/goods/` paths no longer receive traffic.
 
-### 1. `public/robots.txt` — Block `/goods/` for all bots consistently
+**Recommended**: Redirect `/goods/*` with a 301 to a simple `/gone` route that shows a "page removed" message — or just remove the entry entirely if these URLs aren't indexed anymore.
 
-Add `Disallow: /goods/` to the Googlebot and Bingbot blocks so they actually respect it:
+### 2. Build Error in `articles.ts` (line 1022)
+The line contains `answer: "Excellent with e-AWD and Trail mode; TFLcar tests confirm grip in mountains."` — the TypeScript compiler reports an invalid character. This is likely an invisible Unicode character (zero-width space, smart quote, or similar) embedded in the text. 
 
-```
-User-agent: Googlebot
-Allow: /
-Disallow: /goods/
-Disallow: /gone
+**Fix**: Re-type the affected string on line 1022 to ensure only standard ASCII characters are present.
 
-User-agent: Bingbot
-Allow: /
-Disallow: /goods/
-Disallow: /gone
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
-Allow: /
-Disallow: /goods/
-Disallow: /gone
-
-Sitemap: https://autotechspot.com/sitemap.xml
-```
-
-Also disallow `/gone` since that page has `noindex` and shouldn't be crawled either.
-
-### 2. No other file changes needed
-
-The 301 redirect and `noindex` on `/gone` are already correct. The core issue is just the robots.txt bot-specific block oversight.
-
+### Changes
 | File | Change |
 |------|--------|
-| `public/robots.txt` | Add `Disallow: /goods/` and `Disallow: /gone` to Googlebot and Bingbot blocks |
+| `vercel.json` | Remove the invalid 410 redirect entry (or convert to 301 pointing to `/gone`) |
+| `src/data/articles.ts` | Re-write line 1022 to eliminate invisible characters |
+| `src/pages/GonePage.tsx` | *(Optional)* Create a simple "page removed" page if we redirect `/goods/*` |
 
