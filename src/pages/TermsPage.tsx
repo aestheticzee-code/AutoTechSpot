@@ -8,8 +8,8 @@ const TermsPage = () => {
         <title>Terms of Service | AutoTechSpot</title>
         <meta
           name="description"
-          content="Review AutoTechSpot's terms of service covering site usage, content licensing, and user responsibilities."
-        />
+          content="Review AutoTechSpot's terms of service covering site usage, content licensing, and user responsibilities." />
+        
       </Helmet>
 
       <div className="container py-12 md:py-16">
@@ -143,8 +143,8 @@ const TermsPage = () => {
               </h2>
               <p className="mt-3">
                 If you have any questions about these Terms of Service, please contact us at{" "}
-                <a href="mailto:contact@autotechspot.com" className="text-primary hover:underline">
-                  contact@autotechspot.com
+                <a className="text-primary hover:underline" href="mailto:myrononix@gmail.com ">
+                  ​myrononix@gmail.com 
                 </a>
                 .
               </p>
@@ -152,8 +152,8 @@ const TermsPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default TermsPage;
