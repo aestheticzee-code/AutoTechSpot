@@ -7,7 +7,7 @@ export const articles: Article[] = [
     title: "2026 Nissan Rogue PHEV – 38 Miles Electric, 420 Total Range, 7-Seater Family SUV",
     excerpt: "Discover the all-new 2026 Nissan Rogue Plug-in Hybrid – 38-mile EV range, 7 seats, AWD, and $45,990 starting MSRP. Full specs, pricing, real-world MPG, and family-friendly PHEV comparison.",
     content: `
-# 2026 Nissan Rogue PHEV – 38 Miles Electric, 420 Total Range, 7-Seater Family SUV
+# 2026 Nissan Rogue Plug-in Hybrid: Specs, Electric Range, Price, Features & First Look
 
 Are you a busy family shopper hunting for a plug-in hybrid SUV that finally delivers real EV range without sacrificing third-row seating or weekend road-trip capability? The 2026 Nissan Rogue Plug-in Hybrid is built exactly for you. This new AWD hybrid SUV gives you up to 38 miles of pure electric driving for your daily commute, a total driving range of 420 miles when you need to go farther, and genuine seven-passenger seating — all starting at just $45,990. 
 
@@ -21,7 +21,7 @@ In this in-depth guide — updated for March 2026 with official data straight fr
 
 Nissan waited until 2026 to bring a true plug-in hybrid to the Rogue lineup in America — and the wait was worth it. This isn’t just a gas Rogue with a battery added. It’s a completely new powertrain that shares its DNA with the proven Mitsubishi Outlander PHEV but wears fresh Rogue styling, updated LED headlights, and a more upscale interior.
 
-Key upgrades for 2026 include:
+**Key upgrades for 2026 include:**
 - A 20 kWh lithium-ion battery pack
 - Dual electric motors delivering standard all-wheel drive
 - Seven-passenger seating with a usable third row
