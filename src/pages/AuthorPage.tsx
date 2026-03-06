@@ -45,7 +45,7 @@ const AuthorPage = () => {
     "@type": "Person",
     name: author.name,
     url: authorUrl,
-    image: author.avatar,
+    image: author.avatar.startsWith("http") ? author.avatar : `https://autotechspot.com${author.avatar}`,
     jobTitle: author.role,
     description: author.bio,
     worksFor: {

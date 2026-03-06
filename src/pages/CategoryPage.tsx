@@ -81,6 +81,22 @@ const CategoryPage = () => {
             ],
           })}
         </script>
+        {articles.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              name: category.name,
+              numberOfItems: articles.length,
+              itemListElement: articles.map((article, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                url: `https://autotechspot.com/${article.category}/${article.slug}`,
+                name: article.title,
+              })),
+            })}
+          </script>
+        )}
       </Helmet>
 
       {/* Category Header */}

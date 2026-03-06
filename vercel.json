@@ -24,6 +24,46 @@
       "source": "/category/news",
       "destination": "/car-updates",
       "statusCode": 301
+    },
+    {
+      "source": "/article/2026-honda-cr-v-hybrid",
+      "destination": "/car-reviews/2026-honda-cr-v-hybrid",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2026-hyundai-tucson-hybrid",
+      "destination": "/car-reviews/2026-hyundai-tucson-hybrid",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2026-kia-sportage-hybrid",
+      "destination": "/car-reviews/2026-kia-sportage-hybrid",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2026-kia-niro-hybrid",
+      "destination": "/car-reviews/2026-kia-niro-hybrid",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2026-toyota-corolla-cross-hybrid",
+      "destination": "/car-reviews/2026-toyota-corolla-cross-hybrid",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2026-subaru-forester-hybrid-review",
+      "destination": "/car-reviews/2026-subaru-forester-hybrid-review",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2026-nissan-rogue-plug-in-hybrid",
+      "destination": "/car-reviews/2026-nissan-rogue-plug-in-hybrid",
+      "statusCode": 301
+    },
+    {
+      "source": "/article/2026-mazda-cx-50-hybrid",
+      "destination": "/car-reviews/2026-mazda-cx-50-hybrid",
+      "statusCode": 301
     }
   ],
   "rewrites": [
