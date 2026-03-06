@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Search, Home, Car, Newspaper } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Input } from "@/components/ui/input";
@@ -22,6 +23,10 @@ const NotFound = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Page Not Found | AutoTechSpot</title>
+      </Helmet>
       <div className="container mx-auto px-4 py-16">
         {/* Main 404 Section */}
         <div className="mx-auto max-w-2xl text-center">
