@@ -8,8 +8,8 @@ const PrivacyPage = () => {
         <title>Privacy Policy | AutoTechSpot</title>
         <meta
           name="description"
-          content="Learn how AutoTechSpot collects, uses, and protects your personal data. Read our full privacy policy for details on cookies, analytics, and your rights."
-        />
+          content="Learn how AutoTechSpot collects, uses, and protects your personal data. Read our full privacy policy for details on cookies, analytics, and your rights." />
+        
       </Helmet>
 
       <div className="container py-12 md:py-16">
@@ -131,8 +131,8 @@ const PrivacyPage = () => {
               </h2>
               <p className="mt-3">
                 If you have any questions about this Privacy Policy, please contact us at{" "}
-                <a href="mailto:contact@autotechspot.com" className="text-primary hover:underline">
-                  contact@autotechspot.com
+                <a className="text-primary hover:underline" href="mailto:myrononix@gmail.com ">
+                  ​myrononix@gmail.com 
                 </a>
                 .
               </p>
@@ -140,8 +140,8 @@ const PrivacyPage = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default PrivacyPage;
