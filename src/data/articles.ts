@@ -156,7 +156,7 @@ The 2026 Hyundai Santa Fe Hybrid delivers exactly what today’s American famili
 Ready to experience it for yourself? Visit HyundaiUSA.com to build and price your perfect 2026 Santa Fe Hybrid, then head to your local dealer for a test drive. With current inventory and attractive financing offers available right now, there’s never been a better time to bring home this efficient family hauler.
 
 
-> **Note:**All specifications, pricing, and MPG figures sourced directly from HyundaiUSA.com (March 2026), EPA.gov and CarandDriver.com road tests rankings. This article was researched and written by our automotive team using official data and hands-on insights to ensure accuracy and helpfulness for U.S. buyers.
+> **Note:** All specifications, pricing, and MPG figures sourced directly from HyundaiUSA.com (March 2026), EPA.gov and CarandDriver.com road tests rankings. This article was researched and written by our automotive team using official data and hands-on insights to ensure accuracy and helpfulness for U.S. buyers.
 
 
     `,
