@@ -152,7 +152,7 @@ Ready to experience it for yourself? Visit HyundaiUSA.com to build and price you
       name: "Alexander Sterling",
       avatar: "/images/alexander-sterling.png",
     },
-    publishedAt: "2026-03-06",
+    publishedAt: "2026-03-08",
     readingTime: 8,
     featured: false,
     faqs: [
