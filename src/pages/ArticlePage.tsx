@@ -309,6 +309,9 @@ const ArticlePage = () => {
                 {article.faqs && article.faqs.length > 0 && (
                   <FAQAccordion faqs={article.faqs} />
                 )}
+
+                {/* Author Box */}
+                {author && <AuthorBox author={author} />}
               </div>
 
               {/* Sidebar */}
