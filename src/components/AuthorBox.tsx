@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 const WIDGET_ID = "c1af6a44-3d65-478f-81be-5da74a4173da";
-const SCRIPT_SRC = `https://sdqvxhrztzmagfkmdcvf.supabase.co/functions/v1/embed-script?id=${WIDGET_ID}&style=inline&italic_bio=1&social_labels=1&padding=8&accent=%238b5cf6`;
+const SCRIPT_SRC = `https://sdqvxhrztzmagfkmdcvf.supabase.co/functions/v1/embed-script?id=${WIDGET_ID}&style=card&italic_bio=1&social_labels=1&padding=20&accent=%238b5cf6`;
 
 const AuthorBox = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -9,19 +9,16 @@ const AuthorBox = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Create the widget container div
     const widgetDiv = document.createElement("div");
     widgetDiv.id = `authorwidget-${WIDGET_ID}`;
     containerRef.current.appendChild(widgetDiv);
 
-    // Load the embed script
     const script = document.createElement("script");
     script.src = SCRIPT_SRC;
     script.async = true;
     script.defer = true;
     containerRef.current.appendChild(script);
 
-    // Add JSON-LD schema
     const jsonLd = document.createElement("script");
     jsonLd.type = "application/ld+json";
     jsonLd.setAttribute("data-aw-jsonld", WIDGET_ID);
@@ -37,7 +34,6 @@ const AuthorBox = () => {
     document.head.appendChild(jsonLd);
 
     return () => {
-      // Cleanup
       if (containerRef.current) {
         containerRef.current.innerHTML = "";
       }
