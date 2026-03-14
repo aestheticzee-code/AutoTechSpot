@@ -154,11 +154,11 @@ Resale value remains excellent—often retaining 60–65% after five years (per 
 ## Expert Verdict / Final Scorecard
 
 **Overall Rating: 9.5/10** (Car and Driver Editors’ Choice)  
-• Interior Space & Practicality: 10/10  
-• Hybrid SUV Efficiency & MPG: 9/10  
-• Performance & Towing: 8.5/10 (MAX) / 7/10 (standard)  
-• Value & Reliability: 9.5/10  
-• Technology & Safety: 9/10  
+- Interior Space & Practicality: 10/10  
+- Hybrid SUV Efficiency & MPG: 9/10  
+- Performance & Towing: 8.5/10 (MAX) / 7/10 (standard)  
+- Value & Reliability: 9.5/10  
+- Technology & Safety: 9/10  
 
 This 2026 Toyota Grand Highlander Hybrid earns top marks for families who want 3-row family SUV practicality without sacrificing efficiency or peace of mind.
 
@@ -179,7 +179,7 @@ Ready to experience it yourself? Visit your local Toyota dealer for a test drive
 - Reliability and ownership insights: Consumer Reports, Kelley Blue Book  
 
 
-> **Note:**All specifications, pricing, and MPG figures sourced directly from Toyota.com (March 2026), EPA.gov and CarandDriver.com road tests rankings. This article was researched and written by our automotive team using official data and hands-on insights to ensure accuracy and helpfulness for U.S. buyers.
+> **Note:** All specifications, pricing, and MPG figures sourced directly from Toyota.com (March 2026), EPA.gov and CarandDriver.com road tests rankings. This article was researched and written by our automotive team using official data and hands-on insights to ensure accuracy and helpfulness for U.S. buyers.
     `,
     featuredImage: "/images/2026-toyota-grand-highlander-hybrid.webp",
     featuredImageAlt: "2026 Toyota Grand Highlander Hybrid Nightshade edition dramatically lit in a premium Toyota showroom at night",
