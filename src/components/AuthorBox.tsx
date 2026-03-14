@@ -1,81 +1,51 @@
-import { Link } from "react-router-dom";
-import { Author } from "@/types/author";
-import { Badge } from "@/components/ui/badge";
-import { Twitter, Linkedin, BadgeCheck } from "lucide-react";
+import { useEffect, useRef } from "react";
 
-interface AuthorBoxProps {
-  author: Author;
-}
+const WIDGET_ID = "c1af6a44-3d65-478f-81be-5da74a4173da";
+const SCRIPT_SRC = `https://sdqvxhrztzmagfkmdcvf.supabase.co/functions/v1/embed-script?id=${WIDGET_ID}&style=inline&italic_bio=1&social_labels=1&padding=8&accent=%238b5cf6`;
 
-const AuthorBox = ({ author }: AuthorBoxProps) => {
-  return (
-    <div className="mt-10 rounded-xl border border-border bg-card p-6">
-      <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-        About the Author
-      </p>
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-        <Link to={`/author/${author.slug}`} className="shrink-0">
-          <img
-            src={author.avatar}
-            alt={author.name}
-            className="h-16 w-16 rounded-full object-cover"
-          />
-        </Link>
-        <div className="min-w-0">
-          <div className="flex items-center gap-1.5">
-            <Link
-              to={`/author/${author.slug}`}
-              className="font-display text-lg font-bold hover:text-primary transition-colors"
-            >
-              {author.name}
-            </Link>
-            <BadgeCheck className="h-5 w-5 shrink-0 text-blue-500" />
-          </div>
-          <p className="text-sm text-muted-foreground">{author.role}</p>
-          <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-            {author.bio}
-          </p>
-          <div className="mt-3 flex items-center gap-3">
-            {author.expertise.length > 0 && (
-              <div className="flex flex-wrap gap-1.5">
-                {author.expertise.map((skill) => (
-                  <Badge key={skill} variant="secondary" className="text-xs">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            )}
-            {author.socialLinks && (
-              <div className="flex items-center gap-2 ml-auto">
-                {author.socialLinks.twitter && (
-                  <a
-                    href={author.socialLinks.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${author.name} on Twitter`}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Twitter className="h-4 w-4" />
-                  </a>
-                )}
-                {author.socialLinks.linkedin && (
-                  <a
-                    href={author.socialLinks.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${author.name} on LinkedIn`}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+const AuthorBox = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    // Create the widget container div
+    const widgetDiv = document.createElement("div");
+    widgetDiv.id = `authorwidget-${WIDGET_ID}`;
+    containerRef.current.appendChild(widgetDiv);
+
+    // Load the embed script
+    const script = document.createElement("script");
+    script.src = SCRIPT_SRC;
+    script.async = true;
+    script.defer = true;
+    containerRef.current.appendChild(script);
+
+    // Add JSON-LD schema
+    const jsonLd = document.createElement("script");
+    jsonLd.type = "application/ld+json";
+    jsonLd.setAttribute("data-aw-jsonld", WIDGET_ID);
+    jsonLd.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Alexander Sterling",
+      jobTitle: "Automotive Journalist & Editor",
+      image: "https://sdqvxhrztzmagfkmdcvf.supabase.co/storage/v1/object/public/author-avatars/02daf8cb-cc38-4826-8692-b6a4be15a8b6/1773487150397.webp",
+      description: "Alexander Sterling is a seasoned automotive journalist and editor with over five years of experience. He delivers expert car reviews, industry analysis, and cutting-edge automotive news, blending technical precision with compelling storytelling for enthusiasts and car buyers alike.",
+      sameAs: ["https://Alexandersterling"],
+    });
+    document.head.appendChild(jsonLd);
+
+    return () => {
+      // Cleanup
+      if (containerRef.current) {
+        containerRef.current.innerHTML = "";
+      }
+      jsonLd.remove();
+    };
+  }, []);
+
+  return <div ref={containerRef} className="mt-10" />;
 };
 
 export default AuthorBox;
