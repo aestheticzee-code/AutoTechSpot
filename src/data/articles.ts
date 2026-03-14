@@ -8,24 +8,6 @@ export const articles: Article[] = [
     excerpt: "The 2026 Hyundai Palisade Hybrid delivers 329 hp, up to 34 MPG combined, a 619-mile range, and premium 3-row luxury starting at $44,160. Full real-world driving impressions, ownership costs, and expert review for families who want efficiency without compromise.",
     content: `
 
-## Quick Specs Overview
-• **Starting MSRP**: $44,160 (Blue SEL FWD)  
-
-• **Powertrain**: 2.5L turbo hybrid – 329 hp / 339 lb-ft
-
-• **EPA MPG (best)**: 34 combined (FWD Blue models)  
-
-• **Maximum Range**: 619 miles  
-
-• **Seating & Cargo**: 7–8 passengers, up to 86.7 cu ft cargo  
-
-• **Towing Capacity**: 4,000 lbs  
-
-• **Key Tech**: Dual 12.3-inch panoramic displays standard  
-
-• **Warranty**: 10 years / 100,000 miles powertrain  
-
-
 ## Introduction
 
 Choosing a three-row SUV often forces tough trade-offs: powerful V6 engines that guzzle gas or efficient hybrids that feel underpowered and basic. The 2026 Hyundai Palisade Hybrid eliminates that dilemma entirely.
@@ -34,11 +16,21 @@ This all-new second-generation flagship combines 329 horsepower, class-leading f
 
 In this in-depth review, we cover everything US buyers need — from official specs and EPA ratings to real-world driving feel, long-term ownership costs, reliability, and how it stacks up against rivals. All information reflects the latest data as of March 2026.
 
+### Quick Specs Overview
 
-These numbers position the 2026 Palisade Hybrid as one of the most capable and efficient three-row SUVs available today.
+| Specification              | Details                                      |
+|----------------------------|----------------------------------------------|
+| **Starting MSRP**          | $44,160 (Blue SEL FWD)                       |
+| **Powertrain**             | 2.5L turbo hybrid – 329 hp / 339 lb-ft       |
+| **EPA MPG (best)**         | 34 combined (FWD Blue models)                |
+| **Maximum Range**          | 619 miles                                    |
+| **Seating & Cargo**        | 7–8 passengers, up to 86.7 cu ft cargo       |
+| **Towing Capacity**        | 4,000 lbs                                    |
+| **Key Tech**               | Dual 12.3-inch panoramic displays standard   |
+| **Warranty**               | 10 years / 100,000 miles powertrain          |
 
 
-For buyers considering a smaller option in the Hyundai family, check our detailed 2026 [Hyundai Santa Fe Hybrid](https://autotechspot.com/car-reviews/2026-hyundai-santa-fe-hybrid) review or [Hyundai Tucson Hybrid](https://autotechspot.com/car-reviews/2026-hyundai-tucson-hybrid) MPG guide.
+These numbers position the 2026 Palisade Hybrid as one of the most capable and efficient three-row SUVs available today. For buyers considering a smaller option in the Hyundai family, check our detailed 2026 [Hyundai Santa Fe Hybrid](https://autotechspot.com/car-reviews/2026-hyundai-santa-fe-hybrid) review or [Hyundai Tucson Hybrid](https://autotechspot.com/car-reviews/2026-hyundai-tucson-hybrid) MPG guide.
 
 ## What’s New for the 2026 Hyundai Palisade Hybrid
 
