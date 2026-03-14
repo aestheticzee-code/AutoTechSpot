@@ -13,6 +13,7 @@ import { getAuthorByName } from "@/data/authors";
 import { formatDate, getCategoryInfo, getArticleUrl, ArticleCategory, categories } from "@/types/article";
 import FAQAccordion from "@/components/FAQAccordion";
 import TableOfContents from "@/components/TableOfContents";
+import AuthorBox from "@/components/AuthorBox";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -308,6 +309,9 @@ const ArticlePage = () => {
                 {article.faqs && article.faqs.length > 0 && (
                   <FAQAccordion faqs={article.faqs} />
                 )}
+
+                {/* Author Box */}
+                {author && <AuthorBox author={author} />}
               </div>
 
               {/* Sidebar */}

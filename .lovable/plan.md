@@ -1,27 +1,29 @@
 
 
-# Add Author Box to Every Article
+## Two Issues to Fix
 
-## What
-A reusable `AuthorBox` component displayed at the bottom of every article (after tags/FAQ, before related articles), showing the author's photo, name, role, short bio, expertise badges, and a link to their full profile.
+### 1. Vercel Deployment Failure (`vercel.json`)
+The error message says: *"redirects[0] missing required property 'destination'"*
 
-## Component: `src/components/AuthorBox.tsx`
-- Accepts an `Author` object as prop
-- Displays: avatar (64px rounded), name (linked to `/author/{slug}`), role, truncated bio (~2 lines), expertise as badges
-- Modern card design with subtle border, rounded corners, clean spacing
-- Mobile responsive (stacks vertically on small screens)
-- Supports E-E-A-T by prominently crediting the author
+Vercel's `redirects` only support status codes 301, 302, 307, 308 — **not 410**. The `/goods/:path*` entry with `statusCode: 410` is invalid. 
 
-## Integration: `src/pages/ArticlePage.tsx`
-- Import `AuthorBox`
-- Place it after the FAQ section (line ~310) and before the closing `</div>` of the content column
-- Pass the `author` object (already resolved from `getAuthorByName` on line 68)
-- Show fallback gracefully if author not found in authors database (just skip the box)
+**Fix**: Move the `/goods/:path*` rule out of `redirects` and handle it via Vercel's `rewrites` combined with a small custom 410 page, OR simply use `headers` to return a 410. The simplest valid approach: rewrite `/goods/*` to a static `/gone.html` page that returns informational content, and set the status via Vercel's `headers` config. 
 
-## Changes
+Actually the cleanest approach: Remove the 410 redirect entry and add it as a **rewrite** to a static `/410.html` page placed in `public/`, combined with a custom header returning 410 status. However, Vercel `headers` can't override HTTP status codes.
 
+**Simplest working approach**: Use Vercel Edge Middleware or accept that a pure static 410 isn't possible without serverless functions. The pragmatic fix is to change the 410 to a **301 redirect** to a `/gone` page that displays a "This page no longer exists" message, or simply remove the rule if the `/goods/` paths no longer receive traffic.
+
+**Recommended**: Redirect `/goods/*` with a 301 to a simple `/gone` route that shows a "page removed" message — or just remove the entry entirely if these URLs aren't indexed anymore.
+
+### 2. Build Error in `articles.ts` (line 1022)
+The line contains `answer: "Excellent with e-AWD and Trail mode; TFLcar tests confirm grip in mountains."` — the TypeScript compiler reports an invalid character. This is likely an invisible Unicode character (zero-width space, smart quote, or similar) embedded in the text. 
+
+**Fix**: Re-type the affected string on line 1022 to ensure only standard ASCII characters are present.
+
+### Changes
 | File | Change |
 |------|--------|
-| `src/components/AuthorBox.tsx` | New component — author card with avatar, name, role, bio, expertise badges, link to profile |
-| `src/pages/ArticlePage.tsx` | Import and render `<AuthorBox>` after FAQ section, before related articles |
+| `vercel.json` | Remove the invalid 410 redirect entry (or convert to 301 pointing to `/gone`) |
+| `src/data/articles.ts` | Re-write line 1022 to eliminate invisible characters |
+| `src/pages/GonePage.tsx` | *(Optional)* Create a simple "page removed" page if we redirect `/goods/*` |
 
