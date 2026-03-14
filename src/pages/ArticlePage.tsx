@@ -311,7 +311,7 @@ const ArticlePage = () => {
                 )}
 
                 {/* Author Box */}
-                {author && <AuthorBox author={author} />}
+                <AuthorBox />
               </div>
 
               {/* Sidebar */}
