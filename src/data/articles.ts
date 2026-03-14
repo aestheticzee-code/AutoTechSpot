@@ -10,12 +10,19 @@ export const articles: Article[] = [
 
 ## Quick Specs Overview
 • **Starting MSRP**: $44,160 (Blue SEL FWD)  
-• **Powertrain**: 2.5L turbo hybrid – 329 hp / 339 lb-ft  
+
+• **Powertrain**: 2.5L turbo hybrid – 329 hp / 339 lb-ft
+
 • **EPA MPG (best)**: 34 combined (FWD Blue models)  
+
 • **Maximum Range**: 619 miles  
+
 • **Seating & Cargo**: 7–8 passengers, up to 86.7 cu ft cargo  
+
 • **Towing Capacity**: 4,000 lbs  
+
 • **Key Tech**: Dual 12.3-inch panoramic displays standard  
+
 • **Warranty**: 10 years / 100,000 miles powertrain  
 
 
@@ -145,17 +152,19 @@ Hyundai SUVs have gained strong resale momentum. Industry projections (based on 
 ## Pros and Cons – Expert Insights
 
 **Pros:**  
-• More power and dramatically better MPG than the gas model — reviewers call it the clear winner  
-• Luxurious, quiet cabin with genuine premium materials and thoughtful family features  
-• Exceptional 619-mile range makes road trips stress-free  
-• Outstanding value; the hybrid premium recoups itself fast  
-• Smooth, refined driving experience that feels more expensive than the price suggests (Car and Driver)  
+
+- More power and dramatically better MPG than the gas model — reviewers call it the clear winner  
+- Luxurious, quiet cabin with genuine premium materials and thoughtful family features  
+- Exceptional 619-mile range makes road trips stress-free  
+- Outstanding value; the hybrid premium recoups itself fast  
+- Smooth, refined driving experience that feels more expensive than the price suggests (Car and Driver)  
 
 **Cons:**  
-• Third row remains tight for adults on trips longer than an hour  
-• Higher trims approach $60,000, entering luxury territory  
-• Some driver-assist systems are overly cautious and require occasional overrides  
-• Second-row folding mechanism feels a bit slow compared to some rivals  
+
+- Third row remains tight for adults on trips longer than an hour  
+- Higher trims approach $60,000, entering luxury territory  
+- Some driver-assist systems are overly cautious and require occasional overrides  
+- Second-row folding mechanism feels a bit slow compared to some rivals  
 
 Edmunds and MotorTrend both named the 2026 Palisade Hybrid a “Best of the Best” family SUV, praising its near-perfect blend of capability and efficiency.
 
