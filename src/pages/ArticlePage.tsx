@@ -13,6 +13,7 @@ import { getAuthorByName } from "@/data/authors";
 import { formatDate, getCategoryInfo, getArticleUrl, ArticleCategory, categories } from "@/types/article";
 import FAQAccordion from "@/components/FAQAccordion";
 import TableOfContents from "@/components/TableOfContents";
+import AuthorBox from "@/components/AuthorBox";
 import {
   Breadcrumb,
   BreadcrumbList,
